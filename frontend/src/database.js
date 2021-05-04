@@ -92,6 +92,7 @@ Covid Information Bank
                 <th>Resource</th>
                 <th>State</th>
                 <th>Additional Information</th>
+                <th>Submitted On</th>
                 <th>Status</th>
             </tr>
             {data.map((item)=>{
@@ -101,6 +102,7 @@ Covid Information Bank
                         <td>{resources[item.resource - 1]}</td>
                         <td>{states[item.state - 1]}</td>
                         <td>{item.additional_info}</td>
+                        <td>{item.created_at}</td>
                         {status[item.status - 1 ] === 'Not Verified' ? <td style={{background:'red'}}>{status[item.status - 1 ]}</td> : status[item.status - 1 ] === 'Verified' ? <td style={{background:'green'}}>{status[item.status - 1 ]}</td> : status[item.status - 1 ] === 'WhatsApp Only' ? <td style={{background:'yellow'}}>{status[item.status - 1 ]}</td> : <td style={{background:'blue'}}>{status[item.status - 1 ]}</td> } 
             </tr>
                 )

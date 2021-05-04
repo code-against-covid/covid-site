@@ -71,9 +71,13 @@ const App=()=> {
       resource :  resources.indexOf(resource) + 1,
       status:1,
       ip_address : JSON.stringify(ip),
-      additional_info: additional
+      additional_info: additional,
+      created_at : date,
     })
   };
+  const month = ['January','February','March','April','May','June','July','August','September','October','November','December']
+  const today = new Date();
+  const date = today.getDate() + '-' + month[today.getMonth()];
   return (
     <>
   <div className='heading'>
