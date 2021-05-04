@@ -75,15 +75,21 @@ const App = () =>
   const handleClose = () =>
   {
     setOpen(false);
-    axios.post("http://127.0.0.1:8000/form/", {
-      name: name ? name : null,
-      state: states.indexOf(state) + 1,
-      resource: resources.indexOf(resource) + 1,
-      status: 1,
-      ip_address: JSON.stringify(ip),
-      additional_info: additional
+
+    axios.post("http://127.0.0.1:8000/form/",{
+      name : name ? name : null,
+      state : states.indexOf(state) + 1,
+      resource :  resources.indexOf(resource) + 1,
+      status:1,
+      ip_address : JSON.stringify(ip),
+      additional_info: additional,
+      created_at : date,
+
     })
   };
+  const month = ['January','February','March','April','May','June','July','August','September','October','November','December']
+  const today = new Date();
+  const date = today.getDate() + '-' + month[today.getMonth()];
   return (
     <>
       <div className='heading'>

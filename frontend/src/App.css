@@ -80,7 +80,7 @@
 .footer2 {
   bottom: 0;
   width: 100%;
-  position: fixed;
+  position: relative;
   align-items: center;
   display: flex;
   height: 100px;
