@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import styles from './styles/Footer.module.css';
 
 const Footer = () =>
@@ -15,9 +16,9 @@ const Footer = () =>
             <div className={`${ styles.quicklinks }`}>
                 <div className={`${ styles.quickheading }`}><h3>Quick Links</h3></div>
                 <ul>
-                    <li>Database</li>
-                    <li>Forum</li>
-                    <li>Our Team</li>
+                    <li><Link to="/help">Database</Link></li>
+                    <li><Link to="/">Forum</Link></li>
+                    <li><Link to="/">Our Team</Link></li>
                 </ul>
             </div>
             <div className={`${ styles.copyright }`}>

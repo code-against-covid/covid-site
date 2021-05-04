@@ -11,20 +11,25 @@ html{
 .heading {
   width: 100%;
   text-align: center;
-  font-size: 50px;
+  font-size: 30px;
   padding: 2% 0 2% 0%;
 }
 
-.container {
+
+.frontpagecont{
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
 }
 
 .leftbox {
   background: #fff;
   font-size: large;
-  padding: 2%;
+  padding: 3%;
   margin: 4%;
-  width: 900px;
+  width: 600px;
+  height: 400px;
   overflow: hidden;
   box-shadow: 7px 7px 5px grey;
 }
@@ -33,20 +38,27 @@ html{
   background: #fff;
   margin: 4%;
   font-size: large;
-  padding: 2%;
+  padding: 3%;
   margin-left: 2%;
-  width: 900px;
+  width: 300px;
   box-shadow: 7px 7px 5px grey;
 }
 
+
+/* @media (max-width: 800px) {
+  .leftbox, .rightbox {
+    flex: 100%;
+  }
+} */
+
 .announcement_heading {
-  font-size: 50px;
+  font-size: 30px;
   text-align: center;
 }
 
 .form_heading {
   text-align: center;
-  font-size: 50px;
+  font-size: 30px;
 }
 
 .want {
@@ -69,8 +81,9 @@ html{
 .helpbtn{
   display: inline-block;
    box-shadow: 2px 2px 7px grey;
-   width: 50%;
-   height: 100px;
+   width: 80%;
+   height: 70px;
+   margin: 10%;
 }
 
 .donation {
@@ -129,6 +142,15 @@ html{
   margin-top: 5%;
 }
 
+.orgcardsec{
+  padding: 0 3% 3% 3% 3%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-items: flex-start;
+
+}
+
 .orgcard{
   background-color: #fff8f8;
   width: 300px;
@@ -148,11 +170,46 @@ html{
   margin: 0 4%;
 }
 
-table {
-  margin-top: 5%;
+.database{
+    background: url('./assets/bg/topbg.jpg') #f1f1f1;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.dbsearchsec{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #fff;
+  padding: 1%;
+}
+
+.totaldbposts{
+  margin-top: 1%;
+}
+
+.dbwarning{
+  background: rgb(246, 255, 122);
+  margin: 0.5% 5%;
+  font-size: 13px;
+  padding: 0 3%;
+  display: inline-block;
+}
+
+.filter{
+  width: 350px;
+}
+
+
+.dbtable {
+  margin: 5% auto;
+  margin-bottom: 10%;
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  width: 85%;
+  background: #fff;
 }
 
 td,
