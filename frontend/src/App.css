@@ -1,6 +1,15 @@
+html{
+  font-family: 'Roboto', sans-serif;
+}
+.app{
+    background: url('./assets/bg/topbg.jpg') #f1f1f1;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
 .heading {
   width: 100%;
-  background-color: blanchedalmond;
   text-align: center;
   font-size: 50px;
   padding: 2% 0 2% 0%;
@@ -11,6 +20,7 @@
 }
 
 .leftbox {
+  background: #fff;
   font-size: large;
   padding: 2%;
   margin: 4%;
@@ -20,12 +30,13 @@
 }
 
 .rightbox {
+  background: #fff;
   margin: 4%;
   font-size: large;
   padding: 2%;
   margin-left: 2%;
-  background-color: lightyellow;
   width: 900px;
+  box-shadow: 7px 7px 5px grey;
 }
 
 .announcement_heading {
@@ -39,7 +50,6 @@
 }
 
 .want {
-  background-color: blue;
   margin: 2%;  
   font-size: larger;
   padding: 4%;
@@ -53,7 +63,6 @@
   padding: 4%;
   margin: 5% 0 5% 0;
   text-align: center;
-  background-color: blue;
   border-radius: 2px;
 }
 
@@ -66,8 +75,7 @@
 
 .donation {
   font-size: larger;
-  background-color: lightpink;
-  height: 300px;
+  padding: 2%;
 }
 
 .footer {
@@ -119,6 +127,25 @@
   font-size: large;
   text-align: center;
   margin-top: 5%;
+}
+
+.orgcard{
+  background-color: #fff8f8;
+  width: 300px;
+  padding: 0 1.5% 1.5% 1.5%;
+  box-shadow: 3px 3px 4px grey;
+  margin: 2%;
+}
+
+.orgname{
+  text-align: center;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  margin: 0 4%;
+}
+
+.orgcontact{
+  padding: 2%;
+  margin: 0 4%;
 }
 
 table {

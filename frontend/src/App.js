@@ -13,6 +13,7 @@ import { resources } from './data/resources'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import Footer from './components/Footer/Footer';
 
 const App = () =>
 {
@@ -76,127 +77,163 @@ const App = () =>
   {
     setOpen(false);
 
-    axios.post("http://127.0.0.1:8000/form/",{
-      name : name ? name : null,
-      state : states.indexOf(state) + 1,
-      resource :  resources.indexOf(resource) + 1,
-      status:1,
-      ip_address : JSON.stringify(ip),
+    axios.post("http://127.0.0.1:8000/form/", {
+      name: name ? name : null,
+      state: states.indexOf(state) + 1,
+      resource: resources.indexOf(resource) + 1,
+      status: 1,
+      ip_address: JSON.stringify(ip),
       additional_info: additional,
-      created_at : date,
+      created_at: date,
 
     })
   };
-  const month = ['January','February','March','April','May','June','July','August','September','October','November','December']
+  const month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
   const today = new Date();
   const date = today.getDate() + '-' + month[today.getMonth()];
   return (
     <>
-      <div className='heading'>
-        Covid Information Bank
+      <div className="app">
+        <div className='heading'>
+          Covid Information Bank
   </div>
-      <div className="container">
+        <div className="container">
 
-        <div className="leftbox">
-          <div className="announcement_heading">
-            Announcements
+          <div className="leftbox">
+            <div className="announcement_heading">
+              Announcements
    </div>
-          <div className="marquee">
-            {announcement.map((item) =>
-            {
-              return (
-                <div style={{ background: 'white', marginTop: '3%', fontSize: '20px' }} key={item.id}>{item.name}</div>
-              )
-            })}
+            <div className="marquee">
+              {announcement.map((item) =>
+              {
+                return (
+                  <div style={{ background: 'white', marginTop: '3%', fontSize: '20px' }} key={item.id}>{item.name}</div>
+                )
+              })}
+            </div>
           </div>
-        </div>
-        <div className="rightbox">
-          <div className="form_heading">
-            Access to Database
+          <div className="rightbox">
+            <div className="form_heading">
+              Access to Database
     </div>
 
 
 
-          <div className="want">
-            <Button className="helpbtn" variant="outlined" onClick={handleClickOpen}>
-              I want To Help
+            <div className="want">
+              <Button className="helpbtn" variant="outlined" onClick={handleClickOpen}>
+                I want To Help
       </Button>
-            <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-              <DialogTitle id="form-dialog-title">Form</DialogTitle>
-              <DialogContent>
-                <DialogContentText>
-                  Please fill in the details.All information will be subject to verification by staff members.
+              <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+                <DialogTitle id="form-dialog-title">Form</DialogTitle>
+                <DialogContent>
+                  <DialogContentText>
+                    Please fill in the details.All information will be subject to verification by staff members.
           </DialogContentText>
-                <TextField
-                  autoFocus
-                  onChange={handleSelect2}
-                  margin="dense"
-                  id="name"
-                  label="Name(optional)"
-                  type="email"
-                  fullWidth
-                />
-                <Autocomplete
+                  <TextField
+                    autoFocus
+                    onChange={handleSelect2}
+                    margin="dense"
+                    id="name"
+                    label="Name(optional)"
+                    type="email"
+                    fullWidth
+                  />
+                  <Autocomplete
 
-                  onSelect={handleSelect1}
-                  options={states.map((option) => option)}
-                  renderInput={(params) => (
-                    <TextField {...params} label="State/UT" margin="normal" variant="outlined" />
-                  )}
-                />
-                <Autocomplete
-                  onSelect={handleSelect3}
+                    onSelect={handleSelect1}
+                    options={states.map((option) => option)}
+                    renderInput={(params) => (
+                      <TextField {...params} label="State/UT" margin="normal" variant="outlined" />
+                    )}
+                  />
+                  <Autocomplete
+                    onSelect={handleSelect3}
 
-                  options={resources.map((option) => option)}
-                  renderInput={(params) => (
-                    <TextField {...params} label="Resource" margin="normal" variant="outlined" />
-                  )}
-                />
-                <TextField
-                  onChange={handleSelect4}
-                  autoFocus
-                  margin="dense"
-                  id="name"
-                  multiline
-                  rows={4}
-                  label="Additional Information"
-                  type="email"
-                  fullWidth
-                />
-              </DialogContent>
-              <DialogActions>
-                <Button onClick={handleClose} color="primary">
-                  Submit
+                    options={resources.map((option) => option)}
+                    renderInput={(params) => (
+                      <TextField {...params} label="Resource" margin="normal" variant="outlined" />
+                    )}
+                  />
+                  <TextField
+                    onChange={handleSelect4}
+                    autoFocus
+                    margin="dense"
+                    id="name"
+                    multiline
+                    rows={4}
+                    label="Additional Information"
+                    type="email"
+                    fullWidth
+                  />
+                </DialogContent>
+                <DialogActions>
+                  <Button onClick={handleClose} color="primary">
+                    Submit
           </Button>
-              </DialogActions>
-            </Dialog>
+                </DialogActions>
+              </Dialog>
+            </div>
+
+
+
+            <div className="need">
+              <Button className="helpbtn" variant="outlined" >
+                <Link to='/help' style={{ textDecoration: 'none' }}>I Need Help</Link>
+              </Button>
+            </div>
           </div>
 
-
-
-          <div className="need">
-            <Button className="helpbtn" variant="outlined" >
-              <Link to='/help' style={{ textDecoration: 'none' }}>I Need Help</Link>
-            </Button>
+        </div>
+        <div className="donation">
+          <div style={{ textAlign: 'center', fontSize: '50px' }}>
+            Links To Various Helpful Organizations
+      </div>
+          {organization.map((item) =>
+          {
+            return (
+              <div className="orgcard">
+                <div className="orgicon">
+                  <img src=""></img>
+                </div>
+                <div className="orgName">
+                  Ayaachi Jha
+              </div>
+                <div className="orgcontact">
+                  <p>
+                    Address: 112 Lahore Apptts Vasundhara Enclave Delhi 110096
+                </p>
+                  <p>
+                    E Mail: ayaachi7123@gmail.com
+                </p>
+                  <p>
+                    Phone: 98919710116
+                </p>
+                </div>
+              </div>
+            )
+          })}
+          <div className="orgcard">
+            <div className="orgicon">
+              <img src=""></img>
+            </div>
+            <div className="orgname">
+              <h3>Ayaachi Jha</h3>
+            </div>
+            <div className="orgcontact">
+              <p>
+                Address: 112 Lahore Apptts Vasundhara Enclave Delhi 110096
+                </p>
+              <p>
+                E Mail: ayaachi7123@gmail.com
+                </p>
+              <p>
+                Phone: 98919710116
+                </p>
+            </div>
           </div>
         </div>
 
-      </div>
-      <div className="donation">
-        <div style={{ textAlign: 'center', fontSize: '50px' }}>
-          Links To Various Helpful Organizations
-      </div>
-        {organization.map((item) =>
-        {
-          return (
-            <div style={{ margin: '2%', background: 'white', fontSize: 'larger', textAlign: 'center' }} key={item.id}><a href={item.name}>{item.name}</a> </div>
-          )
-        })}
-      </div>
-      <div className="footer">
-        <div style={{ width: '100%', textAlign: 'center', fontSize: '40px' }}>
-          All Rights Reserved@2021
-    </div>
+        <Footer />
       </div>
     </>
   );
