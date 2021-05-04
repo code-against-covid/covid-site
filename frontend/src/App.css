@@ -8,18 +8,19 @@
 
 .container {
   display: flex;
-  background-color: lavender;
 }
 
 .leftbox {
   font-size: large;
   padding: 2%;
-  background-color: cadetblue;
+  margin: 4%;
   width: 900px;
   overflow: hidden;
+  box-shadow: 7px 7px 5px grey;
 }
 
 .rightbox {
+  margin: 4%;
   font-size: large;
   padding: 2%;
   margin-left: 2%;
@@ -38,21 +39,29 @@
 }
 
 .want {
+  background-color: blue;
+  margin: 2%;  
   font-size: larger;
-  padding: 15%;
+  padding: 4%;
   text-align: center;
   margin: 5% 0 5% 0;
-  background-color: pink;
   border-radius: 2px;
 }
 
 .need {
   font-size: larger;
-  padding: 15%;
-  margin: 15% 0 15% 0;
+  padding: 4%;
+  margin: 5% 0 5% 0;
   text-align: center;
-  background-color: lightsalmon;
+  background-color: blue;
   border-radius: 2px;
+}
+
+.helpbtn{
+  display: inline-block;
+   box-shadow: 2px 2px 7px grey;
+   width: 50%;
+   height: 100px;
 }
 
 .donation {
@@ -93,6 +102,7 @@
 .marquee:hover {
   animation-play-state: paused;
 }
+
 
 /* Make it move! */
 @keyframes marquee {
