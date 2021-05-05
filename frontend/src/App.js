@@ -96,39 +96,40 @@ const App = () =>
       <div className="app">
         <div className='heading'>
           Covid Information Bank
-  </div>
-        <div className="container">
+        </div>
+        <div className="frontpagecont">
 
           <div className="leftbox">
             <div className="announcement_heading">
               Announcements
-   </div>
+            </div>
             <div className="marquee">
               {announcement.map((item) =>
               {
                 return (
-                  <div style={{ background: 'white', marginTop: '3%', fontSize: '20px' }} key={item.id}>{item.name}</div>
-                )
+                  <div style={{ background: 'white', marginTop: '3%', fontSize: '15px' }} key={item.id}>{item.name}</div>
+                );
               })}
             </div>
           </div>
+
           <div className="rightbox">
             <div className="form_heading">
               Access to Database
-    </div>
+            </div>
 
 
 
             <div className="want">
-              <Button className="helpbtn" variant="outlined" onClick={handleClickOpen}>
+              <Button className="helpbtn" variant="contained" color="secondary" size="large" onClick={handleClickOpen}>
                 I want To Help
-      </Button>
+              </Button>
               <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
                 <DialogTitle id="form-dialog-title">Form</DialogTitle>
                 <DialogContent>
                   <DialogContentText>
-                    Please fill in the details.All information will be subject to verification by staff members.
-          </DialogContentText>
+                    Please fill in the details. All information will be subject to verification by staff members.
+                  </DialogContentText>
                   <TextField
                     autoFocus
                     onChange={handleSelect2}
@@ -169,7 +170,7 @@ const App = () =>
                 <DialogActions>
                   <Button onClick={handleClose} color="primary">
                     Submit
-          </Button>
+                  </Button>
                 </DialogActions>
               </Dialog>
             </div>
@@ -177,58 +178,63 @@ const App = () =>
 
 
             <div className="need">
-              <Button className="helpbtn" variant="outlined" >
-                <Link to='/help' style={{ textDecoration: 'none' }}>I Need Help</Link>
+              <Link to='/help' style={{ textDecoration: 'none' }}>
+                <Button className="helpbtn" variant="contained" color="primary" size="large" >
+                  I Need Help
               </Button>
+              </Link>
             </div>
           </div>
 
         </div>
+
         <div className="donation">
-          <div style={{ textAlign: 'center', fontSize: '50px' }}>
-            Links To Various Helpful Organizations
-      </div>
-          {organization.map((item) =>
-          {
-            return (
-              <div className="orgcard">
-                <div className="orgicon">
-                  <img src=""></img>
+          <div className="heading">
+            Helpful Organizations
+          </div>
+          <div className="orgcardsec">
+            {organization.map((item) =>
+            {
+              return (
+                <div className="orgcard">
+                  <div className="orgicon">
+                    <img src={`./assets/orgimgs/${ item.logo }`}></img>
+                  </div>
+                  <div className="orgname">
+                    <h3>{item.name}</h3>
+                  </div>
+                  <div className="orgcontact">
+                    <p>
+                      {item.address}
+                    </p>
+                    <p>
+                      E-Mail: {item.email}
+                    </p>
+                    <p>
+                      Phone: {item.phone}
+                    </p>
+                  </div>
                 </div>
-                <div className="orgName">
-                  Ayaachi Jha
+              )
+            })}
+            <div className="orgcard">
+              <div className="orgicon">
+                <img src=""></img>
               </div>
-                <div className="orgcontact">
-                  <p>
-                    Address: 112 Lahore Apptts Vasundhara Enclave Delhi 110096
-                </p>
-                  <p>
-                    E Mail: ayaachi7123@gmail.com
-                </p>
-                  <p>
-                    Phone: 98919710116
-                </p>
-                </div>
+              <div className="orgname">
+                <h3>Ayaachi Jha</h3>
               </div>
-            )
-          })}
-          <div className="orgcard">
-            <div className="orgicon">
-              <img src=""></img>
-            </div>
-            <div className="orgname">
-              <h3>Ayaachi Jha</h3>
-            </div>
-            <div className="orgcontact">
-              <p>
-                Address: 112 Lahore Apptts Vasundhara Enclave Delhi 110096
+              <div className="orgcontact">
+                <p>
+                  Address: 112 Lahore Apptts Vasundhara Enclave Delhi 110096
                 </p>
-              <p>
-                E Mail: ayaachi7123@gmail.com
+                <p>
+                  E Mail: ayaachi7123@gmail.com
                 </p>
-              <p>
-                Phone: 98919710116
+                <p>
+                  Phone: 98919710116
                 </p>
+              </div>
             </div>
           </div>
         </div>
