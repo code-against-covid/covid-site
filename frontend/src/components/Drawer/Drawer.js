@@ -9,7 +9,6 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
 import StorageIcon from '@material-ui/icons/Storage';
 import HomeIcon from '@material-ui/icons/Home';
 import PeopleIcon from '@material-ui/icons/People';
@@ -30,8 +29,8 @@ const renderIcon = (text) =>
     if (text === 'Home')
     {
         return (
-            <NavLink exact to="/" activeStyle={{ color: "blue" }} style={{ textDecoration: "none", color: "black" }} >
-                <ListItem button key={text}>
+            <NavLink exact to="/" key={text} activeStyle={{ color: "blue" }} style={{ textDecoration: "none", color: "black" }} >
+                <ListItem button>
 
                     <ListItemIcon><HomeIcon color="primary" /></ListItemIcon>
                     <ListItemText primary={text} />
@@ -43,8 +42,8 @@ const renderIcon = (text) =>
     else if (text === 'Database')
     {
         return (
-            <NavLink exact to="/help" activeStyle={{ color: "blue" }} style={{ textDecoration: "none", color: "black" }} >
-                <ListItem button key={text}>
+            <NavLink exact to="/help" key={text} activeStyle={{ color: "blue" }} style={{ textDecoration: "none", color: "black" }} >
+                <ListItem button >
 
                     <ListItemIcon><StorageIcon color="primary" /></ListItemIcon>
                     <ListItemText primary={text} />
@@ -56,8 +55,8 @@ const renderIcon = (text) =>
     else if (text === 'Our Team')
     {
         return (
-            <NavLink exact to="/team" activeStyle={{ color: "blue" }} style={{ textDecoration: "none", color: "black" }} >
-                <ListItem button key={text}>
+            <NavLink exact to="/team" key={text} activeStyle={{ color: "blue" }} style={{ textDecoration: "none", color: "black" }} >
+                <ListItem button>
 
                     <ListItemIcon><PeopleIcon color="primary" /></ListItemIcon>
                     <ListItemText primary={text} />

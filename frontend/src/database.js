@@ -11,13 +11,13 @@ import Footer from './components/Footer/Footer';
 import { Link } from 'react-router-dom'
 import Drawer from './components/Drawer/Drawer';
 
+
 const Database = () =>
 {
 
     const [data, setData] = useState([])
     const [state, setState] = useState('')
     const [resource, setResource] = useState('')
-
 
     useEffect(() =>
     {
@@ -51,12 +51,13 @@ const Database = () =>
         const response = await axios.get("http://127.0.0.1:8000/form/")
         // const response2 = await axios.get(`http://127.0.0.1:8000/resource/${ resources.indexOf(resource) + 1 }/`)
         // const response3 = await axios.get(`http://127.0.0.1:8000/state/${ states.indexOf(state) + 1 }/`)
-        setData(response.data.filter((item) => item.state === state  && item.resource === resource ))
+        setData(response.data.filter((item) => item.state === state && item.resource === resource))
     }
 
     return (
         <>
             <div className="database">
+
                 <Drawer />
                 <div className='heading'>
                     <Link to='/' style={{ textDecoration: 'none' }}>Covid Information Bank</Link>
@@ -95,36 +96,48 @@ const Database = () =>
                     </div>
                 </div>
                 <div>
-                    <div class="dbwarning">
+                    <div className="dbwarning">
                         <h3>Warning!</h3>
                         <p>PLEASE VERIFY EVERY INFORMATION THAT YOU CHOOSE TO ACCEPT YOURSELF TO PREVENT ANY FRAUD. WE ARE JUST PROVIDING A PLATFORM FOR PEOPLE'S BENEFIT.</p>
                     </div>
                 </div>
-                <table className="dbtable">
-                    <tbody>
-                        <tr>
-                            <th>Name</th>
-                            <th>Resource</th>
-                            <th>State</th>
-                            <th>Additional Information</th>
-                            <th>Submitted On</th>
-                            <th>Status</th>
-                        </tr>
-                        {data.map((item) =>
-                        {
-                            return (
-                                <tr key={item.id}>
-                                    {item.name ? <td>{item.name}</td> : <td>Anonymous</td>}
-                                    <td>{item.resource}</td>
-                                    <td>{item.state}</td>
-                                    <td>{item.additional_info}</td>
-                                    <td>{item.created_at}</td>
-                                    {status[item.status - 1] === 'Not Verified' ? <td style={{ background: 'red' }}>{status[item.status - 1]}</td> : status[item.status - 1] === 'Verified' ? <td style={{ background: 'green' }}>{status[item.status - 1]}</td> : status[item.status - 1] === 'WhatsApp Only' ? <td style={{ background: 'yellow' }}>{status[item.status - 1]}</td> : <td style={{ background: 'blue' }}>{status[item.status - 1]}</td>}
+                {
+                    <div className="tablecontainer">
+                        <table className="dbtable">
+                            <col style={{ width: "150px" }} />
+                            <col style={{ width: "150px" }} />
+                            <col style={{ width: "150px" }} />
+                            <col style={{ width: "500px" }} />
+                            <col style={{ width: "150px" }} />
+                            <col style={{ width: "150px" }} />
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Resource</th>
+                                    <th>State</th>
+                                    <th>Additional Information</th>
+                                    <th>Submitted On</th>
+                                    <th>Status</th>
                                 </tr>
-                            )
-                        })}
-                    </tbody>
-                </table>
+                            </thead>
+                            <tbody>
+                                {data.map((item) =>
+                                {
+                                    return (
+                                        <tr key={item.id}>
+                                            {item.name ? <td>{item.name}</td> : <td>Anonymous</td>}
+                                            <td>{item.resource}</td>
+                                            <td>{item.state}</td>
+                                            <td>{item.additional_info}</td>
+                                            <td>{item.created_at}</td>
+                                            {status[item.status - 1] === 'Not Verified' ? <td style={{ background: 'red' }}>{status[item.status - 1]}</td> : status[item.status - 1] === 'Verified' ? <td style={{ background: 'green' }}>{status[item.status - 1]}</td> : status[item.status - 1] === 'WhatsApp Only' ? <td style={{ background: 'yellow' }}>{status[item.status - 1]}</td> : <td style={{ background: 'blue' }}>{status[item.status - 1]}</td>}
+                                        </tr>
+                                    )
+                                })}
+                            </tbody>
+                        </table>
+                    </div>
+                }
 
                 <Footer />
             </div>

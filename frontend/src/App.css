@@ -274,6 +274,10 @@ html {
   table-layout: fixed;
 }
 
+.tablecontainer{
+  overflow-x: auto;
+}
+
 td,
 th {
   border: 1px solid #dddddd;
