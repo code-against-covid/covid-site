@@ -8,7 +8,8 @@ import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import Button from '@material-ui/core/Button';
 import Footer from './components/Footer/Footer';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import Drawer from './components/Drawer/Drawer';
 
 const Database = () =>
 {
@@ -56,8 +57,9 @@ const Database = () =>
     return (
         <>
             <div className="database">
+                <Drawer />
                 <div className='heading'>
-                    <Link to='/' style={{textDecoration:'none'}}>Covid Information Bank</Link>
+                    <Link to='/' style={{ textDecoration: 'none' }}>Covid Information Bank</Link>
                 </div>
                 <h1 className="heading">Database </h1>
                 <div className="dbsearchsec">
