@@ -79,8 +79,8 @@ const App = () =>
 
     axios.post("http://127.0.0.1:8000/form/", {
       name: name ? name : null,
-      state: states.indexOf(state) + 1,
-      resource: resources.indexOf(resource) + 1,
+      state: state,
+      resource: resource,
       status: 1,
       ip_address: JSON.stringify(ip),
       additional_info: additional,
