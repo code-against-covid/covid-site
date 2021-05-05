@@ -14,6 +14,8 @@ import HomeIcon from '@material-ui/icons/Home';
 import PeopleIcon from '@material-ui/icons/People';
 import ForumIcon from '@material-ui/icons/Forum';
 import MenuIcon from '@material-ui/icons/Menu';
+import styles from './styles/Drawer.module.css';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles({
     list: {
@@ -118,7 +120,14 @@ export default function TemporaryDrawer()
         <div>
             {['left'].map((anchor) => (
                 <React.Fragment key={anchor}>
-                    <Button onClick={toggleDrawer(anchor, true)}><MenuIcon fontSize="large" color="primary" /></Button>
+                    <div className={`${ styles.menutogglediv }`}>
+                        <div className={`${ styles.menubtn }`}>
+                            <Button onClick={toggleDrawer(anchor, true)}><MenuIcon fontSize="large" color="primary" /></Button>
+                        </div>
+                        <div className={`${ styles.mainheading }`}>
+                            Covid Information Bank
+                        </div>
+                    </div>
                     <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
                         {list(anchor)}
                     </Drawer>

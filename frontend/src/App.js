@@ -95,20 +95,20 @@ const App = () =>
     <>
       <div className="app">
         <Drawer />
-        <div className='heading'>
+        {/* <div className='heading'>
           <Link to='/' style={{ textDecoration: 'none', color: 'black' }}>Covid Information Bank</Link>
-        </div>
+        </div> */}
         <div className="frontpagecont">
 
           <div className="leftbox">
             <div className="announcement_heading">
-              Announcements
+              News and updates
             </div>
             <div className="marquee">
               {announcement.map((item) =>
               {
                 return (
-                  <div style={{ background: 'lightsalmon', marginTop: '4%', fontSize: '25px', textAlign: 'center' }} key={item.id}>{item.name}</div>
+                  <div className="announcementlines" key={item.id}>{item.name}</div>
                 );
               })}
             </div>
@@ -116,7 +116,7 @@ const App = () =>
 
           <div className="rightbox">
             <div className="form_heading">
-              Access to Database
+              Resource Database
             </div>
 
 
@@ -163,7 +163,8 @@ const App = () =>
                     id="name"
                     multiline
                     rows={4}
-                    label="Additional Information"
+                    label="Information"
+                    placeholder="Information about the resource: Address, Phone, Availability, etc. Any information you provide will help thousands."
                     type="email"
                     fullWidth
                   />
