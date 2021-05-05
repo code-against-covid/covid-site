@@ -10,7 +10,7 @@ import Button from '@material-ui/core/Button';
 import Footer from './components/Footer/Footer';
 import { Link } from 'react-router-dom'
 import Drawer from './components/Drawer/Drawer';
-
+import Table from 'react-bootstrap/Table'
 const Database = () =>
 {
 
@@ -95,12 +95,14 @@ const Database = () =>
                     </div>
                 </div>
                 <div>
-                    <div class="dbwarning">
+                    <div className="dbwarning">
                         <h3>Warning!</h3>
                         <p>PLEASE VERIFY EVERY INFORMATION THAT YOU CHOOSE TO ACCEPT YOURSELF TO PREVENT ANY FRAUD. WE ARE JUST PROVIDING A PLATFORM FOR PEOPLE'S BENEFIT.</p>
                     </div>
                 </div>
-                <table className="dbtable">
+
+
+                <Table className="dbtable" responsive>
                     <tbody>
                         <tr>
                             <th>Name</th>
@@ -124,10 +126,12 @@ const Database = () =>
                             )
                         })}
                     </tbody>
-                </table>
+                </Table>
+                        
 
+                            </div>
                 <Footer />
-            </div>
+            
         </>
     )
 }

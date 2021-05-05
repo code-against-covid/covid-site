@@ -15,7 +15,6 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Footer from './components/Footer/Footer';
 import Drawer from './components/Drawer/Drawer';
-
 const App = () =>
 {
 
@@ -94,7 +93,7 @@ const App = () =>
   return (
     <>
       <div className="app">
-        <Drawer />
+    <Drawer/>
         <div className='heading'>
           <Link to='/' style={{textDecoration:'none',color:'black'}}>Covid Information Bank</Link>
         </div>
@@ -108,7 +107,7 @@ const App = () =>
               {announcement.map((item) =>
               {
                 return (
-                  <div style={{ background: 'lightsalmon', marginTop: '4%', fontSize: '25px', textAlign: 'center' }} key={item.id}>{item.name}</div>
+                  <div style={{ background: 'lightsalmon', marginTop: '4%', fontSize: '25px',textAlign:'center' }} key={item.id}>{item.name}</div>
                 );
               })}
             </div>

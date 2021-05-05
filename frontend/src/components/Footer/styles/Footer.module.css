@@ -1,40 +1,38 @@
-.sitefooter{
-  background: rgba(0,0,0, 0.9);
+.sitefooter {
+  background: rgba(0, 0, 0, 0.9);
   color: rgb(223, 207, 207);
   padding: 4%;
+  margin-right: 0;
 }
 
-.about{
+.about {
   display: inline-block;
   width: 40%;
   margin-left: 7%;
   text-align: justify;
-
 }
 
-.quicklinks{
+.quicklinks {
   display: inline-block;
   width: 20%;
   margin-right: 10%;
   float: right;
   padding-top: 1%;
-
 }
 
-.aboutheading{
+.aboutheading {
   border-bottom: 2px solid red;
   margin: 7%;
   padding: 0 10%;
 }
 
-.quickheading{
+.quickheading {
   border-bottom: 2px solid red;
-  margin: 7% 7% 15% 7%;
+  margin: 7% 0% 15% 7%;
   padding: 0 10%;
 }
 
-
-.copyright{
+.copyright {
   text-align: center;
   margin-top: 5%;
 }
