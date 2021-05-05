@@ -1,7 +1,5 @@
 from rest_framework import serializers
 from form.models import Form
-from state.models import State
-from resource.models import Resource
 from status.models import Status
 
 

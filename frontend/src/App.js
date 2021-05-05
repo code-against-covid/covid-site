@@ -85,7 +85,6 @@ const App = () =>
       ip_address: JSON.stringify(ip),
       additional_info: additional,
       created_at: date,
-
     })
   };
   const month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
@@ -95,7 +94,7 @@ const App = () =>
     <>
       <div className="app">
         <div className='heading'>
-          <Link style={{textDecoration:'none',color:'black'}}>Covid Information Bank</Link>
+          <Link to='/' style={{textDecoration:'none',color:'black'}}>Covid Information Bank</Link>
         </div>
         <div className="frontpagecont">
 

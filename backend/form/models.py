@@ -1,7 +1,5 @@
 from django.db import models
-from resource.models import Resource
 from status.models import Status
-from state.models import State
 import datetime
 
 
