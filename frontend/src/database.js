@@ -8,6 +8,7 @@ import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import Button from '@material-ui/core/Button';
 import Footer from './components/Footer/Footer';
+import {Link} from 'react-router-dom'
 
 const Database = () =>
 {
@@ -56,7 +57,7 @@ const Database = () =>
         <>
             <div className="database">
                 <div className='heading'>
-                    Covid Information Bank
+                    <Link to='/' style={{textDecoration:'none'}}>Covid Information Bank</Link>
                 </div>
                 <h1 className="heading">Database </h1>
                 <div className="dbsearchsec">
@@ -94,7 +95,7 @@ const Database = () =>
                 <div>
                     <div class="dbwarning">
                         <h3>Warning!</h3>
-                        <p>PLEASE VERIFY EVERY INFORMATION THAT YOU CHOOSE TO ACCEPT AGAIN TO PREVENT ANY FRAUD. WE ARE JUST PROVIDING A PLATFORM FOR PEOPLE'S BENEFIT.</p>
+                        <p>PLEASE VERIFY EVERY INFORMATION THAT YOU CHOOSE TO ACCEPT YOURSELF TO PREVENT ANY FRAUD. WE ARE JUST PROVIDING A PLATFORM FOR PEOPLE'S BENEFIT.</p>
                     </div>
                 </div>
                 <table className="dbtable">

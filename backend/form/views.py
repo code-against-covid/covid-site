@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework import viewsets
+from rest_framework import viewsets, permissions
 from .models import Form
 from .serializers import FormSerializer
 
@@ -10,3 +10,4 @@ from .serializers import FormSerializer
 class FormView(viewsets.ModelViewSet):
     queryset = Form.objects.all()
     serializer_class = FormSerializer
+    permission_classes = (permissions.AllowAny,)

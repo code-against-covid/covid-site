@@ -17,8 +17,8 @@ const Footer = () =>
                 <div className={`${ styles.quickheading }`}><h3>Quick Links</h3></div>
                 <ul>
                     <li><Link to="/help">Database</Link></li>
-                    <li><Link to="/">Forum</Link></li>
-                    <li><Link to="/">Our Team</Link></li>
+                    <li><Link to="/forum">Forum</Link></li>
+                    <li><Link to="/team">Our Team</Link></li>
                 </ul>
             </div>
             <div className={`${ styles.copyright }`}>

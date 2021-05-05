@@ -95,7 +95,7 @@ const App = () =>
     <>
       <div className="app">
         <div className='heading'>
-          Covid Information Bank
+          <Link style={{textDecoration:'none',color:'black'}}>Covid Information Bank</Link>
         </div>
         <div className="frontpagecont">
 
@@ -107,7 +107,7 @@ const App = () =>
               {announcement.map((item) =>
               {
                 return (
-                  <div style={{ background: 'white', marginTop: '3%', fontSize: '15px' }} key={item.id}>{item.name}</div>
+                  <div style={{ background: 'lightsalmon', marginTop: '4%', fontSize: '25px',textAlign:'center' }} key={item.id}>{item.name}</div>
                 );
               })}
             </div>
@@ -198,7 +198,6 @@ const App = () =>
               return (
                 <div className="orgcard">
                   <div className="orgicon">
-                    <img src={`./assets/orgimgs/${ item.logo }`}></img>
                   </div>
                   <div className="orgname">
                     <h3>{item.name}</h3>
@@ -217,28 +216,8 @@ const App = () =>
                 </div>
               )
             })}
-            <div className="orgcard">
-              <div className="orgicon">
-                <img src=""></img>
-              </div>
-              <div className="orgname">
-                <h3>Ayaachi Jha</h3>
-              </div>
-              <div className="orgcontact">
-                <p>
-                  Address: 112 Lahore Apptts Vasundhara Enclave Delhi 110096
-                </p>
-                <p>
-                  E Mail: ayaachi7123@gmail.com
-                </p>
-                <p>
-                  Phone: 98919710116
-                </p>
-              </div>
-            </div>
           </div>
         </div>
-
         <Footer />
       </div>
     </>

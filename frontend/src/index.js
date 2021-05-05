@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import Database from './database'
+import Team from './team'
 import { BrowserRouter as Router,Route,Switch} from 'react-router-dom'
 import Error from './error'
 
@@ -13,6 +14,9 @@ ReactDOM.render(
     </Route>
     <Route path='/help'>
       <Database/>
+    </Route>
+    <Route path='/team'>
+      <Team/>
     </Route>
     <Route path='*'>
       <Error/>

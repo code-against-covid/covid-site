@@ -1,22 +1,29 @@
-html{
-  font-family: 'Roboto', sans-serif;
+html {
+  font-family: "Roboto", sans-serif;
 }
-.app{
-    background: url('./assets/bg/topbg.jpg') #f1f1f1;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+.app {
+  background: url("./assets/bg/bg3.jpeg") #f1f1f1;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.team {
+  /* background: url("./assets/bg/bg3.jpeg") #f1f1f1;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover; */
+  background-color: burlywood;
 }
 
 .heading {
   width: 100%;
   text-align: center;
-  font-size: 30px;
+  font-size: 40px;
   padding: 2% 0 2% 0%;
 }
 
-
-.frontpagecont{
+.frontpagecont {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -40,10 +47,10 @@ html{
   font-size: large;
   padding: 3%;
   margin-left: 2%;
-  width: 300px;
+  width: 350px;
+  height: 400px;
   box-shadow: 7px 7px 5px grey;
 }
-
 
 /* @media (max-width: 800px) {
   .leftbox, .rightbox {
@@ -62,11 +69,10 @@ html{
 }
 
 .want {
-  margin: 2%;  
   font-size: larger;
-  padding: 4%;
+  padding: 5%;
   text-align: center;
-  margin: 5% 0 5% 0;
+  margin: 20% 0 5% 0;
   border-radius: 2px;
 }
 
@@ -78,12 +84,12 @@ html{
   border-radius: 2px;
 }
 
-.helpbtn{
+.helpbtn {
   display: inline-block;
-   box-shadow: 2px 2px 7px grey;
-   width: 80%;
-   height: 70px;
-   margin: 10%;
+  box-shadow: 2px 2px 7px grey;
+  width: 80%;
+  height: 70px;
+  margin: 10%;
 }
 
 .donation {
@@ -124,14 +130,13 @@ html{
   animation-play-state: paused;
 }
 
-
 /* Make it move! */
 @keyframes marquee {
   0% {
     top: -1em;
   }
   100% {
-    top: 48em;
+    top: 25em;
   }
 }
 
@@ -142,16 +147,15 @@ html{
   margin-top: 5%;
 }
 
-.orgcardsec{
+.orgcardsec {
   padding: 0 3% 3% 3% 3%;
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
   align-items: flex-start;
-
 }
 
-.orgcard{
+.orgcard {
   background-color: #fff8f8;
   width: 300px;
   padding: 0 1.5% 1.5% 1.5%;
@@ -159,25 +163,25 @@ html{
   margin: 2%;
 }
 
-.orgname{
+.orgname {
   text-align: center;
   border-bottom: 1px solid rgb(0, 0, 0);
   margin: 0 4%;
 }
 
-.orgcontact{
+.orgcontact {
   padding: 2%;
   margin: 0 4%;
 }
 
-.database{
-    background: url('./assets/bg/topbg.jpg') #f1f1f1;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+.database {
+  background: url("./assets/bg/bg4.jpeg") #f1f1f1;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
-.dbsearchsec{
+.dbsearchsec {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -186,11 +190,12 @@ html{
   padding: 1%;
 }
 
-.totaldbposts{
+.totaldbposts {
   margin-top: 1%;
+  font-size: 30px;
 }
 
-.dbwarning{
+.dbwarning {
   background: rgb(246, 255, 122);
   margin: 0.5% 5%;
   font-size: 13px;
@@ -198,10 +203,9 @@ html{
   display: inline-block;
 }
 
-.filter{
+.filter {
   width: 350px;
 }
-
 
 .dbtable {
   margin: 5% auto;

@@ -10,6 +10,7 @@ urlpatterns = [
     path('status/', include('status.urls')),
     path('organization/', include('organization.urls')),
     path('announcement/', include('announcement.urls')),
+    path('api-auth/', include('rest_framework.urls'))
 ]
 
 
