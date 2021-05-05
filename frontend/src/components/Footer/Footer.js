@@ -24,7 +24,7 @@ const Footer = () =>
             <div className={`${ styles.copyright }`}>
                 &copy; copyright 2021
             </div>
-            <a style={{ fontSize: "10px" }} href="https://www.freepik.com/vectors/background">Background vector created by starline - www.freepik.com</a>
+            <a href='https://www.freepik.com/vectors/background'>Background vector created by freepik - www.freepik.com</a>
         </footer >
     );
 }
