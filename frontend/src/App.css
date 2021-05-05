@@ -89,7 +89,7 @@ html {
   padding: 3%;
   margin: 4%;
   width: 600px;
-  height: 400px;
+  height: 350px;
   overflow: hidden;
   box-shadow: 7px 7px 5px grey;
 }
@@ -101,7 +101,7 @@ html {
   padding: 3%;
   margin-left: 2%;
   width: 350px;
-  height: 400px;
+  height: 350px;
   box-shadow: 7px 7px 5px grey;
 }
 
@@ -256,7 +256,7 @@ html {
   background: rgb(246, 255, 122);
   margin: 0.5% 5%;
   font-size: 13px;
-  padding: 0 3%;
+  padding: 1%;
   display: inline-block;
 }
 
