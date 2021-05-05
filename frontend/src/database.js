@@ -49,9 +49,9 @@ const Database = () =>
     const handleSubmit = async () =>
     {
         const response = await axios.get("http://127.0.0.1:8000/form/")
-        const response2 = await axios.get(`http://127.0.0.1:8000/resource/${ resources.indexOf(resource) + 1 }/`)
-        const response3 = await axios.get(`http://127.0.0.1:8000/state/${ states.indexOf(state) + 1 }/`)
-        setData(response.data.filter((item) => response2.data.form_resource.includes(JSON.stringify(item.id)) && response3.data.form_state.includes(JSON.stringify(item.id))))
+        // const response2 = await axios.get(`http://127.0.0.1:8000/resource/${ resources.indexOf(resource) + 1 }/`)
+        // const response3 = await axios.get(`http://127.0.0.1:8000/state/${ states.indexOf(state) + 1 }/`)
+        setData(response.data.filter((item) => item.state === state  && item.resource === resource ))
     }
 
     return (
@@ -115,8 +115,8 @@ const Database = () =>
                             return (
                                 <tr key={item.id}>
                                     {item.name ? <td>{item.name}</td> : <td>Anonymous</td>}
-                                    <td>{resources[item.resource - 1]}</td>
-                                    <td>{states[item.state - 1]}</td>
+                                    <td>{item.resource}</td>
+                                    <td>{item.state}</td>
                                     <td>{item.additional_info}</td>
                                     <td>{item.created_at}</td>
                                     {status[item.status - 1] === 'Not Verified' ? <td style={{ background: 'red' }}>{status[item.status - 1]}</td> : status[item.status - 1] === 'Verified' ? <td style={{ background: 'green' }}>{status[item.status - 1]}</td> : status[item.status - 1] === 'WhatsApp Only' ? <td style={{ background: 'yellow' }}>{status[item.status - 1]}</td> : <td style={{ background: 'blue' }}>{status[item.status - 1]}</td>}

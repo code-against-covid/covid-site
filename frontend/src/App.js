@@ -80,13 +80,12 @@ const App = () =>
 
     axios.post("http://127.0.0.1:8000/form/", {
       name: name ? name : null,
-      state: states.indexOf(state) + 1,
-      resource: resources.indexOf(resource) + 1,
+      state: state,
+      resource: resource,
       status: 1,
       ip_address: JSON.stringify(ip),
       additional_info: additional,
       created_at: date,
-
     })
   };
   const month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
@@ -97,7 +96,7 @@ const App = () =>
       <div className="app">
         <Drawer />
         <div className='heading'>
-          <Link style={{ textDecoration: 'none', color: 'black' }}>Covid Information Bank</Link>
+          <Link to='/' style={{textDecoration:'none',color:'black'}}>Covid Information Bank</Link>
         </div>
         <div className="frontpagecont">
 
