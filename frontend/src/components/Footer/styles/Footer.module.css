@@ -5,31 +5,60 @@
   margin-right: 0;
 }
 
+<<<<<<< HEAD
 .about {
   display: inline-block;
   width: 40%;
   margin-left: 7%;
+=======
+.footercontentsec{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 0 70px 0;
+}
+
+.about{
+  width: 500px;
+>>>>>>> f7df311ef73e9d7478f8dfe36a7d9df484aba28a
   text-align: justify;
 }
 
+<<<<<<< HEAD
 .quicklinks {
   display: inline-block;
   width: 20%;
   margin-right: 10%;
   float: right;
   padding-top: 1%;
+=======
+.quicklinks{
+  width: 500px;
+}
+
+.quicklinks ul{
+  margin-left: 50px;
+}
+.quicklinks li{
+  margin-bottom: 10px;
+>>>>>>> f7df311ef73e9d7478f8dfe36a7d9df484aba28a
 }
 
 .aboutheading {
   border-bottom: 2px solid red;
-  margin: 7%;
-  padding: 0 10%;
+  padding: 4% 10%;
+  margin: 0 0 10% 0;
 }
 
 .quickheading {
   border-bottom: 2px solid red;
+<<<<<<< HEAD
   margin: 7% 0% 15% 7%;
   padding: 0 10%;
+=======
+  padding: 4% 10%;
+  margin: 0 0 10% 0;
+>>>>>>> f7df311ef73e9d7478f8dfe36a7d9df484aba28a
 }
 
 .copyright {

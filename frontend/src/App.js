@@ -95,7 +95,7 @@ const App = () =>
       <div className="app">
     <Drawer/>
         <div className='heading'>
-          <Link to='/' style={{textDecoration:'none',color:'black'}}>Covid Information Bank</Link>
+          <Link to='/' style={{ textDecoration: 'none', color: 'black' }}>Covid Information Bank</Link>
         </div>
         <div className="frontpagecont">
 
@@ -196,7 +196,7 @@ const App = () =>
             {organization.map((item) =>
             {
               return (
-                <div className="orgcard">
+                <div className="orgcard" key={item.id}>
                   <div className="orgicon">
                   </div>
                   <div className="orgname">
