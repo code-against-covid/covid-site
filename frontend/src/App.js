@@ -35,7 +35,8 @@ const styles = (theme) => ({
   },
 });
 
-const DialogTitle = withStyles(styles)((props) => {
+const DialogTitle = withStyles(styles)((props) =>
+{
   const { children, classes, onClose, ...other } = props;
   return (
     <MuiDialogTitle disableTypography className={classes.root} {...other}>
@@ -64,7 +65,7 @@ const App = () =>
   const [announcement, setAnnouncement] = useState([])
   const [openPop, setOpenPop] = useState(false)
   const [openForm, setOpenForm] = useState(false)
-  
+
 
   // For fetching announcements and organizations details from backend.
   useEffect(() =>
@@ -110,8 +111,8 @@ const App = () =>
   {
     setAdditional(e.target.value)
   }
-  
-   // handlesubmit for the submit button in the post and display thank you message.
+
+  // handlesubmit for the submit button in the post and display thank you message.
   const handleSubmit = () =>
   {
     axios.post("http://127.0.0.1:8000/form/", {
@@ -124,12 +125,13 @@ const App = () =>
       created_at: date,
     })
     // Set timeout for 3 seconds. Had to use settimeout cause setopenform and setopenpop would simunltaneously close together.
-    setTimeout( 
-      ()=>{
+    setTimeout(
+      () =>
+      {
         setOpenForm(false)
-      },4000
-      )
-      setOpenPop(true);
+      }, 4000
+    )
+    setOpenPop(true);
   };
   const month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
   const today = new Date();
@@ -137,20 +139,21 @@ const App = () =>
   return (
     <>
       <div className="app">
-        <Drawer /> 
+        <Drawer />
         <div className="frontpagehome">
           <div className="frontpageheadingsecondary"><h1>A resource database, made by you for you.</h1></div>
           <div className="frontpagebtn">
             {/* // Starting of I want to help */}
             <div className="want">
-              <Button className="helpbtn" variant="contained" color="secondary" size="large" onClick={()=>{
+              <Button className="helpbtn" variant="contained" color="secondary" size="large" onClick={() =>
+              {
                 setOpenForm(true)
               }}>
                 I want To Help
               </Button>
             </div>
-          
-          {/* // Starting of I need help. */}
+
+            {/* // Starting of I need help. */}
             <div className="need">
               <Link to='/help' style={{ textDecoration: 'none' }}>
                 <Button className="helpbtn" variant="contained" color="primary" size="large" >
@@ -225,25 +228,26 @@ const App = () =>
               />
             </DialogContent>
             <DialogActions>
-               <Button variant="outlined" color="primary" onClick={handleSubmit}>
-        Submit
+              <Button variant="outlined" color="primary" onClick={handleSubmit}>
+                Submit
       </Button>
-      <Dialog onClose={()=>{
-        setOpenPop(false)
-      }} aria-labelledby="customized-dialog-title" open={openPop}>
-        <DialogTitle id="customized-dialog-title" onClose={()=>{
-          setOpenPop(false)
-        }}>
-          Form Submitted Successfully 
+              <Dialog onClose={() =>
+              {
+                setOpenPop(false)
+              }} aria-labelledby="customized-dialog-title" open={openPop}>
+                <DialogTitle id="customized-dialog-title" onClose={() =>
+                {
+                  setOpenPop(false)
+                }}>
+                  Form Submitted Successfully
         </DialogTitle>
-        <DialogContent dividers>
-          <Typography gutterBottom>
-            From behalf of team UnitedAgainstCovid, we sincerely thank you for sharing this valuable 
-            information with our project. You might have just saved a life.
+                <DialogContent dividers>
+                  <Typography gutterBottom>
+                    The team of United Against Covid thanks you for contributing to our project. Your valuable information will be very helpful in our figth against Covid-19.
           </Typography>
-        </DialogContent>
-      </Dialog>
-      
+                </DialogContent>
+              </Dialog>
+
               <Button onClick={() =>
               {
                 setOpenForm(false);

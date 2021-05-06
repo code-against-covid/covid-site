@@ -184,17 +184,14 @@ html {
 }
 
 .frontpagecont {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: flex-start;
+  
   margin: 0 0 7% 0;
 }
 
 .leftbox {
   font-size: large;
   width: 65%;
-  height: 700px;
+  margin: 0 auto;
 }
 
 @media only screen and (max-width: 700px) {
@@ -204,13 +201,14 @@ html {
   .heading{
     font-size: 50px;
   }
-  .frontpagecont {
+  /* .frontpagecont {
     margin: 0 0 80% 0;
-  }
+  } */
 }
 
 .announcementcontent{
-  background: #fff;
+  background: url('./assets/bg/sec3.jpg') rgba(255, 255, 255, 0.5);
+  color: #000000;
   overflow-y: scroll;
   padding: 5% 10%;
   margin: 7% 0;
@@ -230,7 +228,8 @@ html {
 }
 
 .announcementlines {
-  margin-top: 4%;
+  padding: 4%;
+  border-bottom: 2px solid rgb(175, 169, 169);
 }
 
 .form_heading {
