@@ -1,0 +1,19 @@
+@font-face {
+    font-family: cheappine;
+    src: url(../../../assets/fonts/Cheap\ Pine\ Regular.otf);
+  }
+
+.menutogglediv{
+    padding: 40px 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+
+.mainheading{
+    text-align: center;
+    font-size: 70px;
+    font-family: 'cheappine';
+    margin: auto;
+}

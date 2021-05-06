@@ -134,6 +134,11 @@ html {
   font-family: "Roboto", sans-serif;
 }
 
+@font-face {
+  font-family: cheappine;
+  src: url(./assets/fonts/Cheap\ Pine\ Regular.otf);
+}
+
 .app {
   background: url("./assets/bg/bg3.jpg") #f1f1f1;
   background-repeat: no-repeat;
@@ -150,10 +155,10 @@ html {
 }
 
 .heading {
-  width: 100%;
   text-align: center;
-  font-size: 40px;
-  padding: 2% 0 2% 0%;
+  font-size: 70px;
+  font-family: 'cheappine';
+  margin: 0 auto;
 }
 
 .frontpagecont {
@@ -171,7 +176,7 @@ html {
   width: 600px;
   height: 350px;
   overflow: hidden;
-  box-shadow: 7px 7px 5px grey;
+  box-shadow: 5px 5px 5px grey;
 }
 
 .rightbox {
@@ -182,7 +187,7 @@ html {
   margin-left: 2%;
   width: 350px;
   height: 350px;
-  box-shadow: 7px 7px 5px grey;
+  box-shadow: 5px 5px 5px grey;
 }
 
 /* @media (max-width: 800px) {
@@ -194,6 +199,10 @@ html {
 .announcement_heading {
   font-size: 30px;
   text-align: center;
+}
+
+.announcementlines{
+  margin-top: 4%;
 }
 
 .form_heading {
@@ -334,7 +343,7 @@ html {
 
 .dbwarning {
   background: rgb(246, 255, 122);
-  margin: 0.5% 5%;
+  margin: 2% 5%;
   font-size: 13px;
   padding: 1%;
   display: inline-block;

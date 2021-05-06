@@ -59,9 +59,9 @@ const Database = () =>
             <div className="database">
 
                 <Drawer />
-                <div className='heading'>
+                {/* <div className='heading'>
                     <Link to='/' style={{ textDecoration: 'none' }}>Covid Information Bank</Link>
-                </div>
+                </div> */}
                 <h1 className="heading">Database </h1>
                 <div className="dbsearchsec">
 
