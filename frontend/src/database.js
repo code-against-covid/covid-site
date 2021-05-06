@@ -8,7 +8,6 @@ import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import Button from '@material-ui/core/Button';
 import Footer from './components/Footer/Footer';
-import { Link } from 'react-router-dom'
 import Drawer from './components/Drawer/Drawer';
 
 
@@ -104,13 +103,17 @@ const Database = () =>
                 {
                     <div className="tablecontainer">
                         <table className="dbtable">
-                            <col style={{ width: "150px" }} />
-                            <col style={{ width: "150px" }} />
-                            <col style={{ width: "150px" }} />
-                            <col style={{ width: "500px" }} />
-                            <col style={{ width: "150px" }} />
-                            <col style={{ width: "150px" }} />
                             <thead>
+                                <tr>
+
+                            <th style={{ width: "150px" }} />
+                            <th style={{ width: "150px" }} />
+                            <th style={{ width: "150px" }} />
+                            <th style={{ width: "500px" }} />
+                            <th style={{ width: "150px" }} />
+                            <th style={{ width: "150px" }} />
+                                </tr>
+                           
                                 <tr>
                                     <th>Name</th>
                                     <th>Resource</th>

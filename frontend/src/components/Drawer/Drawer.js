@@ -15,7 +15,6 @@ import PeopleIcon from '@material-ui/icons/People';
 import ForumIcon from '@material-ui/icons/Forum';
 import MenuIcon from '@material-ui/icons/Menu';
 import styles from './styles/Drawer.module.css';
-import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles({
     list: {

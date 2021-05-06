@@ -73,10 +73,8 @@ const App = () =>
     setOpen(true);
   };
 
-  const handleClose = () =>
+  const handleSubmit = () =>
   {
-    setOpen(false);
-
     axios.post("http://127.0.0.1:8000/form/", {
       name: name ? name : null,
       state: state,
@@ -103,7 +101,7 @@ const App = () =>
             <div className="announcement_heading">
               News and updates
             </div>
-            <div className="marquee">
+            <div className="marquee" style={{textAlign:'center',fontSize:'25px'}}>
               {announcement.map((item) =>
               {
                 return (
@@ -124,7 +122,9 @@ const App = () =>
               <Button className="helpbtn" variant="contained" color="secondary" size="large" onClick={handleClickOpen}>
                 I want To Help
               </Button>
-              <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+              <Dialog open={open} onClose={()=>{
+                  setOpen(false);
+              }} aria-labelledby="form-dialog-title">
                 <DialogTitle id="form-dialog-title">Form</DialogTitle>
                 <DialogContent>
                   <DialogContentText>
@@ -169,8 +169,13 @@ const App = () =>
                   />
                 </DialogContent>
                 <DialogActions>
-                  <Button onClick={handleClose} color="primary">
+                  <Button onClick={handleSubmit} color="primary">
                     Submit
+                  </Button>
+                  <Button onClick={()=>{
+                      setOpen(false);
+                  }} color="primary">
+                    Close
                   </Button>
                 </DialogActions>
               </Dialog>

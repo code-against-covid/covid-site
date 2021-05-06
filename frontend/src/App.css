@@ -157,7 +157,7 @@ html {
 .heading {
   text-align: center;
   font-size: 70px;
-  font-family: 'cheappine';
+  font-family: "cheappine";
   margin: 0 auto;
 }
 
@@ -199,15 +199,36 @@ html {
 .announcement_heading {
   font-size: 30px;
   text-align: center;
+  background-color: khaki;
 }
 
-.announcementlines{
+.marquee {
+  position: relative;
+  animation: marquee 10s linear infinite;
+}
+
+.marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Make it move! */
+@keyframes marquee {
+  0% {
+    top: -6em;
+  }
+  100% {
+    top: 20em;
+  }
+}
+
+.announcementlines {
   margin-top: 4%;
 }
 
 .form_heading {
   text-align: center;
   font-size: 30px;
+  background-color: khaki;
 }
 
 .want {
@@ -260,26 +281,6 @@ html {
   padding: 1%;
   margin: 2% 0 2% 0;
   background-color: white;
-}
-
-.marquee {
-  top: 10em;
-  position: relative;
-  animation: marquee 10s linear infinite;
-}
-
-.marquee:hover {
-  animation-play-state: paused;
-}
-
-/* Make it move! */
-@keyframes marquee {
-  0% {
-    top: -1em;
-  }
-  100% {
-    top: 25em;
-  }
 }
 
 .item {
@@ -362,7 +363,7 @@ table {
   table-layout: fixed;
 }
 
-.tablecontainer{
+.tablecontainer {
   overflow-x: auto;
 }
 
@@ -371,7 +372,7 @@ th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
-  overflow-wrap:break-word
+  overflow-wrap: break-word;
 }
 
 tr:nth-child(even) {
