@@ -147,7 +147,7 @@ html {
 }
 
 .frontpagehome{
-  height: 90vh;
+  height: 100vh;
 }
 
 .frontpageheading{
@@ -197,6 +197,12 @@ html {
   height: 700px;
 }
 
+@media only screen and (max-width: 699px) {
+  .leftbox {
+    padding-top: 50px;
+  }
+}
+
 .announcementcontent{
   background: #fff;
   overflow-y: scroll;
@@ -235,12 +241,12 @@ html {
 
 .want {
   width: 320px;
-  margin: 35px 0;
+  margin: 35px 0 35px 50px;
 }
 
 .need {
   width: 320px;
-  margin: 35px 0;
+  margin: 35px 0 35px 50px;
 }
 
 .helpbtn {
