@@ -127,7 +127,7 @@ const App = () =>
     setTimeout( 
       ()=>{
         setOpenForm(false)
-      },3000
+      },4000
       )
       setOpenPop(true);
   };
