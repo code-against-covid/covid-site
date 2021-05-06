@@ -197,9 +197,15 @@ html {
   height: 700px;
 }
 
-@media only screen and (max-width: 699px) {
+@media only screen and (max-width: 700px) {
   .leftbox {
     padding-top: 50px;
+  }
+  .heading{
+    font-size: 50px;
+  }
+  .frontpagecont {
+    margin: 0 0 80% 0;
   }
 }
 
