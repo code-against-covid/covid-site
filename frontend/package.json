@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "rd /s /q build ..\\backend\\build && react-scripts build && xcopy /i build ..\\backend\\build /E /H",
+    "build": "rm -rf ../backend/build && react-scripts build && cp -r build ../backend/build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

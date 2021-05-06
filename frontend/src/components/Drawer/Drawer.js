@@ -124,7 +124,7 @@ export default function TemporaryDrawer()
                             <Button onClick={toggleDrawer(anchor, true)}><MenuIcon fontSize="large" color="primary" /></Button>
                         </div>
                         <div className={`${ styles.mainheading }`}>
-                            Covid Information Bank
+                            United Against Covid
                         </div>
                     </div>
                     <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>

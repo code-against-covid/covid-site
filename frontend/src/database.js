@@ -88,7 +88,7 @@ const Database = () =>
                         />
                     </div>
                     <div className="searchbtn">
-                        <Button variant="contained" size="large" onClick={handleSubmit}>Search</Button>
+                        <Button variant="contained" color="primary" size="large" onClick={handleSubmit}>Search</Button>
                     </div>
                     <div className="totaldbposts">
                         Total Number of Posts: {data.length}
@@ -106,19 +106,19 @@ const Database = () =>
                             <thead>
                                 <tr>
 
-                            <th style={{ width: "150px" }} />
-                            <th style={{ width: "150px" }} />
-                            <th style={{ width: "150px" }} />
-                            <th style={{ width: "500px" }} />
-                            <th style={{ width: "150px" }} />
-                            <th style={{ width: "150px" }} />
+                                    <th style={{ width: "150px" }} />
+                                    <th style={{ width: "150px" }} />
+                                    <th style={{ width: "150px" }} />
+                                    <th style={{ width: "500px" }} />
+                                    <th style={{ width: "150px" }} />
+                                    <th style={{ width: "150px" }} />
                                 </tr>
-                           
+
                                 <tr>
                                     <th>Name</th>
                                     <th>Resource</th>
                                     <th>State</th>
-                                    <th>Additional Information</th>
+                                    <th>Resource Information</th>
                                     <th>Submitted On</th>
                                     <th>Status</th>
                                 </tr>
@@ -142,9 +142,9 @@ const Database = () =>
                     </div>
                 }
 
-                            </div>
-                <Footer />
-            
+            </div>
+            <Footer />
+
         </>
     )
 }

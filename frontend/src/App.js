@@ -95,94 +95,15 @@ const App = () =>
         {/* <div className='heading'>
           <Link to='/' style={{ textDecoration: 'none', color: 'black' }}>Covid Information Bank</Link>
         </div> */}
-        <div className="frontpagecont">
-
-          <div className="leftbox">
-            <div className="announcement_heading">
-              News and updates
-            </div>
-            <div className="marquee" style={{textAlign:'center',fontSize:'25px'}}>
-              {announcement.map((item) =>
-              {
-                return (
-                  <div className="announcementlines" key={item.id}>{item.name}</div>
-                );
-              })}
-            </div>
-          </div>
-
-          <div className="rightbox">
-            <div className="form_heading">
-              Resource Database
-            </div>
-
-
-
+        <div className="frontpagehome">
+          {/* <div className="frontpageheading"><h1>United Against Covid</h1></div> */}
+          <div className="frontpageheadingsecondary"><h1>A resource database, made by you for you.</h1></div>
+          <div className="frontpagebtn">
             <div className="want">
               <Button className="helpbtn" variant="contained" color="secondary" size="large" onClick={handleClickOpen}>
                 I want To Help
               </Button>
-              <Dialog open={open} onClose={()=>{
-                  setOpen(false);
-              }} aria-labelledby="form-dialog-title">
-                <DialogTitle id="form-dialog-title">Form</DialogTitle>
-                <DialogContent>
-                  <DialogContentText>
-                    Please fill in the details. All information will be subject to verification by staff members.
-                  </DialogContentText>
-                  <TextField
-                    autoFocus
-                    onChange={handleSelect2}
-                    margin="dense"
-                    id="name"
-                    label="Name(optional)"
-                    type="email"
-                    fullWidth
-                  />
-                  <Autocomplete
-
-                    onSelect={handleSelect1}
-                    options={states.map((option) => option)}
-                    renderInput={(params) => (
-                      <TextField {...params} label="State/UT" margin="normal" variant="outlined" />
-                    )}
-                  />
-                  <Autocomplete
-                    onSelect={handleSelect3}
-
-                    options={resources.map((option) => option)}
-                    renderInput={(params) => (
-                      <TextField {...params} label="Resource" margin="normal" variant="outlined" />
-                    )}
-                  />
-                  <TextField
-                    onChange={handleSelect4}
-                    autoFocus
-                    margin="dense"
-                    id="name"
-                    multiline
-                    rows={4}
-                    label="Information"
-                    placeholder="Information about the resource: Address, Phone, Availability, etc. Any information you provide will help thousands."
-                    type="email"
-                    fullWidth
-                  />
-                </DialogContent>
-                <DialogActions>
-                  <Button onClick={handleSubmit} color="primary">
-                    Submit
-                  </Button>
-                  <Button onClick={()=>{
-                      setOpen(false);
-                  }} color="primary">
-                    Close
-                  </Button>
-                </DialogActions>
-              </Dialog>
             </div>
-
-
-
             <div className="need">
               <Link to='/help' style={{ textDecoration: 'none' }}>
                 <Button className="helpbtn" variant="contained" color="primary" size="large" >
@@ -191,7 +112,82 @@ const App = () =>
               </Link>
             </div>
           </div>
+        </div>
+        <div className="frontpagecont">
 
+          <div className="leftbox">
+            <div className="heading">
+              News and updates
+            </div>
+            <ul className="announcementcontent">
+              {announcement.map((item) =>
+              {
+                return (
+                  <li className="announcementlines" key={item.id}>{item.name}</li>
+                );
+              })}
+            </ul>
+          </div>
+
+          <Dialog open={open} onClose={() =>
+          {
+            setOpen(false);
+          }} aria-labelledby="form-dialog-title">
+            <DialogTitle id="form-dialog-title">Form</DialogTitle>
+            <DialogContent>
+              <DialogContentText>
+                Please fill in the details. All information will be subject to verification by staff members.
+                  </DialogContentText>
+              <TextField
+                autoFocus
+                onChange={handleSelect2}
+                margin="dense"
+                id="name"
+                label="Name(optional)"
+                type="email"
+                fullWidth
+              />
+              <Autocomplete
+
+                onSelect={handleSelect1}
+                options={states.map((option) => option)}
+                renderInput={(params) => (
+                  <TextField {...params} label="State/UT" margin="normal" variant="outlined" />
+                )}
+              />
+              <Autocomplete
+                onSelect={handleSelect3}
+
+                options={resources.map((option) => option)}
+                renderInput={(params) => (
+                  <TextField {...params} label="Resource" margin="normal" variant="outlined" />
+                )}
+              />
+              <TextField
+                onChange={handleSelect4}
+                autoFocus
+                margin="dense"
+                id="name"
+                multiline
+                rows={4}
+                label="Information"
+                placeholder="Information about the resource: Address, Phone, Availability, etc. Any information you provide will help thousands."
+                type="email"
+                fullWidth
+              />
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={handleSubmit} color="primary">
+                Submit
+                  </Button>
+              <Button onClick={() =>
+              {
+                setOpen(false);
+              }} color="primary">
+                Close
+                  </Button>
+            </DialogActions>
+          </Dialog>
         </div>
 
         <div className="donation">

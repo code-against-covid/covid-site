@@ -140,25 +140,47 @@ html {
 }
 
 .app {
-  background: url("./assets/bg/bg3.jpg") #f1f1f1;
+  background: url("./assets/bg/bg3.png") #f1f1f1;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
 }
 
+.frontpagehome{
+  height: 90vh;
+}
+
+.frontpageheading{
+  width: 100%;
+  font-family: 'cheappine';
+  font-size: 100px;
+  text-align: center;
+  margin: 5% 0;
+}
+
+.frontpageheadingsecondary{
+  width: 100%;
+  font-family: 'cheappine';
+  font-size: 100px;
+  text-align: center;
+  margin: 5% 0;
+}
+
 .team {
-  /* background: url("./assets/bg/bg3.jpeg") #f1f1f1;
+  background: url("./assets/bg/bg3.png") #f1f1f1;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: cover; */
-  background: url("./assets/bg/bg3.jpg") #f1f1f1;
+  background-size: cover;
 }
 
 .heading {
   text-align: center;
   font-size: 70px;
   font-family: "cheappine";
+  width: 60%;
   margin: 0 auto;
+  padding-bottom: 2%;
+  border-bottom: 4px solid #000;
 }
 
 .frontpagecont {
@@ -166,28 +188,21 @@ html {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: flex-start;
+  margin: 0 0 7% 0;
 }
 
 .leftbox {
-  background: #fff;
   font-size: large;
-  padding: 3%;
-  margin: 4%;
-  width: 600px;
-  height: 350px;
-  overflow: hidden;
-  box-shadow: 5px 5px 5px grey;
+  width: 65%;
+  height: 700px;
 }
 
-.rightbox {
+.announcementcontent{
   background: #fff;
-  margin: 4%;
-  font-size: large;
-  padding: 3%;
-  margin-left: 2%;
-  width: 350px;
-  height: 350px;
-  box-shadow: 5px 5px 5px grey;
+  overflow-y: scroll;
+  padding: 5% 10%;
+  margin: 7% 0;
+  border-radius: 10px;
 }
 
 /* @media (max-width: 800px) {
@@ -197,28 +212,9 @@ html {
 } */
 
 .announcement_heading {
-  font-size: 30px;
+  font-size: 50px;
   text-align: center;
-  background-color: khaki;
-}
-
-.marquee {
-  position: relative;
-  animation: marquee 10s linear infinite;
-}
-
-.marquee:hover {
-  animation-play-state: paused;
-}
-
-/* Make it move! */
-@keyframes marquee {
-  0% {
-    top: -6em;
-  }
-  100% {
-    top: 20em;
-  }
+  font-family: 'cheappine';
 }
 
 .announcementlines {
@@ -228,23 +224,23 @@ html {
 .form_heading {
   text-align: center;
   font-size: 30px;
-  background-color: khaki;
+}
+
+.frontpagebtn{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .want {
-  font-size: larger;
-  padding: 5%;
-  text-align: center;
-  margin: 20% 0 5% 0;
-  border-radius: 2px;
+  width: 320px;
+  margin: 35px 0;
 }
 
 .need {
-  font-size: larger;
-  padding: 4%;
-  margin: 5% 0 5% 0;
-  text-align: center;
-  border-radius: 2px;
+  width: 320px;
+  margin: 35px 0;
 }
 
 .helpbtn {
@@ -291,6 +287,7 @@ html {
 }
 
 .orgcardsec {
+  margin: 7% 0;
   padding: 0 3% 3% 3% 3%;
   display: flex;
   flex-wrap: wrap;
@@ -302,13 +299,13 @@ html {
   background-color: #fff8f8;
   width: 300px;
   padding: 1.8%;
-  box-shadow: 3px 3px 4px grey;
+  box-shadow: 3px 3px 4px black;
   margin: 2%;
 }
 
 .orgname {
   text-align: center;
-  border-bottom: 1px solid rgb(0, 0, 0);
+  border-bottom: 2px solid rgb(231, 5, 5);
   margin: 2% 4%;
   padding: 0 0 5% 0;
 }
@@ -322,7 +319,7 @@ html {
 }
 
 .database {
-  background: url("./assets/bg/bg3.jpg") #f1f1f1;
+  background: url("./assets/bg/bg3.png") #f1f1f1;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -335,11 +332,13 @@ html {
   flex-wrap: wrap;
   background: #fff;
   padding: 1%;
+  margin-top: 5%;
+  box-shadow: 1px 1px 2px  #000;
 }
 
 .totaldbposts {
   margin-top: 1%;
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .dbwarning {
@@ -348,6 +347,8 @@ html {
   font-size: 13px;
   padding: 1%;
   display: inline-block;
+  border-radius: 0px 20px 20px;
+  box-shadow: 2px 2px 2px #000;
 }
 
 .filter {
@@ -364,17 +365,23 @@ table {
 }
 
 .tablecontainer {
-  overflow-x: auto;
+  overflow-x: auto; 
 }
 
 td,
 th {
-  border: 1px solid #dddddd;
+  border: 7px solid rgb(255, 255, 255);
   text-align: left;
   padding: 8px;
   overflow-wrap: break-word;
+  padding: 10px;
+}
+
+th{
+  font-size: 20px;
+  font-weight: bold;
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: #f1f1f1;
 }
