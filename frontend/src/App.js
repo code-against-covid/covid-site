@@ -4,9 +4,7 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import { states } from './data/states'
 import { resources } from './data/resources'
@@ -15,12 +13,60 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Footer from './components/Footer/Footer';
 import Drawer from './components/Drawer/Drawer';
+import { withStyles } from '@material-ui/core/styles';
+import MuiDialogTitle from '@material-ui/core/DialogTitle';
+import MuiDialogContent from '@material-ui/core/DialogContent';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
+import Typography from '@material-ui/core/Typography';
+
+
+// Styling added for the pop up after the form is submitted. Stars from here.....
+const styles = (theme) => ({
+  root: {
+    margin: 0,
+    padding: theme.spacing(2),
+  },
+  closeButton: {
+    position: 'absolute',
+    right: theme.spacing(1),
+    top: theme.spacing(1),
+    color: theme.palette.grey[500],
+  },
+});
+
+const DialogTitle = withStyles(styles)((props) => {
+  const { children, classes, onClose, ...other } = props;
+  return (
+    <MuiDialogTitle disableTypography className={classes.root} {...other}>
+      <Typography variant="h6">{children}</Typography>
+      {onClose ? (
+        <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
+          <CloseIcon />
+        </IconButton>
+      ) : null}
+    </MuiDialogTitle>
+  );
+});
+
+const DialogContent = withStyles((theme) => ({
+  root: {
+    padding: theme.spacing(2),
+  },
+}))(MuiDialogContent);
+
+// The styling ends here.
+
 const App = () =>
 {
 
   const [organization, setOrganization] = useState([])
   const [announcement, setAnnouncement] = useState([])
+  const [openPop, setOpenPop] = useState(false)
+  const [openForm, setOpenForm] = useState(false)
+  
 
+  // For fetching announcements and organizations details from backend.
   useEffect(() =>
   {
     async function fetchData()
@@ -31,13 +77,10 @@ const App = () =>
     }
     fetchData();
   }
-    , [])
+    , []) // [] renders only once
 
 
-  const publicIp = require('public-ip');
-
-  const [open, setOpen] = useState(false);
-
+  const publicIp = require('public-ip'); // For catching the client's ipv4. 
   const [ip, setIp] = useState();
 
   (async () =>
@@ -67,12 +110,8 @@ const App = () =>
   {
     setAdditional(e.target.value)
   }
-
-  const handleClickOpen = () =>
-  {
-    setOpen(true);
-  };
-
+  
+   // handlesubmit for the submit button in the post and display thank you message.
   const handleSubmit = () =>
   {
     axios.post("http://127.0.0.1:8000/form/", {
@@ -84,26 +123,34 @@ const App = () =>
       additional_info: additional,
       created_at: date,
     })
+    // Set timeout for 3 seconds. Had to use settimeout cause setopenform and setopenpop would simunltaneously close together.
+    setTimeout( 
+      ()=>{
+        setOpenForm(false)
+      },3000
+      )
+      setOpenPop(true);
   };
   const month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
   const today = new Date();
-  const date = today.getDate() + '-' + month[today.getMonth()];
+  const date = today.getDate() + '-' + month[today.getMonth()]; //For capturing the post date.
   return (
     <>
       <div className="app">
-        <Drawer />
-        {/* <div className='heading'>
-          <Link to='/' style={{ textDecoration: 'none', color: 'black' }}>Covid Information Bank</Link>
-        </div> */}
+        <Drawer /> 
         <div className="frontpagehome">
-          {/* <div className="frontpageheading"><h1>United Against Covid</h1></div> */}
           <div className="frontpageheadingsecondary"><h1>A resource database, made by you for you.</h1></div>
           <div className="frontpagebtn">
+            {/* // Starting of I want to help */}
             <div className="want">
-              <Button className="helpbtn" variant="contained" color="secondary" size="large" onClick={handleClickOpen}>
+              <Button className="helpbtn" variant="contained" color="secondary" size="large" onClick={()=>{
+                setOpenForm(true)
+              }}>
                 I want To Help
               </Button>
             </div>
+          
+          {/* // Starting of I need help. */}
             <div className="need">
               <Link to='/help' style={{ textDecoration: 'none' }}>
                 <Button className="helpbtn" variant="contained" color="primary" size="large" >
@@ -113,8 +160,9 @@ const App = () =>
             </div>
           </div>
         </div>
-        <div className="frontpagecont">
 
+
+        <div className="frontpagecont">
           <div className="leftbox">
             <div className="heading">
               News and updates
@@ -129,9 +177,9 @@ const App = () =>
             </ul>
           </div>
 
-          <Dialog open={open} onClose={() =>
+          <Dialog open={openForm} onClose={() =>
           {
-            setOpen(false);
+            setOpenForm(false);
           }} aria-labelledby="form-dialog-title">
             <DialogTitle id="form-dialog-title">Form</DialogTitle>
             <DialogContent>
@@ -177,12 +225,28 @@ const App = () =>
               />
             </DialogContent>
             <DialogActions>
-              <Button onClick={handleSubmit} color="primary">
-                Submit
-                  </Button>
+               <Button variant="outlined" color="primary" onClick={handleSubmit}>
+        Submit
+      </Button>
+      <Dialog onClose={()=>{
+        setOpenPop(false)
+      }} aria-labelledby="customized-dialog-title" open={openPop}>
+        <DialogTitle id="customized-dialog-title" onClose={()=>{
+          setOpenPop(false)
+        }}>
+          Form Submitted Successfully 
+        </DialogTitle>
+        <DialogContent dividers>
+          <Typography gutterBottom>
+            From behalf of team UnitedAgainstCovid, we sincerely thank you for sharing this valuable 
+            information with our project. You might have just saved a life.
+          </Typography>
+        </DialogContent>
+      </Dialog>
+      
               <Button onClick={() =>
               {
-                setOpen(false);
+                setOpenForm(false);
               }} color="primary">
                 Close
                   </Button>
