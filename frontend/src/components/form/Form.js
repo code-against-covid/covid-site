@@ -56,19 +56,18 @@ const DialogContent = withStyles((theme) => ({
 const Form = () => {
   const [openPop, setOpenPop] = useState(false)
   const [openForm, setOpenForm] = useState(false)
-
-  const publicIp = require('public-ip'); // For catching the client's ipv4. 
   const [ip, setIp] = useState();
-
+  const [name, setName] = useState('')
+  const [state, setState] = useState('')
+  const [resource, setResource] = useState('')
+  const [additional, setAdditional] = useState('')
+  
+  const publicIp = require('public-ip'); // For catching the client's ipv4. 
   (async () =>
   {
     setIp(await publicIp.v4())
   })();
 
-  const [name, setName] = useState('')
-  const [state, setState] = useState('')
-  const [resource, setResource] = useState('')
-  const [additional, setAdditional] = useState('')
 
 
   const handleSelect1 = (e) =>
@@ -99,13 +98,15 @@ const Form = () => {
       ip_address: JSON.stringify(ip),
       additional_info: additional,
       created_at: date,
+    }).catch((error)=>{
+      console.log(error)
     })
     // Set timeout for 3 seconds. Had to use settimeout cause setopenform and setopenpop would simunltaneously close together.
     setTimeout(
       () =>
       {
         setOpenForm(false)
-      }, 4000
+      }, 3500
     )
     setOpenPop(true);
   };

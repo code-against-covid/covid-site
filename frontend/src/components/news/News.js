@@ -10,10 +10,13 @@ const News = () => {
   // For fetching announcements and organizations details from backend.
   useEffect(() =>
   {
-    async function fetchData()
+    function fetchData()
     {
-      const response = await axios.get("http://127.0.0.1:8000/announcement/")
-      return (setAnnouncement(response.data))
+    axios.get("http://127.0.0.1:8000/announcement/").then((response)=> {
+      setAnnouncement(response.data)
+    }).catch((error)=>{
+      console.log(error)
+    })
     }
     fetchData();
   }

@@ -9,10 +9,13 @@ const Organization = () => {
 
     useEffect(() =>
   {
-    async function fetchData()
+    function fetchData()
     {
-      const response2 = await axios.get("http://127.0.0.1:8000/organization/")
-      return ( setOrganization(response2.data))
+       axios.get("http://127.0.0.1:8000/organization/").then((response)=>{
+         setOrganization(response.data)
+       }).catch((error)=>{
+         console.log(error)
+       })
     }
     fetchData();
   }
