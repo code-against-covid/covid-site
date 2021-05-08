@@ -7,17 +7,18 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import { states } from '../../data/states'
-import {month} from '../../data/months'
+import { month } from '../../data/months'
 import { resources } from '../../data/resources'
 import { withStyles } from '@material-ui/core/styles';
 import MuiDialogTitle from '@material-ui/core/DialogTitle';
 import MuiDialogContent from '@material-ui/core/DialogContent';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
-import { useState} from 'react'
+import { useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Typography from '@material-ui/core/Typography';
+import style from './styles/Form.module.css';
 
 const styles = (theme) => ({
   root: {
@@ -36,10 +37,10 @@ const DialogTitle = withStyles(styles)((props) =>
 {
   const { children, classes, onClose, ...other } = props;
   return (
-    <MuiDialogTitle disableTypography className={classes.root} {...other}>
+    <MuiDialogTitle disableTypography className={`${ classes.root }`} {...other}>
       <Typography variant="h6">{children}</Typography>
       {onClose ? (
-        <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
+        <IconButton aria-label="close" className={`${ classes.closeButton }`} onClick={onClose}>
           <CloseIcon />
         </IconButton>
       ) : null}
@@ -53,7 +54,8 @@ const DialogContent = withStyles((theme) => ({
   },
 }))(MuiDialogContent);
 
-const Form = () => {
+const Form = () =>
+{
   const [openPop, setOpenPop] = useState(false)
   const [openForm, setOpenForm] = useState(false)
   const [ip, setIp] = useState();
@@ -61,7 +63,7 @@ const Form = () => {
   const [state, setState] = useState('')
   const [resource, setResource] = useState('')
   const [additional, setAdditional] = useState('')
-  
+
   const publicIp = require('public-ip'); // For catching the client's ipv4. 
   (async () =>
   {
@@ -98,7 +100,8 @@ const Form = () => {
       ip_address: JSON.stringify(ip),
       additional_info: additional,
       created_at: date,
-    }).catch((error)=>{
+    }).catch((error) =>
+    {
       console.log(error)
     })
     // Set timeout for 3 seconds. Had to use settimeout cause setopenform and setopenpop would simunltaneously close together.
@@ -112,109 +115,109 @@ const Form = () => {
   };
   const today = new Date();
   const date = today.getDate() + '-' + month[today.getMonth()]; //For capturing the post date.
-    return (
-        <div>
-            <div className="frontpagehome">
-          <div className="frontpageheadingsecondary"><h1>A RESOURCE DATABASE, MADE BY YOU FOR YOU.</h1></div>
-          <div className="frontpagebtn">
-            {/* // Starting of I want to help */}
-            <div className="want">
-              <Button className="helpbtn" variant="contained" color="secondary" size="large" onClick={() =>
-              {
-                setOpenForm(true)
-              }}>
-                I want To Help
+  return (
+    <div>
+      <div className={`${ style.frontpagehome }`}>
+        <div className={`${ style.frontpageheadingsecondary }`}><h1>A RESOURCE DATABASE, MADE BY YOU FOR YOU.</h1></div>
+        <div className={`${ style.frontpagebtn }`}>
+          {/* // Starting of I want to help */}
+          <div className={`${ style.want }`}>
+            <Button className={`${ style.helpbtn }`} variant="contained" color="secondary" size="large" onClick={() =>
+            {
+              setOpenForm(true)
+            }}>
+              I want To Help
               </Button>
-            </div>
+          </div>
 
-            {/* // Starting of I need help. */}
-            <div className="need">
-              <Link to='/help' style={{ textDecoration: 'none' }}>
-                <Button className="helpbtn" variant="contained" color="primary" size="large" >
-                  I Need Help
+          {/* // Starting of I need help. */}
+          <div className={`${ style.need }`}>
+            <Link to='/help' style={{ textDecoration: 'none' }}>
+              <Button className={`${ style.helpbtn }`} variant="contained" color="primary" size="large" >
+                I Need Help
               </Button>
-              </Link>
-            </div>
+            </Link>
           </div>
         </div>
-               <Dialog open={openForm} onClose={() =>
+      </div>
+      <Dialog open={openForm} onClose={() =>
+      {
+        setOpenForm(false);
+      }} aria-labelledby="form-dialog-title">
+        <DialogTitle id="form-dialog-title">Form</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            Please fill in the details. All information will be subject to verification by staff members.
+                  </DialogContentText>
+          <TextField
+            autoFocus
+            onChange={handleSelect2}
+            margin="dense"
+            id="name"
+            label="Name(optional)"
+            type="email"
+            fullWidth
+          />
+          <Autocomplete
+
+            onSelect={handleSelect1}
+            options={states.map((option) => option)}
+            renderInput={(params) => (
+              <TextField {...params} label="State/UT" margin="normal" variant="outlined" />
+            )}
+          />
+          <Autocomplete
+            onSelect={handleSelect3}
+
+            options={resources.map((option) => option)}
+            renderInput={(params) => (
+              <TextField {...params} label="Resource" margin="normal" variant="outlined" />
+            )}
+          />
+          <TextField
+            onChange={handleSelect4}
+            autoFocus
+            margin="dense"
+            id="name"
+            multiline
+            rows={4}
+            label="Information"
+            placeholder="Information about the resource: Address, Phone, Availability, etc. Any information you provide will help thousands."
+            type="email"
+            fullWidth
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button variant="outlined" color="primary" onClick={handleSubmit}>
+            Submit
+      </Button>
+          <Dialog onClose={() =>
+          {
+            setOpenPop(false)
+          }} aria-labelledby="customized-dialog-title" open={openPop}>
+            <DialogTitle id="customized-dialog-title" onClose={() =>
+            {
+              setOpenPop(false)
+            }}>
+              Form Submitted Successfully
+        </DialogTitle>
+            <DialogContent dividers>
+              <Typography gutterBottom>
+                The team of United Against Covid thanks you for contributing to our project. Your valuable information will be very helpful in our figth against Covid-19.
+          </Typography>
+            </DialogContent>
+          </Dialog>
+
+          <Button onClick={() =>
           {
             setOpenForm(false);
-          }} aria-labelledby="form-dialog-title">
-            <DialogTitle id="form-dialog-title">Form</DialogTitle>
-            <DialogContent>
-              <DialogContentText>
-                Please fill in the details. All information will be subject to verification by staff members.
-                  </DialogContentText>
-              <TextField
-                autoFocus
-                onChange={handleSelect2}
-                margin="dense"
-                id="name"
-                label="Name(optional)"
-                type="email"
-                fullWidth
-              />
-              <Autocomplete
-
-                onSelect={handleSelect1}
-                options={states.map((option) => option)}
-                renderInput={(params) => (
-                  <TextField {...params} label="State/UT" margin="normal" variant="outlined" />
-                )}
-              />
-              <Autocomplete
-                onSelect={handleSelect3}
-
-                options={resources.map((option) => option)}
-                renderInput={(params) => (
-                  <TextField {...params} label="Resource" margin="normal" variant="outlined" />
-                )}
-              />
-              <TextField
-                onChange={handleSelect4}
-                autoFocus
-                margin="dense"
-                id="name"
-                multiline
-                rows={4}
-                label="Information"
-                placeholder="Information about the resource: Address, Phone, Availability, etc. Any information you provide will help thousands."
-                type="email"
-                fullWidth
-              />
-            </DialogContent>
-            <DialogActions>
-              <Button variant="outlined" color="primary" onClick={handleSubmit}>
-                Submit
-      </Button>
-              <Dialog onClose={() =>
-              {
-                setOpenPop(false)
-              }} aria-labelledby="customized-dialog-title" open={openPop}>
-                <DialogTitle id="customized-dialog-title" onClose={() =>
-                {
-                  setOpenPop(false)
-                }}>
-                  Form Submitted Successfully
-        </DialogTitle>
-                <DialogContent dividers>
-                  <Typography gutterBottom>
-                    The team of United Against Covid thanks you for contributing to our project. Your valuable information will be very helpful in our figth against Covid-19.
-          </Typography>
-                </DialogContent>
-              </Dialog>
-
-              <Button onClick={() =>
-              {
-                setOpenForm(false);
-              }} color="primary">
-                Close
+          }} color="primary">
+            Close
                   </Button>
-            </DialogActions>
-          </Dialog>
-        </div>
-    )
+        </DialogActions>
+      </Dialog>
+    </div>
+  )
 }
 
 export default Form

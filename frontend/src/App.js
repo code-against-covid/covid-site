@@ -12,12 +12,12 @@ const App = () =>
     <main>
       <div className="app">
         <Drawer />
-      <Form/>
-       <News/>
-          <Organization/>
+        <Form />
+        <News />
+        <Organization />
         <Footer />
-</div>
-    </>
+      </div>
+    </main>
   );
 }
 

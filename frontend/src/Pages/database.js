@@ -10,6 +10,7 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 import Button from '@material-ui/core/Button';
 import Footer from '../components/Footer/Footer';
 import Drawer from '../components/Drawer/Drawer';
+import styles from './styles/database.module.css';
 
 
 const Database = () =>
@@ -48,13 +49,13 @@ const Database = () =>
 
     return (
         <>
-            <div className="database">
+            <div className={`${ styles.database }`}>
 
                 <Drawer />
-                <h1 className="heading">Database </h1>
-                <div className="dbsearchsec">
+                <h1 className={`${ styles.heading }`}>Database </h1>
+                <div className={`${ styles.dbsearchsec }`}>
 
-                    <div className="filter">
+                    <div className={`${ styles.filter }`}>
 
                         <Autocomplete
 
@@ -66,7 +67,7 @@ const Database = () =>
                         />
                     </div>
 
-                    <div className="filter">
+                    <div className={`${ styles.filter }`}>
 
                         <Autocomplete
 
@@ -77,38 +78,28 @@ const Database = () =>
                             )}
                         />
                     </div>
-                    <div className="searchbtn">
+                    <div className={`${ styles.searchbtn }`}>
                         <Button variant="contained" color="primary" size="large" onClick={handleSubmit}>Search</Button>
                     </div>
-                    <div className="totaldbposts">
+                    <div className={`${ styles.totaldbposts }`}>
                         Total Number of Posts: {data.length}
                     </div>
                 </div>
                 <div>
-                    <div className="dbwarning">
+                    <div className={`${ styles.dbwarning }`}>
                         <h3>Warning!</h3>
                         <p>PLEASE VERIFY EVERY INFORMATION THAT YOU CHOOSE TO ACCEPT YOURSELF TO PREVENT ANY FRAUD. WE ARE JUST PROVIDING A PLATFORM FOR PEOPLE'S BENEFIT.</p>
                     </div>
                 </div>
                 {
-                    <div className="tablecontainer">
-                        <table className="dbtable">
+                    <div className={`${ styles.tablecontainer }`}>
+                        <table className={`${ styles.dbtable }`}>
                             <thead>
-                                <tr>
-
-                                    <th style={{ width: "150px" }} />
-                                    <th style={{ width: "150px" }} />
-                                    <th style={{ width: "150px" }} />
-                                    <th style={{ width: "500px" }} />
-                                    <th style={{ width: "150px" }} />
-                                    <th style={{ width: "150px" }} />
-                                </tr>
-
                                 <tr>
                                     <th>Name</th>
                                     <th>Resource</th>
                                     <th>State</th>
-                                    <th>Resource Information</th>
+                                    <th className={`${ styles.resourcerow }`}>Resource Information</th>
                                     <th>Submitted On</th>
                                     <th>Status</th>
                                 </tr>
