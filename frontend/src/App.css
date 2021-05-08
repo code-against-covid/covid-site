@@ -156,7 +156,7 @@ html {
 }
 
 .frontpagehome{
-  margin-bottom: 150px;
+  margin-bottom: 180px;
 }
 
 
@@ -167,11 +167,13 @@ html {
   font-size: 80px;
   text-align: center;
   margin: 5% auto;
-  color: rgb(19, 66, 51);
+  /* color: rgb(19, 66, 51); */
+  /* border-bottom: 4px solid #000;
+  padding-bottom: 2%; */
 }
 
 .team {
-  background: url("./assets/bg/bg3.png") #f1f1f1;
+  background:  url("./assets/bg/bg3.png") #f1f1f1;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -185,7 +187,7 @@ html {
   margin: 0 auto;
   padding-bottom: 2%;
   border-bottom: 4px solid #000;
-  color: rgb(19, 66, 51);
+  /* color: rgb(19, 66, 51); */
 }
 
 .frontpagecont {
@@ -199,12 +201,17 @@ html {
   margin: 0 auto;
 }
 
+
+
 @media only screen and (max-width: 700px) {
   .leftbox {
     padding-top: 50px;
   }
   .heading{
     font-size: 50px;
+  }
+  .leftbox {
+    width: 90%;
   }
   /* .frontpagecont {
     margin: 0 0 80% 0;
@@ -230,6 +237,11 @@ html {
   padding: 4%;
   border-bottom: 2px solid rgb(175, 169, 169);
 }
+/* .announcementlines:hover {
+  -ms-transform: scale(1.1); 
+  -webkit-transform: scale(1.1); 
+  transform: scale(1.1);
+} */
 
 .form_heading {
   text-align: center;

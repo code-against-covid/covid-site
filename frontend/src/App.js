@@ -137,9 +137,11 @@ const App = () =>
   const today = new Date();
   const date = today.getDate() + '-' + month[today.getMonth()]; //For capturing the post date.
   return (
-    <>
+    <main>
       <div className="app">
-        <Drawer />
+        <header>
+          <Drawer />
+        </header>
         <div className="frontpagehome">
           <div className="frontpageheadingsecondary"><h1>A RESOURCE DATABASE, MADE BY YOU FOR YOU.</h1></div>
           <div className="frontpagebtn">
@@ -251,7 +253,7 @@ const App = () =>
               <Button onClick={() =>
               {
                 setOpenForm(false);
-              }} color="primary">
+              }} color="primary" variant="outlined">
                 Close
                   </Button>
             </DialogActions>
@@ -290,7 +292,7 @@ const App = () =>
         </div>
         <Footer />
       </div>
-    </>
+    </main>
   );
 }
 
