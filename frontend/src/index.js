@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import Database from './database'
-import Team from './team'
+import Database from './Pages/database'
+import Team from './Pages/team'
 import { BrowserRouter as Router,Route,Switch} from 'react-router-dom'
-import Error from './error'
+import Error from './Pages/error'
 
 ReactDOM.render(
   <Router>
