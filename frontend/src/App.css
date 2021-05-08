@@ -144,9 +144,9 @@ html {
   src: url(./assets/fonts/Oxygen/Oxygen-Bold.ttf);
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;900&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&family=Playfair+Display:wght@400;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&family=Playfair+Display:wght@400;900&display=swap");
 
 .app {
   background: url("./assets/bg/bg3.png") #f1f1f1;
@@ -155,15 +155,13 @@ html {
   background-size: cover;
 }
 
-.frontpagehome{
-  margin-bottom: 180px;
+.frontpagehome {
+  margin-bottom: 150px;
 }
 
-
-
-.frontpageheadingsecondary{
+.frontpageheadingsecondary {
   width: 90%;
-  font-family: 'oxygen';
+  font-family: "oxygen";
   font-size: 80px;
   text-align: center;
   margin: 5% auto;
@@ -182,7 +180,7 @@ html {
 .heading {
   text-align: center;
   font-size: 70px;
-  font-family: 'oxygen';
+  font-family: "oxygen";
   width: 80%;
   margin: 0 auto;
   padding-bottom: 2%;
@@ -191,7 +189,6 @@ html {
 }
 
 .frontpagecont {
-  
   margin: 0 0 7% 0;
 }
 
@@ -207,7 +204,7 @@ html {
   .leftbox {
     padding-top: 50px;
   }
-  .heading{
+  .heading {
     font-size: 50px;
   }
   .leftbox {
@@ -218,8 +215,8 @@ html {
   } */
 }
 
-.announcementcontent{
-  background: url('./assets/bg/sec3.jpg') rgba(255, 255, 255, 0.5);
+.announcementcontent {
+  background: url("./assets/bg/sec3.jpg") rgba(255, 255, 255, 0.5);
   color: #000000;
   overflow-y: scroll;
   padding: 5% 10%;
@@ -248,7 +245,7 @@ html {
   font-size: 30px;
 }
 
-.frontpagebtn{
+.frontpagebtn {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -355,7 +352,7 @@ html {
   background: #fff;
   padding: 1%;
   margin-top: 5%;
-  box-shadow: 1px 1px 2px  #000;
+  box-shadow: 1px 1px 2px #000;
 }
 
 .totaldbposts {
@@ -381,13 +378,12 @@ table {
   margin: 5% auto;
   margin-bottom: 10%;
   font-family: arial, sans-serif;
-  width: 85%;
   background: #fff;
   table-layout: fixed;
 }
 
 .tablecontainer {
-  overflow-x: auto; 
+  overflow-x: auto;
 }
 
 td,
@@ -399,7 +395,7 @@ th {
   padding: 10px;
 }
 
-th{
+th {
   font-size: 20px;
   font-weight: bold;
 }

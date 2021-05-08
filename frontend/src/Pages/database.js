@@ -1,14 +1,15 @@
 import React from 'react'
+import '../App.css'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import { resources } from './data/resources'
-import { states } from './data/states'
-import { status } from './data/status'
+import { resources } from '../data/resources'
+import { states } from '../data/states'
+import { status } from '../data/status'
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import Button from '@material-ui/core/Button';
-import Footer from './components/Footer/Footer';
-import Drawer from './components/Drawer/Drawer';
+import Footer from '../components/Footer/Footer';
+import Drawer from '../components/Drawer/Drawer';
 
 
 const Database = () =>
@@ -32,24 +33,16 @@ const Database = () =>
     const handleSelect1 = (e) =>
     {
         setState(e.target.value)
-        //     const response = await axios.get("http://127.0.0.1:8000/form/")
-        //   const response2 = await axios.get(`http://127.0.0.1:8000/state/${states.indexOf(e.target.value) + 1}/`)
-        //     setData(response.data.filter((item)=> response2.data.form_state.includes(JSON.stringify(item.id))))
     }
 
     const handleSelect2 = (e) =>
     {
         setResource(e.target.value)
-        //     const response = await axios.get("http://127.0.0.1:8000/form/")
-        //   const response2 = await axios.get(`http://127.0.0.1:8000/resource/${resources.indexOf(e.target.value) + 1}/`)
-        //     setData(response.data.filter((item)=> response2.data.form_resource.includes(JSON.stringify(item.id))))
     }
 
     const handleSubmit = async () =>
     {
         const response = await axios.get("http://127.0.0.1:8000/form/")
-        // const response2 = await axios.get(`http://127.0.0.1:8000/resource/${ resources.indexOf(resource) + 1 }/`)
-        // const response3 = await axios.get(`http://127.0.0.1:8000/state/${ states.indexOf(state) + 1 }/`)
         setData(response.data.filter((item) => item.state === state && item.resource === resource))
     }
 
@@ -58,9 +51,6 @@ const Database = () =>
             <div className="database">
 
                 <Drawer />
-                {/* <div className='heading'>
-                    <Link to='/' style={{ textDecoration: 'none' }}>Covid Information Bank</Link>
-                </div> */}
                 <h1 className="heading">Database </h1>
                 <div className="dbsearchsec">
 

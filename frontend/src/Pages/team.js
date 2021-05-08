@@ -1,7 +1,7 @@
 import React from 'react'
-import './App.css';
-import Footer from './components/Footer/Footer'
-import Drawer from './components/Drawer/Drawer';
+import '../App.css';
+import Footer from '../components/Footer/Footer'
+import Drawer from '../components/Drawer/Drawer';
 
 const Team = () =>
 {
