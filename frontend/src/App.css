@@ -139,6 +139,9 @@ html {
   src: url(./assets/fonts/Cheap\ Pine\ Regular.otf);
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;900&display=swap');
+
+
 .app {
   background: url("./assets/bg/bg3.png") #f1f1f1;
   background-repeat: no-repeat;
@@ -152,18 +155,18 @@ html {
 
 .frontpageheading{
   width: 100%;
-  font-family: 'cheappine';
+  font-family: 'Montserrat';
   font-size: 100px;
   text-align: center;
   margin: 5% 0;
 }
 
 .frontpageheadingsecondary{
-  width: 100%;
-  font-family: 'cheappine';
-  font-size: 100px;
+  width: 90%;
+  font-family: 'Playfair Display', serif;
+  font-size: 80px;
   text-align: center;
-  margin: 5% 0;
+  margin: 5% auto;
 }
 
 .team {
@@ -176,7 +179,7 @@ html {
 .heading {
   text-align: center;
   font-size: 70px;
-  font-family: "cheappine";
+  font-family: 'Playfair Display', serif;
   width: 60%;
   margin: 0 auto;
   padding-bottom: 2%;

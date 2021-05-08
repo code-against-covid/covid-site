@@ -3,6 +3,8 @@
     src: url(../../../assets/fonts/Cheap\ Pine\ Regular.otf);
   }
 
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;900&display=swap');
+
 .menutogglediv{
     padding: 40px 50px;
     display: flex;
@@ -14,6 +16,7 @@
 .mainheading{
     text-align: center;
     font-size: 70px;
-    font-family: 'cheappine';
+    font-family: 'Playfair Display', serif;
     margin: auto;
+    color: rgb(0, 0, 0);
 }

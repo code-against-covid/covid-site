@@ -141,7 +141,7 @@ const App = () =>
       <div className="app">
         <Drawer />
         <div className="frontpagehome">
-          <div className="frontpageheadingsecondary"><h1>A resource database, made by you for you.</h1></div>
+          <div className="frontpageheadingsecondary"><h1>A RESOURCE DATABASE, MADE BY YOU FOR YOU.</h1></div>
           <div className="frontpagebtn">
             {/* // Starting of I want to help */}
             <div className="want">
