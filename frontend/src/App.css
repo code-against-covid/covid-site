@@ -139,8 +139,14 @@ html {
   src: url(./assets/fonts/Cheap\ Pine\ Regular.otf);
 }
 
+@font-face {
+  font-family: oxygen;
+  src: url(./assets/fonts/Oxygen/Oxygen-Bold.ttf);
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&family=Playfair+Display:wght@400;900&display=swap');
 
 .app {
   background: url("./assets/bg/bg3.png") #f1f1f1;
@@ -150,23 +156,18 @@ html {
 }
 
 .frontpagehome{
-  height: 100vh;
+  margin-bottom: 150px;
 }
 
-.frontpageheading{
-  width: 100%;
-  font-family: 'Montserrat';
-  font-size: 100px;
-  text-align: center;
-  margin: 5% 0;
-}
+
 
 .frontpageheadingsecondary{
   width: 90%;
-  font-family: 'Playfair Display', serif;
+  font-family: 'oxygen';
   font-size: 80px;
   text-align: center;
   margin: 5% auto;
+  color: rgb(19, 66, 51);
 }
 
 .team {
@@ -179,11 +180,12 @@ html {
 .heading {
   text-align: center;
   font-size: 70px;
-  font-family: 'Playfair Display', serif;
-  width: 60%;
+  font-family: 'oxygen';
+  width: 80%;
   margin: 0 auto;
   padding-bottom: 2%;
   border-bottom: 4px solid #000;
+  color: rgb(19, 66, 51);
 }
 
 .frontpagecont {
@@ -223,12 +225,6 @@ html {
     flex: 100%;
   }
 } */
-
-.announcement_heading {
-  font-size: 50px;
-  text-align: center;
-  font-family: 'cheappine';
-}
 
 .announcementlines {
   padding: 4%;

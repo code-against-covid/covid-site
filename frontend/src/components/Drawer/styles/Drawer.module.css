@@ -1,7 +1,12 @@
 @font-face {
     font-family: cheappine;
     src: url(../../../assets/fonts/Cheap\ Pine\ Regular.otf);
-  }
+}
+
+@font-face {
+    font-family: oxygen;
+    src: url(../../../assets/fonts/Oxygen/Oxygen-Bold.ttf);
+}
 
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;900&display=swap');
 
@@ -16,7 +21,7 @@
 .mainheading{
     text-align: center;
     font-size: 70px;
-    font-family: 'Playfair Display', serif;
+    font-family: 'oxygen';
     margin: auto;
-    color: rgb(0, 0, 0);
+    color: rgb(19, 66, 51);
 }
