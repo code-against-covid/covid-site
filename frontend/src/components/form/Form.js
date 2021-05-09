@@ -122,7 +122,7 @@ const Form = () =>
         <div className={`${ style.frontpagebtn }`}>
           {/* // Starting of I want to help */}
           <div className={`${ style.want }`}>
-            <Button className={`${ style.helpbtn }`} variant="contained" color="secondary" size="large" onClick={() =>
+            <Button className={`${ style.helpbtn }`} variant="contained" color="primary" size="large" onClick={() =>
             {
               setOpenForm(true)
             }}>
@@ -133,7 +133,7 @@ const Form = () =>
           {/* // Starting of I need help. */}
           <div className={`${ style.need }`}>
             <Link to='/help' style={{ textDecoration: 'none' }}>
-              <Button className={`${ style.helpbtn }`} variant="contained" color="primary" size="large" >
+              <Button className={`${ style.helpbtn }`} variant="contained" color="secondary" size="large" >
                 I Need Help
               </Button>
             </Link>
@@ -147,7 +147,7 @@ const Form = () =>
         <DialogTitle id="form-dialog-title">Form</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Please fill in the details. All information will be subject to verification by staff members.
+            Please fill in the details. All the information will be subject to verification by the volunteers.
                   </DialogContentText>
           <TextField
             autoFocus
@@ -203,7 +203,7 @@ const Form = () =>
         </DialogTitle>
             <DialogContent dividers>
               <Typography gutterBottom>
-                The team of United Against Covid thanks you for contributing to our project. Your valuable information will be very helpful in our figth against Covid-19.
+                The team of United Against Covid thanks you for contributing to our project. Your valuable information will be very helpful in our fight against Covid-19.
           </Typography>
             </DialogContent>
           </Dialog>

@@ -16,23 +16,33 @@ const Team = () =>
         <div className={`${ styles.orgcard }`}>
           <div className={`${ styles.orgicon }`}>
           </div>
-          <div className={`${ styles.orgname }`}>
-            <h3>Ayaachi Jha</h3>
+          <div className={`${ styles.orgheading }`}>
+            <div className={`${ styles.orgname }`}>
+              <h3>Ayaachi Jha</h3>
+            </div>
+            <div className={`${ styles.orgdesignationtag }`}>
+              <h4>Co-Founder</h4>
+            </div>
           </div>
           <div className={`${ styles.orgcontact }`}>
             <p>
               Netaji Subhas University of Technology
-                    </p>
+            </p>
             <p>
               B.E. Mechanical Engineering, 4th Year
-                    </p>
+            </p>
           </div>
         </div>
         <div className={`${ styles.orgcard }`}>
           <div className={`${ styles.orgicon }`}>
           </div>
-          <div className={`${ styles.orgname }`}>
-            <h3>Dhananjhay Bansal</h3>
+          <div className={`${ styles.orgheading }`}>
+            <div className={`${ styles.orgname }`}>
+              <h3>Dhananjhay Bansal</h3>
+            </div>
+            <div className={`${ styles.orgdesignationtag }`}>
+              <h4>Co-Founder</h4>
+            </div>
           </div>
           <div className={`${ styles.orgcontact }`}>
             <p>

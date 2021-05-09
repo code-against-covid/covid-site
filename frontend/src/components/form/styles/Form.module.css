@@ -9,6 +9,7 @@
     font-size: 80px;
     text-align: center;
     margin: 5% auto;
+    color: rgb(0, 0, 0);
     /* color: rgb(19, 66, 51); */
     /* border-bottom: 4px solid #000;
     padding-bottom: 2%; */
@@ -29,13 +30,17 @@
   
 
   @media only screen and (max-width: 700px) {
+    .frontpagehome {
+      margin-bottom: 0px;
+    }
 
     .heading {
-      font-size: 50px;
+      font-size: 30px;
     }
-    /* .frontpagecont {
-      margin: 0 0 80% 0;
-    } */
+
+    .frontpageheadingsecondary{
+      font-size: 30px;
+    }
   }  
 
   

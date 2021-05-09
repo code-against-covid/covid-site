@@ -26,8 +26,7 @@ const Footer = () =>
             <div className={`${ styles.copyright }`}>
                 &copy; copyright 2021
             </div>
-            <a href='https://coolbackgrounds.io/white-background/'>background from coolbackgrounds.io</a>
-        </footer >
+        </footer>
     );
 }
 
