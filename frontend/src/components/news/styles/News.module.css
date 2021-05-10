@@ -26,7 +26,7 @@
       padding-top: 50px;
     }
     .heading {
-      font-size: 50px;
+      font-size: 30px;
     }
     .leftbox {
       width: 90%;
@@ -36,20 +36,7 @@
     } */
   }
   
-  @media only screen and (max-width: 700px) {
-    .leftbox {
-      padding-top: 50px;
-    }
-    .heading {
-      font-size: 50px;
-    }
-    .leftbox {
-      width: 90%;
-    }
-    /* .frontpagecont {
-      margin: 0 0 80% 0;
-    } */
-  }  
+
   
 .announcementcontent {
     background: url("../../../assets/bg/sec3.jpg") rgba(255, 255, 255, 0.5);

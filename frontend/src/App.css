@@ -148,22 +148,9 @@ html {
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&family=Playfair+Display:wght@400;900&display=swap");
 
-.app {
-  background: url("./assets/bg/bgtry3.png") #f1f1f1;
+.layout {
+  background: url("./assets/bg/bg3.jpg") #f1f1f1;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-}
-
-.frontpagehome {
-  margin-bottom: 150px;
-}
-
-.frontpageheadingsecondary {
-  width: 90%;
-  font-family: "oxygen";
-  font-size: 80px;
-  text-align: center;
-  margin: 5% auto;
-  color: rgb(19, 66, 51);
 }

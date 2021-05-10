@@ -8,12 +8,21 @@
     src: url(../../../assets/fonts/Oxygen/Oxygen-Bold.ttf);
 }
 
+@font-face {
+    font-family: lotus;
+    src: url(../../../assets/fonts/Lotuseater-d9A46.otf);
+}
+
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;900&display=swap');
 
+/* .navigation{
+    background-color: rgba(255, 255, 255,0.5);
+} */
+
 .menutogglediv{
-    padding: 40px 50px;
+    padding: 2.5%;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: no-wrap;
     align-items: center;
 }
 
@@ -23,5 +32,13 @@
     font-size: 70px;
     font-family: 'oxygen';
     margin: auto;
+    color: rgb(168, 0, 0);
     /* color: rgb(19, 66, 51); */
 }
+
+@media only screen and (max-width: 700px) {
+
+    .mainheading {
+      font-size: 30px;
+    }
+  }  

@@ -116,7 +116,7 @@ export default function TemporaryDrawer()
     );
 
     return (
-        <div>
+        <div className={`${ styles.navigation }`}>
             {['left'].map((anchor) => (
                 <React.Fragment key={anchor}>
                     <div className={`${ styles.menutogglediv }`}>
@@ -124,7 +124,7 @@ export default function TemporaryDrawer()
                             <Button onClick={toggleDrawer(anchor, true)}><MenuIcon fontSize="large" color="primary" /></Button>
                         </div>
                         <div className={`${ styles.mainheading }`}>
-                            UNITED AGAINST COVID
+                            United Against Covid
                         </div>
                     </div>
                     <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
