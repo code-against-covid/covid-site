@@ -203,7 +203,7 @@ const Form = () =>
         </DialogTitle>
             <DialogContent dividers>
               <Typography gutterBottom>
-                The team of United Against Covid thanks you for contributing to our project. Your valuable information will be very helpful in our figth against Covid-19.
+                The team of United Against Covid thanks you for contributing to our project. Your valuable information will be very helpful in our fight against Covid-19.
           </Typography>
             </DialogContent>
           </Dialog>
