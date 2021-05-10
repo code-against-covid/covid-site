@@ -45,9 +45,26 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+#SECURE_HSTS_SECONDS = 31536000
+
+SECURE_SSL_REDIRECT = False
+
+SECURE_HSTS_PRELOAD = False
+
+SECURE_HSTS_INCLUDE_SUBDOMAINS = False
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+SESSION_COOKIE_SECURE = True
+
+CSRF_COOKIE_SECURE = True
+
+# WHITENOISE_USE_FINDERS = True
+
 
 # Application definition
 
+# 'whitenoise.runserver_nostatic',
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -60,8 +77,12 @@ INSTALLED_APPS = [
     'status',
     'announcement',
     'organization',
+    'team',
+    'django_otp',
+    'django_otp.plugins.otp_totp',
 ]
 
+# 'whitenoise.middleware.WhiteNoiseMiddleware',
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -70,6 +91,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django_otp.middleware.OTPMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]

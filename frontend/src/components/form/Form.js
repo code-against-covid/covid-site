@@ -208,7 +208,7 @@ const Form = () =>
             </DialogContent>
           </Dialog>
 
-          <Button onClick={() =>
+          <Button variant="outlined" onClick={() =>
           {
             setOpenForm(false);
           }} color="primary">
