@@ -23,8 +23,9 @@ admin_site = OTPAdmin(name='OTPAdmin')
 for model_cls, model_admin in admin.site._registry.items():
     admin_site.register(model_cls, model_admin.__class__)
 
+# Start with admin.site.urls in the beginning.
 urlpatterns = [
-    path('unitedagainstcovidadminpanellogin/', admin_site.urls),
+    path('unitedagainstcovidadminpanellogin/', admin.site.urls),
     path('form/', include('form.urls')),
     path('status/', include('status.urls')),
     path('organization/', include('organization.urls')),
