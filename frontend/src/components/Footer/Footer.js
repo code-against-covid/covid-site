@@ -20,11 +20,12 @@ const Footer = () =>
                         <li><Link to="/help">Database</Link></li>
                         <li><Link to="/forum">Forum</Link></li>
                         <li><Link to="/team">Our Team</Link></li>
+                        <li><Link to="/donors">Donors List</Link></li>
                     </ul>
                 </div>
             </div>
             <div className={`${ styles.copyright }`}>
-                &copy; copyright 2021
+               UnitedAgainstCovid19 &copy; copyright 2021
             </div>
         </footer>
     );

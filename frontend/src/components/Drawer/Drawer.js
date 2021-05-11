@@ -66,6 +66,19 @@ const renderIcon = (text) =>
             </NavLink>
         );
     }
+    else if (text === 'Donors List')
+    {
+        return (
+            <NavLink exact to="/donors" key={text} activeStyle={{ color: "blue" }} style={{ textDecoration: "none", color: "black" }} >
+                <ListItem button>
+
+                    <ListItemIcon><PeopleIcon color="primary" /></ListItemIcon>
+                    <ListItemText primary={text} />
+
+                </ListItem>
+            </NavLink>
+        );
+    }
     return null;
 }
 
@@ -96,7 +109,7 @@ export default function TemporaryDrawer()
             onKeyDown={toggleDrawer(anchor, false)}
         >
             <List>
-                {['Home', 'Database', 'Our Team'].map((text, index) => (
+                {['Home', 'Database', 'Our Team','Donors List'].map((text, index) => (
 
                     renderIcon(text)
 
