@@ -15,7 +15,7 @@ const Team = () =>
   {
     function fetchData()
     {
-      axios.get("http://127.0.0.1:8000/team/").then((response) =>
+      axios.get(`${process.env.REACT_APP_API_URL}/team/`).then((response) =>
       {
         setTeam(response.data)
       }).catch((error) =>

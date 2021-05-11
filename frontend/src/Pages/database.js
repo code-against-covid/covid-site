@@ -24,7 +24,7 @@ const Database = () =>
     {
         async function fetchData()
         {
-            const response = await axios.get("http://127.0.0.1:8000/form/")
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/form/`)
             return setData(response.data)
         }
         fetchData();
@@ -43,7 +43,7 @@ const Database = () =>
 
     const handleSubmit = async () =>
     {
-        const response = await axios.get("http://127.0.0.1:8000/form/")
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/form/`)
         resource ? setData(response.data.filter((item) => item.state === state && item.resource === resource)) : setData(response.data.filter((item) => item.state === state))
     }
 

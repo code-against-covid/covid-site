@@ -92,7 +92,7 @@ const Form = () =>
   // handlesubmit for the submit button in the post and display thank you message.
   const handleSubmit = () =>
   {
-    axios.post("http://127.0.0.1:8000/form/", {
+    axios.post(`${process.env.REACT_APP_API_URL}/form/`, {
       name: name ? name : null,
       state: state,
       resource: resource,

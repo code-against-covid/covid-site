@@ -14,7 +14,7 @@ const News = () =>
   {
     function fetchData()
     {
-      axios.get("http://127.0.0.1:8000/announcement/").then((response) =>
+      axios.get(`${process.env.REACT_APP_API_URL}/announcement/`).then((response) =>
       {
         setAnnouncement(response.data)
       }).catch((error) =>

@@ -13,7 +13,7 @@ const Organization = () =>
   {
     function fetchData()
     {
-      axios.get("http://127.0.0.1:8000/organization/").then((response) =>
+      axios.get(`${process.env.REACT_APP_API_URL}/organization/`).then((response) =>
       {
         setOrganization(response.data)
       }).catch((error) =>
