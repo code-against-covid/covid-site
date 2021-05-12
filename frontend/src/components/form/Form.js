@@ -222,7 +222,7 @@ const Form = () =>
             id="information"
             multiline
             rows={4}
-            label="Additional Information"
+            label="Information"
             placeholder="Information about the resource: Address, Phone, Availability, etc. Any information you provide will help thousands."
             type="text"
             fullWidth
