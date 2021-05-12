@@ -62,8 +62,6 @@ const Form = () =>
   const [name, setName] = useState('')
   const [state, setState] = useState('')
   const [resource, setResource] = useState('')
-  const [mobile, setMobile] = useState('')
-  const [address, setAddress] = useState('')
   const [additional, setAdditional] = useState('')
 
 
@@ -112,8 +110,6 @@ const Form = () =>
     // {
     //   additionalinfo = `Mobile: ${ mobile }, ` + additionalinfo;
     // }
-
-    console.log(address.length);
     axios.post(`${ process.env.REACT_APP_API_URL }/form/`, {
       name: name ? name : null,
       state: state,
