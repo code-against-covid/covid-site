@@ -112,8 +112,6 @@ const Form = () =>
     {
       additionalinfo = `Mobile: ${ mobile }, ` + additionalinfo;
     }
-
-    console.log(address.length);
     axios.post(`${ process.env.REACT_APP_API_URL }/form/`, {
       name: name ? name : null,
       state: state,
@@ -176,7 +174,7 @@ const Form = () =>
             onChange={handleSelect2}
             margin="dense"
             id="name"
-            label="Name of the person giving the information(optional)"
+            label="Your name(optional)"
             type="text"
             fullWidth
           />
@@ -226,7 +224,7 @@ const Form = () =>
             id="information"
             multiline
             rows={4}
-            label="Information"
+            label="Additional Information"
             placeholder="Information about the resource: Address, Phone, Availability, etc. Any information you provide will help thousands."
             type="text"
             fullWidth
