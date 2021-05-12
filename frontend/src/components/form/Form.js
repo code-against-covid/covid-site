@@ -62,7 +62,10 @@ const Form = () =>
   const [name, setName] = useState('')
   const [state, setState] = useState('')
   const [resource, setResource] = useState('')
+  const [mobile, setMobile] = useState('')
+  const [address, setAddress] = useState('')
   const [additional, setAdditional] = useState('')
+
 
   const publicIp = require('public-ip'); // For catching the client's ipv4. 
   (async () =>
@@ -88,17 +91,36 @@ const Form = () =>
   {
     setAdditional(e.target.value)
   }
+  const handleSelect5 = (e) =>
+  {
+    setMobile(e.target.value)
+  }
+  const handleSelect6 = (e) =>
+  {
+    setAddress(e.target.value)
+  }
 
   // handlesubmit for the submit button in the post and display thank you message.
   const handleSubmit = () =>
   {
+    var additionalinfo = additional;
+    if (address.length > 0)
+    {
+      additionalinfo = `Address: ${ address }, ` + additionalinfo;
+    }
+    if (mobile.length > 0)
+    {
+      additionalinfo = `Mobile: ${ mobile }, ` + additionalinfo;
+    }
+
+    console.log(address.length);
     axios.post(`${ process.env.REACT_APP_API_URL }/form/`, {
       name: name ? name : null,
       state: state,
       resource: resource,
       status: 1,
       ip_address: JSON.stringify(ip),
-      additional_info: additional,
+      additional_info: additionalinfo,
       created_at: date,
     }).catch((error) =>
     {
@@ -155,7 +177,7 @@ const Form = () =>
             margin="dense"
             id="name"
             label="Name of the person giving the information(optional)"
-            type="email"
+            type="text"
             fullWidth
           />
           <Autocomplete
@@ -174,23 +196,46 @@ const Form = () =>
               <TextField {...params} label="Resource" margin="normal" variant="outlined" />
             )}
           />
+
+          <TextField
+            autoFocus
+            onChange={handleSelect5}
+            margin="dense"
+            id="mobile"
+            label="Mobile of the resource provider(optional)"
+            type="text"
+            fullWidth
+          />
+
+          <TextField
+            autoFocus
+            onChange={handleSelect6}
+            margin="dense"
+            id="address"
+            multiline
+            rows={3}
+            label="Address for the resource(optional)"
+            type="text"
+            fullWidth
+          />
+
           <TextField
             onChange={handleSelect4}
             autoFocus
             margin="dense"
-            id="name"
+            id="information"
             multiline
             rows={4}
             label="Information"
             placeholder="Information about the resource: Address, Phone, Availability, etc. Any information you provide will help thousands."
-            type="email"
+            type="text"
             fullWidth
           />
         </DialogContent>
         <DialogActions>
           <Button variant="outlined" color="primary" onClick={handleSubmit}>
             Submit
-      </Button>
+        </Button>
           <Dialog onClose={() =>
           {
             setOpenPop(false)

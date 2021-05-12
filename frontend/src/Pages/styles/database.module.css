@@ -57,6 +57,7 @@
   font-family: arial, sans-serif;
   background: #fff;
   table-layout: fixed;
+  line-height: 20px;
 }
 
 td,
