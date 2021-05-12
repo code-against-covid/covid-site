@@ -154,8 +154,8 @@ const Form = () =>
             onChange={handleSelect2}
             margin="dense"
             id="name"
-            label="Name of the person giving the information(optional)"
-            type="email"
+            label="Your name(optional)"
+            type="text"
             fullWidth
           />
           <Autocomplete
@@ -182,8 +182,11 @@ const Form = () =>
             multiline
             rows={4}
             label="Information"
-            placeholder="Information about the resource: Address, Phone, Availability, etc. Any information you provide will help thousands."
-            type="email"
+            placeholder="Information about the resource(Please fill according to the order given below): 
+            1.Phone
+            2.Address/location
+            3.Additional Information"
+            type='text'
             fullWidth
           />
         </DialogContent>
