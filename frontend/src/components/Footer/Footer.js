@@ -9,10 +9,7 @@ const Footer = () =>
             <div className={`${ styles.footercontentsec }`}>
                 <div className={`${ styles.about }`}>
                     <div className={`${ styles.aboutheading }`}><h3>About Us</h3></div>
-                Just another group trying to help fight covid-19 and help bring people together
-                in these difficult days for help and support. We need to break away form our differences and
-                survive through these difficult times and this website is a just a way of assisting those who need
-                to be assisted and giving a platform to those who want to assist.
+                We are just a group trying to bring together everyone who wants to help fight Covid 19. We created this website to help those who might need any information or help regarding particular resources or any help in general. The database is accessible to everyone through this website and anyone can contribute and help by providing any information they might want to share.
             </div>
                 <div className={`${ styles.quicklinks }`}>
                     <div className={`${ styles.quickheading }`}><h3>Quick Links</h3></div>
@@ -25,7 +22,7 @@ const Footer = () =>
                 </div>
             </div>
             <div className={`${ styles.copyright }`}>
-               UnitedAgainstCovid19 &copy; copyright 2021
+                UnitedAgainstCovid19 &copy; copyright 2021
             </div>
         </footer>
     );

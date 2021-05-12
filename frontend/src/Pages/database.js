@@ -24,7 +24,7 @@ const Database = () =>
     {
         async function fetchData()
         {
-            const response = await axios.get(`${process.env.REACT_APP_API_URL}/form/`)
+            const response = await axios.get(`${ process.env.REACT_APP_API_URL }/form/`)
             return setData(response.data)
         }
         fetchData();
@@ -43,7 +43,7 @@ const Database = () =>
 
     const handleSubmit = async () =>
     {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/form/`)
+        const response = await axios.get(`${ process.env.REACT_APP_API_URL }/form/`)
         resource ? setData(response.data.filter((item) => item.state === state && item.resource === resource)) : setData(response.data.filter((item) => item.state === state))
     }
 
@@ -88,7 +88,7 @@ const Database = () =>
                 <div>
                     <div className={`${ styles.dbwarning }`}>
                         <h3>Warning!</h3>
-                        <p>PLEASE VERIFY EVERY INFORMATION THAT YOU CHOOSE TO ACCEPT YOURSELF TO PREVENT ANY FRAUD. WE ARE JUST PROVIDING A PLATFORM FOR PEOPLE'S BENEFIT.</p>
+                        <p>WE ACCEPT NO RESPONSIBILITY OR LIABILITY FOR THE ACCURACY OR THE COMPLETENESS OF THE INFORMATION CONTAINED IN THIS WEBSITE. UNDER NO CIRCUMSTANCES WILL WE BE HELD RESPONSIBLE OR LIABLE IN ANY WAY FOR ANY CLAIMS, DAMAGES, LOSSES, EXPENSES, COSTS OR LIABILITIES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, ANY DIRECT OR INDIRECT DAMAGES FOR LOSS OF PROFITS, BUSINESS INTERRUPTION OR LOSS OF INFORMATION) RESULTING OR ARISING DIRECTLY OR INDIRECTLY FROM YOUR USE OF OR INABILITIY TO USE THIS WEBSITE OR ANY WEBSITES LINKED TO IT, OR FROM YOUR RELIANCE ON THE INFORMATION AND MATERIAL ON THIS WEBSITE, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES IN ADVANCE. WE ARE JUST TRYING TO HELP BY PROVIDING A PLATFORM FOR EVERYONE TO BENEFIT FROM. WHILE WE TRY TO VERIFY THE INFORMATION TO THE BEST OF OUR ABILITIES, WE CANNOT GAURANTEE THAT THERE ARE NO MISTAKES OR ERRORS. SHOULD YOU DECIDE TO ACT UPON ANY OF THE INFORMATION ON THIS WEBSITE, YOU DO SO AT YOUR OWN RISK.</p>
                     </div>
                 </div>
                 {
