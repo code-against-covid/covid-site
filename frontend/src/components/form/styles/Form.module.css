@@ -1,0 +1,75 @@
+
+.frontpagehome {
+    margin-bottom: 150px;
+  }
+  
+  .frontpageheadingsecondary {
+    width: 90%;
+    font-family: "oxygen";
+    font-size: 80px;
+    text-align: center;
+    margin: 5% auto;
+    color: rgb(0, 0, 0);
+    /* color: rgb(19, 66, 51); */
+    /* border-bottom: 4px solid #000;
+    padding-bottom: 2%; */
+  }
+  
+  
+  
+  .heading {
+    text-align: center;
+    font-size: 70px;
+    font-family: "oxygen";
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 2%;
+    border-bottom: 4px solid #000;
+    /* color: rgb(19, 66, 51); */
+  }
+  
+
+  @media only screen and (max-width: 700px) {
+    .frontpagehome {
+      margin-bottom: 0px;
+    }
+
+    .heading {
+      font-size: 30px;
+    }
+
+    .frontpageheadingsecondary{
+      font-size: 30px;
+    }
+  }  
+
+  
+.form_heading {
+    text-align: center;
+    font-size: 30px;
+  }
+  
+  .frontpagebtn {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .want {
+    width: 320px;
+    margin: 35px 0 35px 50px;
+  }
+  
+  .need {
+    width: 320px;
+    margin: 35px 0 35px 50px;
+  }
+  
+  .helpbtn {
+    display: inline-block;
+    box-shadow: 2px 2px 7px grey;
+    width: 80%;
+    height: 70px;
+    margin: 10%;
+  }

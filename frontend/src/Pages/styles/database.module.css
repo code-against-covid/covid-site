@@ -1,0 +1,90 @@
+.database {
+  /* background: url("./assets/bg/bg3.png") #f1f1f1; */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.dbsearchsec {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #fff;
+  padding: 1%;
+  margin-top: 5%;
+  box-shadow: 1px 1px 2px #000;
+}
+
+.totaldbposts {
+  margin-top: 1%;
+  font-size: 20px;
+}
+
+.dbwarning {
+  background: rgb(246, 255, 122);
+  margin: 2% 5%;
+  font-size: 11px;
+  padding: 1%;
+  display: inline-block;
+  border-radius: 0px 20px 20px;
+  box-shadow: 2px 2px 2px #000;
+  line-height: 12px;
+}
+
+.filter {
+  width: 350px;
+}
+
+.heading {
+  text-align: center;
+  font-size: 70px;
+  font-family: "oxygen";
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 2%;
+  border-bottom: 4px solid #000;
+  /* color: rgb(19, 66, 51); */
+}
+
+.tablecontainer {
+  overflow-x: auto;
+  margin: 0 2% 2% 2%;
+}
+
+.dbtable {
+  margin: 1% auto;
+  margin-bottom: 10%;
+  font-family: arial, sans-serif;
+  background: #fff;
+  table-layout: fixed;
+  line-height: 20px;
+}
+
+td,
+th {
+  border: 7px solid rgb(255, 255, 255);
+  text-align: left;
+  padding: 8px;
+  overflow-wrap: break-word;
+  padding: 10px;
+  width: 150px;
+}
+
+th {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.resourcerow {
+  width: 500px;
+}
+tr:nth-child(even) {
+  background-color: #f1f1f1;
+}
+
+@media only screen and (max-width: 700px) {
+  .heading {
+    font-size: 30px;
+  }
+}

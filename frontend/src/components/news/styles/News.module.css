@@ -1,0 +1,60 @@
+.frontpagecont {
+    margin: 0 0 7% 0;
+}
+
+.leftbox {
+    font-size: large;
+    width: 65%;
+    margin: 0 auto;
+  }
+
+  .heading {
+    text-align: center;
+    font-size: 70px;
+    font-family: "oxygen";
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 2%;
+    border-bottom: 4px solid #000;
+    /* color: rgb(19, 66, 51); */
+  }
+  
+  
+  
+  @media only screen and (max-width: 700px) {
+    .leftbox {
+      padding-top: 50px;
+    }
+    .heading {
+      font-size: 30px;
+    }
+    .leftbox {
+      width: 90%;
+    }
+    /* .frontpagecont {
+      margin: 0 0 80% 0;
+    } */
+  }
+  
+
+  
+.announcementcontent {
+    background: url("../../../assets/bg/sec3.jpg") rgba(255, 255, 255, 0.5);
+    color: #000000;
+    overflow-y: scroll;
+    padding: 5% 10%;
+    margin: 7% 0;
+    border-radius: 10px;
+  }
+  
+  /* @media (max-width: 800px) {
+    .leftbox, .rightbox {
+      flex: 100%;
+    }
+  } */
+  
+  .announcementlines {
+    padding: 4%;
+    border-bottom: 2px solid rgb(175, 169, 169);
+    line-height: 25px;
+  }

@@ -1,0 +1,46 @@
+.sitefooter {
+  background: rgba(0, 0, 0, 0.9);
+  color: rgb(223, 207, 207);
+  padding: 4%;
+  margin-right: 0;
+}
+
+.footercontentsec {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 0 70px 0;
+}
+
+.about {
+  width: 500px;
+  text-align: justify;
+}
+
+.quicklinks {
+  width: 500px;
+}
+
+.quicklinks ul {
+  margin-left: 50px;
+}
+.quicklinks li {
+  margin-bottom: 10px;
+}
+
+.aboutheading {
+  border-bottom: 2px solid red;
+  padding: 4% 10%;
+  margin: 0 0 10% 0;
+}
+
+.quickheading {
+  border-bottom: 2px solid red;
+  padding: 4% 10%;
+  margin: 0 0 10% 0;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 5%;
+}
