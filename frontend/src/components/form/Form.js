@@ -91,34 +91,36 @@ const Form = () =>
   {
     setAdditional(e.target.value)
   }
-  const handleSelect5 = (e) =>
-  {
-    setMobile(e.target.value)
-  }
-  const handleSelect6 = (e) =>
-  {
-    setAddress(e.target.value)
-  }
+  // const handleSelect5 = (e) =>
+  // {
+  //   setMobile(e.target.value)
+  // }
+  // const handleSelect6 = (e) =>
+  // {
+  //   setAddress(e.target.value)
+  // }
 
   // handlesubmit for the submit button in the post and display thank you message.
   const handleSubmit = () =>
   {
-    var additionalinfo = additional;
-    if (address.length > 0)
-    {
-      additionalinfo = `Address: ${ address }, ` + additionalinfo;
-    }
-    if (mobile.length > 0)
-    {
-      additionalinfo = `Mobile: ${ mobile }, ` + additionalinfo;
-    }
+    // var additionalinfo = additional;
+    // if (address.length > 0)
+    // {
+    //   additionalinfo = `Address: ${ address }, ` + additionalinfo;
+    // }
+    // if (mobile.length > 0)
+    // {
+    //   additionalinfo = `Mobile: ${ mobile }, ` + additionalinfo;
+    // }
+
+    console.log(address.length);
     axios.post(`${ process.env.REACT_APP_API_URL }/form/`, {
       name: name ? name : null,
       state: state,
       resource: resource,
       status: 1,
       ip_address: JSON.stringify(ip),
-      additional_info: additionalinfo,
+      additional_info: additional,
       created_at: date,
     }).catch((error) =>
     {
@@ -195,7 +197,7 @@ const Form = () =>
             )}
           />
 
-          <TextField
+          {/* <TextField
             autoFocus
             onChange={handleSelect5}
             margin="dense"
@@ -215,7 +217,7 @@ const Form = () =>
             label="Address for the resource(optional)"
             type="text"
             fullWidth
-          />
+          /> */}
 
           <TextField
             onChange={handleSelect4}
