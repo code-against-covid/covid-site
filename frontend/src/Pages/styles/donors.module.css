@@ -31,6 +31,8 @@
   padding: 1.8%;
   box-shadow: 3px 3px 4px black;
   margin: 2%;
+  height: 200px;
+  line-height: 20px;
 }
 
 .orgheading {
@@ -40,9 +42,8 @@
   padding: 0 0 5% 0;
 }
 
-.orgname {
-  font-weight: bold;
-  font-size: 30px;
+.orgname{
+font-weight: bold;
 }
 
 .orgcontact {
@@ -51,10 +52,11 @@
 }
 .orgcontact p {
   margin: 4% 0;
+  text-align: justify;
 }
 
-.orgdesignationtag {
-  margin-top: 4%;
+.orgdesignationtag{
+margin-top: 4%;
 }
 
 @media only screen and (max-width: 700px) {

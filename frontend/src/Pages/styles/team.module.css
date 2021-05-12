@@ -31,6 +31,8 @@
     padding: 1.8%;
     box-shadow: 3px 3px 4px black;
     margin: 2%;
+    height: 180px;
+    line-height: 20px;
 }
   
 .orgheading {

@@ -92,7 +92,7 @@ const Form = () =>
   // handlesubmit for the submit button in the post and display thank you message.
   const handleSubmit = () =>
   {
-    axios.post(`${process.env.REACT_APP_API_URL}/form/`, {
+    axios.post(`${ process.env.REACT_APP_API_URL }/form/`, {
       name: name ? name : null,
       state: state,
       resource: resource,
@@ -148,13 +148,13 @@ const Form = () =>
         <DialogContent>
           <DialogContentText>
             Please fill in the details. All the information will be subject to verification by the volunteers.
-                  </DialogContentText>
+          </DialogContentText>
           <TextField
             autoFocus
             onChange={handleSelect2}
             margin="dense"
             id="name"
-            label="Name(optional)"
+            label="Name of the person giving the information(optional)"
             type="email"
             fullWidth
           />
