@@ -6,7 +6,6 @@
     font-size: large;
     width: 65%;
     margin: 0 auto;
-    line-height: 25px;
   }
 
   .heading {
@@ -57,4 +56,5 @@
   .announcementlines {
     padding: 4%;
     border-bottom: 2px solid rgb(175, 169, 169);
+    line-height: 25px;
   }
