@@ -71,5 +71,37 @@ export const donorslist = [
     //     "email": '',
     //     "links": '',
     // }
+    {
+        "name": "Dr. Virendra Kumar Jha",
+        "job": 'Professor, Teaching in Delhi University',
+        "amount": '1500',
+        "tag": 'In the time of need, hoping for this website to work as a silver lining in these difficult times.',
+        "email": '',
+        "links": '',
+    },
+    {
+        "name": "Mrs. Alka Jha",
+        "job": '',
+        "amount": '1500',
+        "tag": "In the hope of being there for the one's in need.",
+        "email": '',
+        "links": '',
+    },
+    {
+        "name": "Mrs. Raj Rani Jha",
+        "job": '',
+        "amount": '1500',
+        "tag": "Hope this website benefits lots of people who are struggling in these times.",
+        "email": '',
+        "links": '',
+    },
+    {
+        "name": "Ms. Jasmine Jha",
+        "job": 'Pursuing Ph.D. and teaching in Delhi University',
+        "amount": '1500',
+        "tag": "Wishing for this website to work as a catalyst for making help accessible on time.",
+        "email": '',
+        "links": '',
+    },
 
 ]
