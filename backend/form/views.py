@@ -8,6 +8,6 @@ from .serializers import FormSerializer
 
 
 class FormView(viewsets.ModelViewSet):
-    queryset = Form.objects.all()
+    queryset = Form.objects.all().order_by('-created_at')
     serializer_class = FormSerializer
     permission_classes = (permissions.AllowAny,)
