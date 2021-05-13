@@ -8,22 +8,29 @@ const Organization = () =>
 {
 
   const [organization, setOrganization] = useState([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() =>
   {
-    function fetchData()
-    {
-      axios.get(`${process.env.REACT_APP_API_URL}/organization/`).then((response) =>
+    if(loading){
+
+      function fetchData()
       {
-        setOrganization(response.data)
-      }).catch((error) =>
-      {
-        console.log(error)
-      })
+        axios.get(`${process.env.REACT_APP_API_URL}/organization/`).then((response) =>
+        {
+          setOrganization(response.data)
+        }).catch((error) =>
+        {
+          console.log(error)
+        })
+      }
+      fetchData();
     }
-    fetchData();
+    return ()=>{
+      setLoading(false)
+    }
   }
-    , []) // [] renders only once
+    , [loading]) // [] renders only once
 
   return (
     <div className={`${ styles.donation }`}>

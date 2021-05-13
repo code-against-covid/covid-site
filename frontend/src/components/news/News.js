@@ -7,24 +7,31 @@ import styles from './styles/News.module.css';
 const News = () =>
 {
   const [announcement, setAnnouncement] = useState([])
+  const [loading, setLoading] = useState(true)
 
 
   // For fetching announcements and organizations details from backend.
   useEffect(() =>
   {
-    function fetchData()
-    {
-      axios.get(`${process.env.REACT_APP_API_URL}/announcement/`).then((response) =>
+    if(loading){
+
+      function fetchData()
       {
-        setAnnouncement(response.data)
-      }).catch((error) =>
-      {
-        console.log(error)
-      })
+        axios.get(`${process.env.REACT_APP_API_URL}/announcement/`).then((response) =>
+        {
+          setAnnouncement(response.data)
+        }).catch((error) =>
+        {
+          console.log(error)
+        })
+      }
+      fetchData();
     }
-    fetchData();
+    return ()=>{
+      setLoading(false)
+    }
   }
-    , []) // [] renders only once
+    , [loading]) // [] renders only once
   return (
     <div className={`${ styles.frontpagecont }`}>
       <div className={`${ styles.leftbox }`}>

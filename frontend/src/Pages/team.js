@@ -10,22 +10,29 @@ const Team = () =>
 {
 
   const [team, setTeam] = useState([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() =>
   {
-    function fetchData()
-    {
-      axios.get(`${process.env.REACT_APP_API_URL}/team/`).then((response) =>
+    if(loading){
+
+      function fetchData()
       {
-        setTeam(response.data)
-      }).catch((error) =>
-      {
-        console.log(error)
-      })
+        axios.get(`${process.env.REACT_APP_API_URL}/team/`).then((response) =>
+        {
+          setTeam(response.data)
+        }).catch((error) =>
+        {
+          console.log(error)
+        })
+      }
+      fetchData();
     }
-    fetchData();
+    return()=>{
+      setLoading(false)
+    }
   }
-    , [])
+    , [loading])
   return (
     <div className={`${ styles.team }`}>
       <Drawer />

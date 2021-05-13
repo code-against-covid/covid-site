@@ -19,17 +19,25 @@ const Database = () =>
     const [data, setData] = useState([])
     const [state, setState] = useState('')
     const [resource, setResource] = useState('')
+    const [loading, setLoading] = useState(true)
 
     useEffect(() =>
     {
-        async function fetchData()
-        {
-            const response = await axios.get(`${ process.env.REACT_APP_API_URL }/form/`)
-            return setData(response.data)
+        if(loading){
+           
+            async function fetchData()
+            {
+                const response = await axios.get(`${ process.env.REACT_APP_API_URL }/form/`)
+                return setData(response.data)
+            }
+            fetchData();
         }
-        fetchData();
+        return ()=>{
+            setLoading(false)
+           
+        }
     }
-        , [])
+        , [loading])
 
     const handleSelect1 = (e) =>
     {
