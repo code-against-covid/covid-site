@@ -265,7 +265,7 @@ const Form = () =>
           }} aria-labelledby="customized-dialog-title" open={openError}>
            <DialogContent dividers>
              <Typography gutterBottom>
-             Please fill the state,resource and information section before submitting.
+             Please fill the state, resource and information section before submitting.
          </Typography>
            </DialogContent>
          </Dialog>
