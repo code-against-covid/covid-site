@@ -58,6 +58,7 @@ const Form = () =>
 {
   const [openPop, setOpenPop] = useState(false)
   const [openForm, setOpenForm] = useState(false)
+  const [openError, setOpenError] = useState(false)
   const [ip, setIp] = useState();
   const [name, setName] = useState('')
   const [state, setState] = useState('')
@@ -118,18 +119,20 @@ const Form = () =>
       ip_address: JSON.stringify(ip),
       additional_info: additional,
       created_at: date,
-    }).catch((error) =>
-    {
-      console.log(error)
-    })
-    // Set timeout for 3 seconds. Had to use settimeout cause setopenform and setopenpop would simunltaneously close together.
-    setTimeout(
+    }).then((response)=>{
+      console.log(response)
+       setTimeout(
       () =>
       {
         setOpenForm(false)
       }, 3500
     )
     setOpenPop(true);
+    }).catch((error) =>
+    {
+     setOpenError(true)
+    })    
+    // Set timeout for 3 seconds. Had to use settimeout cause setopenform and setopenpop would simunltaneously close together.
   };
   const today = new Date();
   const date = today.getDate() + '-' + month[today.getMonth()]; //For capturing the post date.
@@ -255,6 +258,20 @@ const Form = () =>
           }} color="primary">
             Close
                   </Button>
+
+                  
+        <Dialog onClose={() =>
+         {
+           setOpenError(false)
+          }} aria-labelledby="customized-dialog-title" open={openError}>
+           <DialogContent dividers>
+             <Typography gutterBottom>
+             Please fill the state,resource and information section before submitting.
+         </Typography>
+           </DialogContent>
+         </Dialog>
+         
+
         </DialogActions>
       </Dialog>
     </div>
