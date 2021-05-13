@@ -120,7 +120,6 @@ const Form = () =>
       additional_info: additional,
       created_at: date,
     }).then((response)=>{
-      console.log(response)
        setTimeout(
       () =>
       {
