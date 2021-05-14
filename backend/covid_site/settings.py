@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-from datetime import timedelta
 
 import json
 from django.core.exceptions import ImproperlyConfigured
@@ -22,23 +21,23 @@ from django.core.exceptions import ImproperlyConfigured
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-with open(os.path.join(BASE_DIR, '../secrets.json')) as secrets_file:
-    secrets = json.load(secrets_file)
+# with open(os.path.join(BASE_DIR, '../secrets.json')) as secrets_file:
+#     secrets = json.load(secrets_file)
 
 
-def get_secret(setting, secrets=secrets):
-    """Get secret setting or fail with ImproperlyConfigured"""
-    try:
-        return secrets[setting]
-    except KeyError:
-        raise ImproperlyConfigured("Set the {} setting".format(setting))
+# def get_secret(setting, secrets=secrets):
+#     """Get secret setting or fail with ImproperlyConfigured"""
+#     try:
+#         return secrets[setting]
+#     except KeyError:
+#         raise ImproperlyConfigured("Set the {} setting".format(setting))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = get_secret('SECRET_KEY')
+SECRET_KEY = '#fj7@9fn@482F92y3F9274F3462dhaaya#%&2jf8@4926yG6937%&*@f^^8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -126,8 +125,8 @@ DATABASES = {
     'default': {
         'ENGINE': "django.db.backends.mysql",
         'NAME': "covid-site",
-        'USER': get_secret('DB_USER'),
-        'PASSWORD': get_secret('DB_PASSWORD'),
+        'USER': 'root',
+        'PASSWORD': '208LahoreA$$',
         'PORT': 3306,
         'HOST': '127.0.0.1',
     }
