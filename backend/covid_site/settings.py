@@ -40,9 +40,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '#fj7@9fn@482F92y3F9274F3462dhaaya#%&2jf8@4926yG6937%&*@f^^8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 SECURE_HSTS_SECONDS = 31536000
 
@@ -58,13 +58,13 @@ SESSION_COOKIE_SECURE = True
 
 CSRF_COOKIE_SECURE = True
 
-# WHITENOISE_USE_FINDERS = True
+WHITENOISE_USE_FINDERS = True
 
 
 # Application definition
 
-# 'whitenoise.runserver_nostatic',
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -81,11 +81,11 @@ INSTALLED_APPS = [
     'django_otp.plugins.otp_totp',
 ]
 
-# 'whitenoise.middleware.WhiteNoiseMiddleware',
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
