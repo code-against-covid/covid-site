@@ -122,7 +122,7 @@ const Database = () =>
                                             <td>{item.state}</td>
                                             <td>{item.additional_info}</td>
                                             <td>{item.created_at}</td>
-                                            {status[item.status - 1] === 'Not Verified' ? <td style={{ background: 'red',textAlign:'center',color:'white' }}>{status[item.status - 1]}</td> : status[item.status - 1] === 'Verified' ? <td style={{ background: 'green',textAlign:'center',color:'white' }}>{status[item.status - 1]}</td> : status[item.status - 1] === 'WhatsApp Only' ? <td style={{ background: 'salmon',textAlign:'center',color:'white' }}>{status[item.status - 1]}</td> : <td style={{ background: 'lightblue',textAlign:'center',color:'white' }}>{status[item.status - 1]}</td>}
+                                            {status[item.status - 1] === 'Not Verified' ? <td style={{ background: 'red',textAlign:'center',color:'white' }}>{status[item.status - 1]}</td> : status[item.status - 1] === 'Verified' ? <td style={{ background: 'green',textAlign:'center',color:'white' }}>{status[item.status - 1]}</td> : status[item.status - 1] === 'WhatsApp Only' ? <td style={{ background: 'salmon',textAlign:'center',color:'white' }}>{status[item.status - 1]}</td> : <td style={{ background: 'blue',textAlign:'center',color:'white' }}>{status[item.status - 1]}</td>}
                                         </tr>
                                     )
                                 })}

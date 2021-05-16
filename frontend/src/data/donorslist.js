@@ -103,5 +103,29 @@ export const donorslist = [
         "email": '',
         "links": '',
     },
+    {
+        "name": "Mrs. Renu Jindal",
+        "job": '',
+        "amount": '1500',
+        "tag": "Courage is all we need. Hoping for the best.",
+        "email": '',
+        "links": '',
+    },
+    {
+        "name": "Ms. Simriti Bansal",
+        "job": 'Completing Masters in English Honors ',
+        "amount": '1500',
+        "tag": "Hope this website serves as a bridge in connecting people who are struggling.",
+        "email": '',
+        "links": '',
+    },
+    {
+        "name": "Mrs. Krishna Devi",
+        "job": '',
+        "amount": '1500',
+        "tag": "God bless the frontline workers and anyone is fighting against this virus.",
+        "email": '',
+        "links": '',
+    },
 
 ]
