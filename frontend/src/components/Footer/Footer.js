@@ -17,7 +17,7 @@ const Footer = () =>
                         <li><Link to="/help">Database</Link></li>
                         <li><Link to="/forum">Forum</Link></li>
                         <li><Link to="/team">Our Team</Link></li>
-                        <li><Link to="/donors">Donors List</Link></li>
+                        <li><Link to="/donors">Contributors</Link></li>
                     </ul>
                 </div>
             </div>

@@ -104,7 +104,7 @@ const Form = () =>
   {
     if(resource && additional && state){
     axios.post(`${ process.env.REACT_APP_API_URL }/form/`, {
-          name: name ? name : null,
+          name: name ? name : 'Anonymous',
           state: state,
           resource: resource,
           status: 1,

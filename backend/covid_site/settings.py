@@ -40,23 +40,24 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '#fj7@9fn@482F92y3F9274F3462dhaaya#%&2jf8@4926yG6937%&*@f^^8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
 SECURE_HSTS_SECONDS = 31536000
 
-SECURE_SSL_REDIRECT = False
+# SECURE_SSL_REDIRECT = False
 
 SECURE_HSTS_PRELOAD = True
 
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
+# In development, True; False in prod.
 CORS_ORIGIN_ALLOW_ALL = True
 
-SESSION_COOKIE_SECURE = True
+# SESSION_COOKIE_SECURE = True
 
-CSRF_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
 
 WHITENOISE_USE_FINDERS = True
 
@@ -97,7 +98,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'covid_site.urls'
 
-CORS_ORIGIN_ALLOW_ALL = True
 
 TEMPLATES = [
     {
@@ -169,14 +169,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 
 STATIC_URL = '/static/'
-STATIC_URL = '/static/'
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'build/static')
 ]
