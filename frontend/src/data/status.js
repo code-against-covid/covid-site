@@ -1,6 +1,6 @@
 export const status = [
-    "Not Verified",
-    "Verified",
+    "Unchecked",
+    "Working",
     "Not Working",
     "WhatsApp Only"
 ]

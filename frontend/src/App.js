@@ -4,7 +4,7 @@ import Footer from './components/Footer/Footer';
 import Drawer from './components/Drawer/Drawer';
 import Form from './components/form/Form'
 import Organization from './components/organization/Organization'
-import News from './components/news/News'
+import Initiative from './components/news/News'
 
 const App = () =>
 {
@@ -13,7 +13,7 @@ const App = () =>
       <div className="app">
         <Drawer />
         <Form />
-        <News />
+        <Initiative />
         <Organization />
         <Footer />
       </div>

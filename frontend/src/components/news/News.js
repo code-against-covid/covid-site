@@ -36,16 +36,31 @@ const News = () =>
     <div className={`${ styles.frontpagecont }`}>
       <div className={`${ styles.leftbox }`}>
         <div className={`${ styles.heading }`}>
-          News and updates
+         Helpful Initiatives By People
             </div>
-        <ul className={`${ styles.announcementcontent }`}>
+  
+          <div className={`${ styles.orgcardsec }`}>
           {announcement.map((item) =>
           {
             return (
-              <li className={`${ styles.announcementlines }`} key={item.id}>{item.name}</li>
-            );
-          })}
-        </ul>
+               <div className={`${ styles.orgcard }`} key={item.id}>
+              <div className={`${ styles.orgicon }`}>
+              </div>
+              <div onClick={()=>{
+                window.open(item.link)
+              }} className={`${ styles.orgname }`}>
+                <h3>{item.name}</h3>
+              </div>
+              <div className={`${ styles.orgcontact }`}>
+                <p>
+                  {item.description}
+                </p>
+
+              </div>
+            </div>
+              );
+            })}
+            </div>
       </div>
     </div>
   )
