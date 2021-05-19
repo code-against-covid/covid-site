@@ -6,6 +6,7 @@
 }
 
 .heading {
+  color: whitesmoke;
   text-align: center;
   font-size: 70px;
   font-family: "oxygen";
@@ -42,8 +43,8 @@
   padding: 0 0 5% 0;
 }
 
-.orgname{
-font-weight: bold;
+.orgname {
+  font-weight: bold;
 }
 
 .orgcontact {
@@ -55,8 +56,8 @@ font-weight: bold;
   text-align: justify;
 }
 
-.orgdesignationtag{
-margin-top: 4%;
+.orgdesignationtag {
+  margin-top: 4%;
 }
 
 @media only screen and (max-width: 700px) {

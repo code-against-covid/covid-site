@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-from datetime import timedelta
 
 import json
 from django.core.exceptions import ImproperlyConfigured
@@ -38,32 +37,34 @@ def get_secret(setting, secrets=secrets):
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = get_secret('SECRET_KEY')
+SECRET_KEY = '#fj7@9fn@482F92y3F9274F3462dhaaya#%&2jf8@4926yG6937%&*@f^^8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 SECURE_HSTS_SECONDS = 31536000
 
-SECURE_SSL_REDIRECT = False
+# SECURE_SSL_REDIRECT = False
 
 SECURE_HSTS_PRELOAD = True
 
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 # CORS_ORIGIN_ALLOW_ALL = True
 
-# SESSION_COOKIE_SECURE = True
+# In development, True; False in prod.
+CORS_ORIGIN_ALLOW_ALL = True
 
 # CSRF_COOKIE_SECURE = True
+
+CSRF_COOKIE_SECURE = True
 
 WHITENOISE_USE_FINDERS = True
 
 
 # Application definition
 
-# 'whitenoise.runserver_nostatic',
 INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.admin',
@@ -82,7 +83,6 @@ INSTALLED_APPS = [
     'django_otp.plugins.otp_totp',
 ]
 
-# 'whitenoise.middleware.WhiteNoiseMiddleware',
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -125,8 +125,8 @@ DATABASES = {
     'default': {
         'ENGINE': "django.db.backends.mysql",
         'NAME': "covid-site",
-        'USER': get_secret('DB_USER'),
-        'PASSWORD': get_secret('DB_PASSWORD'),
+        'USER': get_secret(DB_USER),
+        'PASSWORD': get_secret(DB_PASSWORD),
         'PORT': 3306,
         'HOST': '127.0.0.1',
     }
@@ -168,8 +168,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-
-STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

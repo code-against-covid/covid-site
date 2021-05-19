@@ -102,35 +102,30 @@ const Form = () =>
   // handlesubmit for the submit button in the post and display thank you message.
   const handleSubmit = () =>
   {
-    // var additionalinfo = additional;
-    // if (address.length > 0)
-    // {
-    //   additionalinfo = `Address: ${ address }, ` + additionalinfo;
-    // }
-    // if (mobile.length > 0)
-    // {
-    //   additionalinfo = `Mobile: ${ mobile }, ` + additionalinfo;
-    // }
+    if(resource && additional && state){
     axios.post(`${ process.env.REACT_APP_API_URL }/form/`, {
-      name: name ? name : null,
-      state: state,
-      resource: resource,
-      status: 1,
-      ip_address: JSON.stringify(ip),
-      additional_info: additional,
-      created_at: date,
-    }).then((response)=>{
-       setTimeout(
-      () =>
-      {
-        setOpenForm(false)
-      }, 3500
-    )
-    setOpenPop(true);
-    }).catch((error) =>
-    {
-     setOpenError(true)
-    })    
+          name: name ? name : 'Anonymous',
+          state: state,
+          resource: resource,
+          status: 1,
+          ip_address: JSON.stringify(ip),
+          additional_info: additional,
+          created_at: date,
+        }).then((response)=>{
+          setTimeout(
+          () =>
+          {
+            setOpenForm(false)
+          }, 3500
+        )
+        setOpenPop(true);
+        }).catch((error)=>{
+          console.log(error)
+        })
+    }
+    else {
+      setOpenError(true)   
+    }
     // Set timeout for 3 seconds. Had to use settimeout cause setopenform and setopenpop would simunltaneously close together.
   };
   const today = new Date();

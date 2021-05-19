@@ -59,6 +59,9 @@ const Team = () =>
             <p>
               B.E. Mechanical Engineering, 4th Year
             </p>
+            <p>
+             ayaachi712@gmail.com
+            </p>
           </div>
         </div>
 
@@ -79,6 +82,9 @@ const Team = () =>
                     </p>
             <p>
               BSc Honors Astrophysics, 3rd Year
+                    </p>
+            <p>
+             dhananjhay03@gmail.com
                     </p>
           </div>
         </div>

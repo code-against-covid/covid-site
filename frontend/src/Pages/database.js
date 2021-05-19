@@ -5,12 +5,23 @@ import axios from 'axios'
 import { resources } from '../data/resources'
 import { states } from '../data/states'
 import { status } from '../data/status'
+import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import Button from '@material-ui/core/Button';
 import Footer from '../components/Footer/Footer';
 import Drawer from '../components/Drawer/Drawer';
 import styles from './styles/database.module.css';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import Typography from '@material-ui/core/Typography';
+import MuiDialogContent from '@material-ui/core/DialogContent';
+
+const DialogContent = withStyles((theme) => ({
+  root: {
+    padding: theme.spacing(2),
+  },
+}))(MuiDialogContent);
 
 
 const Database = () =>
@@ -19,6 +30,7 @@ const Database = () =>
     const [data, setData] = useState([])
     const [state, setState] = useState('')
     const [resource, setResource] = useState('')
+    const [alert, setAlert] = useState(true)
     const [loading, setLoading] = useState(true)
 
     useEffect(() =>
@@ -96,7 +108,7 @@ const Database = () =>
                 <div>
                     <div className={`${ styles.dbwarning }`}>
                         <h3>Warning!</h3>
-                        <p>WE ACCEPT NO RESPONSIBILITY OR LIABILITY FOR THE ACCURACY OR THE COMPLETENESS OF THE INFORMATION CONTAINED IN THIS WEBSITE. UNDER NO CIRCUMSTANCES WILL WE BE HELD RESPONSIBLE OR LIABLE IN ANY WAY FOR ANY CLAIMS, DAMAGES, LOSSES, EXPENSES, COSTS OR LIABILITIES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, ANY DIRECT OR INDIRECT DAMAGES FOR LOSS OF PROFITS, BUSINESS INTERRUPTION OR LOSS OF INFORMATION) RESULTING OR ARISING DIRECTLY OR INDIRECTLY FROM YOUR USE OF OR INABILITIY TO USE THIS WEBSITE OR ANY WEBSITES LINKED TO IT, OR FROM YOUR RELIANCE ON THE INFORMATION AND MATERIAL ON THIS WEBSITE, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES IN ADVANCE. WE ARE JUST TRYING TO HELP BY PROVIDING A PLATFORM FOR EVERYONE TO BENEFIT FROM. WHILE WE TRY TO VERIFY THE INFORMATION TO THE BEST OF OUR ABILITIES, WE CANNOT GAURANTEE THAT THERE ARE NO MISTAKES OR ERRORS. SHOULD YOU DECIDE TO ACT UPON ANY OF THE INFORMATION ON THIS WEBSITE, YOU DO SO AT YOUR OWN RISK.</p>
+                        <p>WE ACCEPT NO RESPONSIBILITY OR LIABILITY FOR THE ACCURACY OR THE COMPLETENESS OF THE INFORMATION CONTAINED IN THIS WEBSITE. UNDER NO CIRCUMSTANCES WILL WE BE HELD RESPONSIBLE OR LIABLE IN ANY WAY FOR ANY CLAIMS, DAMAGES, LOSSES, EXPENSES, COSTS OR LIABILITIES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, ANY DIRECT OR INDIRECT DAMAGES FOR LOSS OF PROFITS, BUSINESS INTERRUPTION OR LOSS OF INFORMATION) RESULTING OR ARISING DIRECTLY OR INDIRECTLY FROM YOUR USE OF OR INABILITIY TO USE THIS WEBSITE OR ANY WEBSITES LINKED TO IT, OR FROM YOUR RELIANCE ON THE INFORMATION AND MATERIAL ON THIS WEBSITE, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES IN ADVANCE. WE ARE JUST TRYING TO HELP BY PROVIDING A PLATFORM FOR EVERYONE TO BENEFIT FROM. WHILE WE TRY TO VERIFY THE INFORMATION TO THE BEST OF OUR ABILITIES, WE CANNOT GUARANTEE THAT THERE ARE NO MISTAKES OR ERRORS. SHOULD YOU DECIDE TO ACT UPON ANY OF THE INFORMATION ON THIS WEBSITE, YOU DO SO AT YOUR OWN RISK.</p>
                     </div>
                 </div>
                 {
@@ -122,7 +134,7 @@ const Database = () =>
                                             <td>{item.state}</td>
                                             <td>{item.additional_info}</td>
                                             <td>{item.created_at}</td>
-                                            {status[item.status - 1] === 'Not Verified' ? <td style={{ background: 'red' }}>{status[item.status - 1]}</td> : status[item.status - 1] === 'Verified' ? <td style={{ background: 'green' }}>{status[item.status - 1]}</td> : status[item.status - 1] === 'WhatsApp Only' ? <td style={{ background: 'yellow' }}>{status[item.status - 1]}</td> : <td style={{ background: 'lightblue' }}>{status[item.status - 1]}</td>}
+                                            {status[item.status - 1] === 'Unchecked' ? <td style={{ background: 'red',textAlign:'center',color:'white' }}>{status[item.status - 1]}</td> : status[item.status - 1] === 'Working' ? <td style={{ background: 'green',textAlign:'center',color:'white' }}>{status[item.status - 1]}</td> : status[item.status - 1] === 'WhatsApp Only' ? <td style={{ background: 'salmon',textAlign:'center',color:'white' }}>{status[item.status - 1]}</td> : <td style={{ background: 'blue',textAlign:'center',color:'white' }}>{status[item.status - 1]}</td>}
                                         </tr>
                                     )
                                 })}
@@ -132,7 +144,27 @@ const Database = () =>
                 }
 
             </div>
+           
+             <Dialog onClose={() =>
+         {
+           setAlert(false)
+          }} 
+          aria-labelledby="customized-dialog-title" open={alert}>
+           <DialogContent dividers>
+             <Typography style={{fontSize:'20px'}} gutterBottom >
+             PLEASE BEWARE OF FRAUDS AND ILLEGAL SELLERS OF SUCH RESOURCES. CONFIRM EACH PERSON'S IDENTITY AND MAKE SURE THAT THEIR BUSINESS IS LEGIT.DON'T MAKE ANY ADVANCE PAYMENTS BEFORE VERIFYING EVERY POSSIBLE DETAILS ISSUED BY THE SELLER !
+         </Typography>
+           </DialogContent>
+           <DialogActions>
+          <Button autoFocus onClick={()=>{
+              setAlert(false)
+          }} color="primary">
+            close
+          </Button>
+        </DialogActions>
+         </Dialog>
             <Footer />
+
 
         </>
     )

@@ -5,4 +5,4 @@ from .models import Announcement
 class AnnouncementSerializer(serializers.ModelSerializer):
     class Meta:
         model = Announcement
-        fields = ('id', 'name')
+        fields = ('id', 'name', 'link', 'description')
