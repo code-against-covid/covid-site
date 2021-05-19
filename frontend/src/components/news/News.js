@@ -3,12 +3,12 @@ import '../../App.css';
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import styles from './styles/News.module.css';
-
+import {color} from '../../data/color'
 const News = () =>
 {
   const [announcement, setAnnouncement] = useState([])
   const [loading, setLoading] = useState(true)
-
+  
 
   // For fetching announcements and organizations details from backend.
   useEffect(() =>
@@ -39,28 +39,29 @@ const News = () =>
          Helpful Initiatives By People
             </div>
   
-          <div className={`${ styles.orgcardsec }`}>
-          {announcement.map((item) =>
-          {
+        <div style={{display:'flex',flexWrap:'wrap',justifyContent:'space-evenly'}}>
+          {announcement.map((item)=>{
             return (
-               <div className={`${ styles.orgcard }`} key={item.id}>
-              <div className={`${ styles.orgicon }`}>
-              </div>
-              <div onClick={()=>{
-                window.open(item.link)
-              }} className={`${ styles.orgname }`}>
-                <h3>{item.name}</h3>
-              </div>
-              <div className={`${ styles.orgcontact }`}>
-                <p>
-                  {item.description}
-                </p>
-
-              </div>
-            </div>
-              );
-            })}
-            </div>
+              
+         <div key={item.id} className={`${styles.card}`} style={{background:`${color[item.id]}`,flexBasis:'auto'}}>
+<p className={`${styles.carddets}`} style={{cursor:'pointer',fontSize:'40px'}}>
+  {item.name}
+  </p>
+<p className={`${styles.carddets}`}>
+  {item.description}
+  </p>
+  
+  <div style={{textAlign:'center'}}>
+    <button style={{fontSize:'30px',width:'80%',margin:'8px',cursor:'pointer',background:'salmon'}} onClick={()=>{
+  window.open(item.link)
+}}>
+      Explore
+      </button>
+    </div>
+         </div>
+            )
+          })}
+        </div>
       </div>
     </div>
   )

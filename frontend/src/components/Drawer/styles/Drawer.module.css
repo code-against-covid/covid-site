@@ -1,44 +1,42 @@
 @font-face {
-    font-family: cheappine;
-    src: url(../../../assets/fonts/Cheap\ Pine\ Regular.otf);
+  font-family: cheappine;
+  src: url(../../../assets/fonts/Cheap\ Pine\ Regular.otf);
 }
 
 @font-face {
-    font-family: oxygen;
-    src: url(../../../assets/fonts/Oxygen/Oxygen-Bold.ttf);
+  font-family: oxygen;
+  src: url(../../../assets/fonts/Oxygen/Oxygen-Bold.ttf);
 }
 
 @font-face {
-    font-family: lotus;
-    src: url(../../../assets/fonts/Lotuseater-d9A46.otf);
+  font-family: lotus;
+  src: url(../../../assets/fonts/Lotuseater-d9A46.otf);
 }
 
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;900&display=swap");
 
 /* .navigation{
     background-color: rgba(255, 255, 255,0.5);
 } */
 
-.menutogglediv{
-    padding: 2.5%;
-    display: flex;
-    flex-wrap: no-wrap;
-    align-items: center;
+.menutogglediv {
+  padding: 2.5%;
+  display: flex;
+  flex-wrap: no-wrap;
+  align-items: center;
 }
 
-
-.mainheading{
-    text-align: center;
-    font-size: 70px;
-    font-family: 'oxygen';
-    margin: auto;
-    color: rgb(168, 0, 0);
-    /* color: rgb(19, 66, 51); */
+.mainheading {
+  text-align: center;
+  font-size: 80px;
+  font-family: "oxygen";
+  margin: auto;
+  color: black;
+  /* color: rgb(19, 66, 51); */
 }
 
 @media only screen and (max-width: 700px) {
-
-    .mainheading {
-      font-size: 30px;
-    }
-  }  
+  .mainheading {
+    font-size: 30px;
+  }
+}

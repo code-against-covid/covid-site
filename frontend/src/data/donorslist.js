@@ -35,7 +35,7 @@ export const donorslist = [
         "name": "Mr. Mahesh Aggarwal",
         "job": '',
         "amount": '1000',
-        "tag": 'Manglum Properties, Vasundhara Enclave',
+        "tag": 'Manglum Builder, Vasundhara Enclave',
         "email": '',
         "links": '',
     },
