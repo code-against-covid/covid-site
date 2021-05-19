@@ -3,7 +3,6 @@ import '../../App.css';
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import styles from './styles/News.module.css';
-import {color} from '../../data/color'
 const News = () =>
 {
   const [announcement, setAnnouncement] = useState([])
@@ -43,7 +42,7 @@ const News = () =>
           {announcement.map((item)=>{
             return (
               
-         <div key={item.id} className={`${styles.card}`} style={{background:`${color[item.id]}`,flexBasis:'auto'}}>
+         <div key={item.id} className={`${styles.card}`} style={{background:"#FACAB6",flexBasis:'auto'}}>
 <p className={`${styles.carddets}`} style={{cursor:'pointer',fontSize:'40px'}}>
   {item.name}
   </p>
@@ -52,7 +51,7 @@ const News = () =>
   </p>
   
   <div style={{textAlign:'center'}}>
-    <button style={{fontSize:'30px',width:'80%',margin:'8px',cursor:'pointer',background:'salmon'}} onClick={()=>{
+    <button style={{fontSize:'30px',width:'80%',margin:'8px',cursor:'pointer',background:'black',color:'white'}} onClick={()=>{
   window.open(item.link)
 }}>
       Explore
