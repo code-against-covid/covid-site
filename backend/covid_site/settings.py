@@ -22,7 +22,7 @@ from django.core.exceptions import ImproperlyConfigured
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-with open(os.path.join(BASE_DIR, '../secrets.json')) as secrets_file:
+with open(os.path.join(BASE_DIR, 'secrets.json')) as secrets_file:
     secrets = json.load(secrets_file)
 
 
@@ -52,20 +52,20 @@ SECURE_SSL_REDIRECT = False
 SECURE_HSTS_PRELOAD = True
 
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# CORS_ORIGIN_ALLOW_ALL = True
 
-CORS_ORIGIN_ALLOW_ALL = True
+# SESSION_COOKIE_SECURE = True
 
-SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
 
-CSRF_COOKIE_SECURE = True
-
-# WHITENOISE_USE_FINDERS = True
+WHITENOISE_USE_FINDERS = True
 
 
 # Application definition
 
 # 'whitenoise.runserver_nostatic',
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -87,6 +87,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -97,8 +98,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'covid_site.urls'
-
-CORS_ORIGIN_ALLOW_ALL = True
 
 TEMPLATES = [
     {
@@ -177,7 +176,7 @@ STATIC_URL = '/static/'
 
 
 STATIC_URL = '/static/'
-STATIC_URL = '/static/'
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'build/static')
 ]
