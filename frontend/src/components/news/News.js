@@ -37,16 +37,16 @@ const News = () =>
     <div className={`${ styles.frontpagecont }`}>
       <div className={`${ styles.leftbox }`}>
         <div className={`${ styles.heading }`}>
-          Helpful Initiatives By People
-            </div>
+          Other Helpful Initiatives
+        </div>
 
-        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly' }}>
+        <div className={`${ styles.announcementsection }`}>
           {announcement.map((item) =>
           {
             return (
 
-              <div key={item.id} className={`${ styles.card }`} style={{ background: "#FACAB6", flexBasis: 'auto' }}>
-                <p className={`${ styles.carddets }`} style={{ cursor: 'pointer', fontSize: '40px' }}>
+              <div key={item.id} className={`${ styles.card }`} >
+                <p className={`${ styles.cardname }`}>
                   {item.name}
                 </p>
                 <p className={`${ styles.carddets }`}>
@@ -54,7 +54,7 @@ const News = () =>
                 </p>
 
                 <div style={{ textAlign: 'center' }}>
-                  <button style={{ fontSize: '30px', width: '80%', margin: '8px', cursor: 'pointer', background: 'black', color: 'white' }} onClick={() =>
+                  <button className={`${ styles.explorebtn }`} onClick={() =>
                   {
                     window.open(item.link)
                   }}>

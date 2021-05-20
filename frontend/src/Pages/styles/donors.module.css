@@ -29,11 +29,12 @@
   background-color: #fff8f8;
   width: 300px;
   padding: 1.8%;
-  box-shadow: 3px 3px 4px black;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   margin: 2%;
-  height: 200px;
+  border-radius: 4px;
   line-height: 20px;
 }
+
 
 .orgheading {
   text-align: center;
