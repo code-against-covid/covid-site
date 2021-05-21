@@ -134,7 +134,7 @@ export default function TemporaryDrawer()
                 <React.Fragment key={anchor}>
                     <div className={`${ styles.menutogglediv }`}>
                         <div className={`${ styles.menubtn }`}>
-                            <Button onClick={toggleDrawer(anchor, true)}><MenuIcon fontSize="large" color="primary" /></Button>
+                            <Button onClick={toggleDrawer(anchor, true)}><MenuIcon fontSize="large" style={{ color: "white" }} /></Button>
                         </div>
                         <div className={`${ styles.mainheading }`}>
                             United Against Covid

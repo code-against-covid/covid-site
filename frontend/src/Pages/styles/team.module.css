@@ -12,12 +12,13 @@
   width: 80%;
   margin: 0 auto;
   padding-bottom: 2%;
-  border-bottom: 4px solid #000;
+  border-bottom: 4px solid rgb(133, 0, 0);;
+  color: rgb(133, 0, 0);
   /* color: rgb(19, 66, 51); */
 }
 
 .orgcardsec {
-  margin: 7% 0;
+  margin: 4% 0;
   padding: 0 3% 3% 3% 3%;
   display: flex;
   flex-wrap: wrap;
@@ -67,6 +68,9 @@
   }
   .leftbox {
     width: 90%;
+  }
+  .orgcard {
+    margin-bottom: 30px;
   }
   /* .frontpagecont {
       margin: 0 0 80% 0;

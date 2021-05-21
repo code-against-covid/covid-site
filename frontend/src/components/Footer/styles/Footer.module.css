@@ -26,6 +26,16 @@
 }
 .quicklinks li {
   margin-bottom: 10px;
+  color: white;
+}
+
+.quicklinks a {
+  text-decoration: none;
+  color: rgb(223, 207, 207);
+}
+
+.quicklinks a:hover {
+  color: rgb(255,255,255);
 }
 
 .aboutheading {
@@ -37,7 +47,7 @@
 .quickheading {
   border-bottom: 2px solid red;
   padding: 4% 10%;
-  margin: 5% 0 10% 0;
+  margin: 0 0 10% 0;
 }
 
 .copyright {

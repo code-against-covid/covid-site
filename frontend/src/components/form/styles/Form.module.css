@@ -1,5 +1,6 @@
 .frontpagehome {
   margin-bottom: 150px;
+  margin-top: 150px;
 }
 
 .frontpageheadingsecondary {
@@ -8,8 +9,8 @@
   font-size: 70px;
   text-align: center;
   margin: 5% auto;
-  color: rgb(0, 0, 0);
-  border-bottom: 4px solid #000;
+  color: rgb(133, 0, 0);
+  /* border-bottom: 4px solid #000; */
   /* border-bottom: 4px solid #000;
     padding-bottom: 2%; */
 }
@@ -28,6 +29,7 @@
 @media only screen and (max-width: 700px) {
   .frontpagehome {
     margin-bottom: 0px;
+    margin-top: 50px;
   }
 
   .heading {

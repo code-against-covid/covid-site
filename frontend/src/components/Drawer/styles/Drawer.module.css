@@ -20,25 +20,27 @@
 } */
 
 .menutogglediv {
-  padding: 2%;
-  margin-bottom: 10px;
+  padding: 1% 2%;
+  margin-bottom: 70px;
   display: flex;
   flex-wrap: no-wrap;
   align-items: center;
-  background-color: lightseagreen;
+  background: rgba(0, 0, 0, 0.85);
+  color: #f0f0f0;
+  box-shadow: 0 0 3px 3px #000000;
 }
 
 .mainheading {
   text-align: center;
-  font-size: 90px;
+  font-size: 80px;
   font-family: "oxygen";
   margin: auto;
-  color: rgb(0, 0, 0);
+  
   /* color: rgb(19, 66, 51); */
 }
 
 @media only screen and (max-width: 700px) {
   .mainheading {
-    font-size: 30px;
+    font-size: 40px;
   }
 }
