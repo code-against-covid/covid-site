@@ -64,7 +64,9 @@ const Database = () =>
     const handleSubmit = async () =>
     {
         const response = await axios.get(`${ process.env.REACT_APP_API_URL }/form/`)
-        resource ? setData(response.data.filter((item) => item.state === state && item.resource === resource)) : setData(response.data.filter((item) => item.state === state))
+        resource ? state ? setData(response.data.filter((item) => item.state.toLowerCase() === state.toLowerCase() && item.resource.toLowerCase() === resource.toLowerCase())) : setData(response.data.filter((item)=> item.resource.toLowerCase() === resource.toLowerCase()))
+         : state ? setData(response.data.filter((item)=> item.state.toLowerCase() === state.toLowerCase())) :
+         setData(response.data)
     }
 
     return (

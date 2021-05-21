@@ -13,24 +13,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 
-import json
-from django.core.exceptions import ImproperlyConfigured
-
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-with open(os.path.join(BASE_DIR, 'secrets.json')) as secrets_file:
-    secrets = json.load(secrets_file)
-
-
-def get_secret(setting, secrets=secrets):
-    """Get secret setting or fail with ImproperlyConfigured"""
-    try:
-        return secrets[setting]
-    except KeyError:
-        raise ImproperlyConfigured("Set the {} setting".format(setting))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -46,7 +32,7 @@ ALLOWED_HOSTS = ['*']
 
 SECURE_HSTS_SECONDS = 31536000
 
-# SECURE_SSL_REDIRECT = False
+SECURE_SSL_REDIRECT = False
 
 SECURE_HSTS_PRELOAD = True
 
@@ -56,7 +42,6 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 # In development, True; False in prod.
 CORS_ORIGIN_ALLOW_ALL = True
 
-# CSRF_COOKIE_SECURE = True
 
 CSRF_COOKIE_SECURE = True
 
