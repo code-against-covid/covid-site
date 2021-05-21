@@ -30,3 +30,18 @@
   margin: 1%;
   border-radius: 2%;
 }
+
+@media only screen and (max-width: 700px) {
+  .leftbox {
+    padding-top: 50px;
+  }
+  .heading {
+    font-size: 30px;
+  }
+  .leftbox {
+    width: 90%;
+  }
+  /* .frontpagecont {
+      margin: 0 0 80% 0;
+    } */
+}

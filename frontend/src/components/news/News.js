@@ -35,14 +35,14 @@ const News = () =>
     <div className={`${ styles.frontpagecont }`}>
       <div className={`${ styles.leftbox }`}>
         <div className={`${ styles.heading }`}>
-         Helpful Initiatives By People
+         Helpful Initiatives
             </div>
   
         <div style={{display:'flex',flexWrap:'wrap',justifyContent:'space-evenly'}}>
           {announcement.map((item)=>{
             return (
               
-         <div key={item.id} className={`${styles.card}`} style={{background:"#FACAB6",flexBasis:'auto'}}>
+         <div key={item.id} className={`${styles.card}`} style={{background:"#FACAB6"}}>
 <p className={`${styles.carddets}`} style={{cursor:'pointer',fontSize:'40px'}}>
   {item.name}
   </p>
