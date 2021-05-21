@@ -149,7 +149,9 @@ html {
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&family=Playfair+Display:wght@400;900&display=swap");
 
 .layout {
-  background: #f3ebe8;
+  background: #fff;
+
+
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;

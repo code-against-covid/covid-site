@@ -12,23 +12,69 @@
   text-align: center;
   font-size: 70px;
   font-family: "oxygen";
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   padding-bottom: 2%;
   border-bottom: 4px solid #000;
   /* color: rgb(19, 66, 51); */
 }
 
+.announcementsection {
+  margin: 8% 0;
+}
+
+.cardname {
+  margin-top: 2%;
+  font-size: 35px;
+  font-weight: bold;
+}
+
 .carddets {
-  text-align: center;
-  font-size: 20px;
   margin: 2%;
 }
 
 .card {
-  opacity: 0.8;
-  margin: 1%;
-  border-radius: 2%;
+  background-color: #f1f1f1;
+  margin: 0 2% 4% 2%;
+  padding: 2%;
+  font-size: 25px;
+  line-height: 30px;
+  box-shadow: 0 0 3px 3px rgb(236, 233, 233);
+}
+
+.explorebtn {
+  padding: 2% 9%;
+  cursor: pointer;
+  font-size: 20px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.85);
+  border-radius: 5px;
+}
+.explorebtn:hover {
+  background-color: rgba(0, 0, 0, 1);
+}
+
+@media only screen and (max-width: 700px) {
+  .leftbox {
+    padding-top: 50px;
+  }
+  .heading {
+    font-size: 30px;
+  }
+  .leftbox {
+    width: 90%;
+  }
+
+  .cardname {
+    font-size: 25px;
+  }
+
+  .carddets {
+    font-size: 17px;
+  }
+  /* .frontpagecont {
+      margin: 0 0 80% 0;
+    } */
 }
 
 @media only screen and (max-width: 700px) {

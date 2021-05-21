@@ -20,18 +20,20 @@
 } */
 
 .menutogglediv {
-  padding: 2.5%;
+  padding: 2%;
+  margin-bottom: 10px;
   display: flex;
   flex-wrap: no-wrap;
   align-items: center;
+  background-color: lightseagreen;
 }
 
 .mainheading {
   text-align: center;
-  font-size: 80px;
+  font-size: 90px;
   font-family: "oxygen";
   margin: auto;
-  color: black;
+  color: rgb(0, 0, 0);
   /* color: rgb(19, 66, 51); */
 }
 
