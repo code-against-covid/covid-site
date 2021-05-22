@@ -49,10 +49,10 @@
 }
 
 .tablecontainer {
-  overflow-x: auto;
+  overflow-x: scroll;
   margin: 0 2% 2% 2%;
   width: 95vw;
-  min-width: 1000px;
+  /* min-width: 1000px; */
 }
 
 .dbtable {
@@ -62,7 +62,7 @@
   background: #fff;
   table-layout: fixed;
   line-height: 20px;
-  /* min-width: 1000px; */
+  min-width: 1100px;
   width: 100%;
 }
 
