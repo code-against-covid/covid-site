@@ -18,9 +18,9 @@ import Typography from '@material-ui/core/Typography';
 import MuiDialogContent from '@material-ui/core/DialogContent';
 
 const DialogContent = withStyles((theme) => ({
-  root: {
-    padding: theme.spacing(2),
-  },
+    root: {
+        padding: theme.spacing(2),
+    },
 }))(MuiDialogContent);
 
 
@@ -35,8 +35,9 @@ const Database = () =>
 
     useEffect(() =>
     {
-        if(loading){
-           
+        if (loading)
+        {
+
             async function fetchData()
             {
                 const response = await axios.get(`${ process.env.REACT_APP_API_URL }/form/`)
@@ -44,9 +45,10 @@ const Database = () =>
             }
             fetchData();
         }
-        return ()=>{
+        return () =>
+        {
             setLoading(false)
-           
+
         }
     }
         , [loading])
@@ -64,9 +66,9 @@ const Database = () =>
     const handleSubmit = async () =>
     {
         const response = await axios.get(`${ process.env.REACT_APP_API_URL }/form/`)
-        resource ? state ? setData(response.data.filter((item) => item.state.toLowerCase() === state.toLowerCase() && item.resource.toLowerCase() === resource.toLowerCase())) : setData(response.data.filter((item)=> item.resource.toLowerCase() === resource.toLowerCase()))
-         : state ? setData(response.data.filter((item)=> item.state.toLowerCase() === state.toLowerCase())) :
-         setData(response.data)
+        resource ? state ? setData(response.data.filter((item) => item.state.toLowerCase() === state.toLowerCase() && item.resource.toLowerCase() === resource.toLowerCase())) : setData(response.data.filter((item) => item.resource.toLowerCase() === resource.toLowerCase()))
+            : state ? setData(response.data.filter((item) => item.state.toLowerCase() === state.toLowerCase())) :
+                setData(response.data)
     }
 
     return (
@@ -136,7 +138,7 @@ const Database = () =>
                                             <td>{item.state}</td>
                                             <td>{item.additional_info}</td>
                                             <td>{item.created_at}</td>
-                                            {status[item.status - 1] === 'Unchecked' ? <td style={{ background: 'red',textAlign:'center',color:'white' }}>{status[item.status - 1]}</td> : status[item.status - 1] === 'Working' ? <td style={{ background: 'green',textAlign:'center',color:'white' }}>{status[item.status - 1]}</td> : status[item.status - 1] === 'WhatsApp Only' ? <td style={{ background: 'salmon',textAlign:'center',color:'white' }}>{status[item.status - 1]}</td> : <td style={{ background: 'blue',textAlign:'center',color:'white' }}>{status[item.status - 1]}</td>}
+                                            {status[item.status - 1] === 'Unchecked' ? <td style={{ background: 'red', textAlign: 'center', color: 'white' }}>{status[item.status - 1]}</td> : status[item.status - 1] === 'Working' ? <td style={{ background: 'green', textAlign: 'center', color: 'white' }}>{status[item.status - 1]}</td> : status[item.status - 1] === 'WhatsApp Only' ? <td style={{ background: 'salmon', textAlign: 'center', color: 'white' }}>{status[item.status - 1]}</td> : <td style={{ background: 'blue', textAlign: 'center', color: 'white' }}>{status[item.status - 1]}</td>}
                                         </tr>
                                     )
                                 })}
@@ -146,25 +148,26 @@ const Database = () =>
                 }
 
             </div>
-           
-             <Dialog onClose={() =>
-         {
-           setAlert(false)
-          }} 
-          aria-labelledby="customized-dialog-title" open={alert}>
-           <DialogContent dividers>
-             <Typography style={{fontSize:'20px'}} gutterBottom >
-             PLEASE BEWARE OF FRAUDS AND ILLEGAL SELLERS OF THESE RESOURCES. CONFIRM EACH PERSON'S IDENTITY AND MAKE SURE THAT THEIR BUSINESS IS LEGIT. DON'T MAKE ANY PAYMENTS IN ADVANCE BEFORE VERIFYING EVERY POSSIBLE DETAIL ISSUED BY THE SELLER !
+
+            <Dialog onClose={() =>
+            {
+                setAlert(false)
+            }}
+                aria-labelledby="customized-dialog-title" open={alert}>
+                <DialogContent dividers>
+                    <Typography style={{ fontSize: '20px' }} gutterBottom >
+                        PLEASE BEWARE OF FRAUDS AND ILLEGAL SELLERS OF THESE RESOURCES. CONFIRM EACH PERSON'S IDENTITY AND MAKE SURE THAT THEIR BUSINESS IS LEGIT. DON'T MAKE ANY PAYMENTS IN ADVANCE BEFORE VERIFYING EVERY POSSIBLE DETAIL ISSUED BY THE SELLER !
          </Typography>
-           </DialogContent>
-           <DialogActions>
-          <Button autoFocus onClick={()=>{
-              setAlert(false)
-          }} color="primary">
-            close
+                </DialogContent>
+                <DialogActions>
+                    <Button autoFocus onClick={() =>
+                    {
+                        setAlert(false)
+                    }} color="primary">
+                        close
           </Button>
-        </DialogActions>
-         </Dialog>
+                </DialogActions>
+            </Dialog>
             <Footer />
 
 

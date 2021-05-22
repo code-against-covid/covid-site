@@ -110,8 +110,8 @@ DATABASES = {
     'default': {
         'ENGINE': "django.db.backends.mysql",
         'NAME': "covid-site",
-        'USER': get_secret('DB_USER'),
-        'PASSWORD': get_secret(('DB_PASSWORD')),
+        'USER': "ayaachi",
+        'PASSWORD': "Chamber007",
         'PORT': 3306,
         'HOST': '127.0.0.1',
     }
