@@ -62,7 +62,7 @@
   background: #fff;
   table-layout: fixed;
   line-height: 20px;
-  min-width: 1100px;
+  min-width: 900px;
   width: 100%;
 }
 
@@ -89,8 +89,12 @@ tr:nth-child(even) {
   background-color: #f1f1f1;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1100px) {
   .heading {
     font-size: 30px;
+  }
+  .resourcerow {
+    width: 30%;
+    /* width: 500px; */
   }
 }
