@@ -51,6 +51,8 @@
 .tablecontainer {
   overflow-x: auto;
   margin: 0 2% 2% 2%;
+  width: 95vw;
+  min-width: 1000px;
 }
 
 .dbtable {
@@ -60,7 +62,8 @@
   background: #fff;
   table-layout: fixed;
   line-height: 20px;
-  width: 1200px;
+  /* min-width: 1000px; */
+  width: 100%;
 }
 
 td,
@@ -70,7 +73,7 @@ th {
   padding: 8px;
   overflow-wrap: break-word;
   padding: 10px;
-  width: 150px;
+  /* width: 150px; */
 }
 
 th {
@@ -79,7 +82,8 @@ th {
 }
 
 .resourcerow {
-  width: 500px;
+  width: 40%;
+  /* width: 500px; */
 }
 tr:nth-child(even) {
   background-color: #f1f1f1;
