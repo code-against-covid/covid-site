@@ -64,7 +64,9 @@ const Database = () =>
     const handleSubmit = async () =>
     {
         const response = await axios.get(`${ process.env.REACT_APP_API_URL }/form/`)
-        resource ? setData(response.data.filter((item) => item.state === state && item.resource === resource)) : setData(response.data.filter((item) => item.state === state))
+        resource ? state ? setData(response.data.filter((item) => item.state.toLowerCase() === state.toLowerCase() && item.resource.toLowerCase() === resource.toLowerCase())) : setData(response.data.filter((item)=> item.resource.toLowerCase() === resource.toLowerCase()))
+         : state ? setData(response.data.filter((item)=> item.state.toLowerCase() === state.toLowerCase())) :
+         setData(response.data)
     }
 
     return (
@@ -152,7 +154,7 @@ const Database = () =>
           aria-labelledby="customized-dialog-title" open={alert}>
            <DialogContent dividers>
              <Typography style={{fontSize:'20px'}} gutterBottom >
-             PLEASE BEWARE OF FRAUDS AND ILLEGAL SELLERS OF SUCH RESOURCES. CONFIRM EACH PERSON'S IDENTITY AND MAKE SURE THAT THEIR BUSINESS IS LEGIT.DON'T MAKE ANY ADVANCE PAYMENTS BEFORE VERIFYING EVERY POSSIBLE DETAILS ISSUED BY THE SELLER !
+             PLEASE BEWARE OF FRAUDS AND ILLEGAL SELLERS OF THESE RESOURCES. CONFIRM EACH PERSON'S IDENTITY AND MAKE SURE THAT THEIR BUSINESS IS LEGIT. DON'T MAKE ANY PAYMENTS IN ADVANCE BEFORE VERIFYING EVERY POSSIBLE DETAIL ISSUED BY THE SELLER !
          </Typography>
            </DialogContent>
            <DialogActions>
