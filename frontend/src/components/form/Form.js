@@ -19,6 +19,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Typography from '@material-ui/core/Typography';
 import style from './styles/Form.module.css';
+import {motion} from 'framer-motion'
 
 const styles = (theme) => ({
   root: {
@@ -129,9 +130,18 @@ const Form = () =>
     // Set timeout for 3 seconds. Had to use settimeout cause setopenform and setopenpop would simunltaneously close together.
   };
   const today = new Date();
-  const date = today.getDate() + '-' + month[today.getMonth()]; //For capturing the post date.
+  const date = today.getDate() + '-' + month[today.getMonth()]; 
+  const fadeLeft = {
+    hidden: {opacity:0,x:-100},
+    visible:{opacity:1,x:0}
+  }
   return (
-    <div>
+    <motion.div
+    variants={fadeLeft}
+    initial = 'hidden'
+    animate = 'visible'
+    transition = {{duration:1}}
+    >
       <div className={`${ style.frontpagehome }`}>
         <div className={`${ style.frontpageheadingsecondary }`}><h1>A RESOURCE DATABASE, MADE BY YOU FOR YOU.</h1></div>
         <div className={`${ style.frontpagebtn }`}>
@@ -268,7 +278,7 @@ const Form = () =>
 
         </DialogActions>
       </Dialog>
-    </div>
+    </motion.div>
   )
 }
 

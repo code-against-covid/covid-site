@@ -1,0 +1,27 @@
+.container {
+  background-image: url("../../assets/bg/b1.png");
+  background-size: 100%;
+}
+
+.bubble {
+  display: flex;
+}
+
+.bubble_item {
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+  width: 200px;
+  height: 200px;
+  background-color: pink;
+  border-radius: 100px;
+  margin: 20px;
+  margin-bottom: 800px;
+  word-wrap: break-word;
+}
+
+.textindiv {
+  cursor: pointer;
+  text-align: center;
+  margin-top: 40%;
+}

@@ -10,11 +10,14 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import StorageIcon from '@material-ui/icons/Storage';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import EmojiPeopleIcon from '@material-ui/icons/EmojiPeople';
 import HomeIcon from '@material-ui/icons/Home';
 import PeopleIcon from '@material-ui/icons/People';
 import ForumIcon from '@material-ui/icons/Forum';
 import MenuIcon from '@material-ui/icons/Menu';
 import styles from './styles/Drawer.module.css';
+import {motion} from 'framer-motion'
 
 const useStyles = makeStyles({
     list: {
@@ -53,13 +56,26 @@ const renderIcon = (text) =>
             </NavLink>
         );
     }
+    else if (text === 'Relax')
+    {
+        return (
+            <NavLink exact to="/blossom" key={text} activeStyle={{ color: "blue" }} style={{ textDecoration: "none", color: "black" }} >
+                <ListItem button >
+
+                    <ListItemIcon><FavoriteIcon color="primary" /></ListItemIcon>
+                    <ListItemText primary={text} />
+
+                </ListItem>
+            </NavLink>
+        );
+    }
     else if (text === 'Our Team')
     {
         return (
             <NavLink exact to="/team" key={text} activeStyle={{ color: "blue" }} style={{ textDecoration: "none", color: "black" }} >
                 <ListItem button>
 
-                    <ListItemIcon><PeopleIcon color="primary" /></ListItemIcon>
+                    <ListItemIcon><EmojiPeopleIcon color="primary" /></ListItemIcon>
                     <ListItemText primary={text} />
 
                 </ListItem>
@@ -109,7 +125,7 @@ export default function TemporaryDrawer()
             onKeyDown={toggleDrawer(anchor, false)}
         >
             <List>
-                {['Home', 'Database', 'Our Team', 'Contributors'].map((text, index) => (
+                {['Home', 'Database', 'Our Team', 'Contributors','Relax'].map((text, index) => (
 
                     renderIcon(text)
 
@@ -136,9 +152,13 @@ export default function TemporaryDrawer()
                         <div className={`${ styles.menubtn }`}>
                             <Button onClick={toggleDrawer(anchor, true)}><MenuIcon fontSize="large" style={{ color: "white" }} /></Button>
                         </div>
-                        <div className={`${ styles.mainheading }`}>
+                        <motion.div 
+                        initial={{opacity:0}}
+                        animate={{opacity:1}}
+                        transition={{duration:1}}
+                        className={`${ styles.mainheading }`}>
                             United Against Covid
-                        </div>
+                        </motion.div>
                     </div>
                     <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
                         {list(anchor)}

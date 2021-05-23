@@ -3,6 +3,8 @@ import '../../App.css';
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import styles from './styles/News.module.css';
+import {motion} from 'framer-motion'
+
 const News = () =>
 {
   const [announcement, setAnnouncement] = useState([])
@@ -33,8 +35,19 @@ const News = () =>
     }
   }
     , [loading]) // [] renders only once
+
+    const fadeRight = {
+    hidden: {opacity:0,x:100},
+    visible:{opacity:1,x:0}
+  }
+
   return (
-    <div className={`${ styles.frontpagecont }`}>
+    <motion.div
+     variants={fadeRight}
+    initial = 'hidden'
+    animate = 'visible'
+    transition = {{duration:1}}
+    className={`${ styles.frontpagecont }`}>
       <div className={`${ styles.leftbox }`}>
         <div className={`${ styles.heading }`}>
           Other Helpful Initiatives
@@ -66,7 +79,7 @@ const News = () =>
           })}
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
