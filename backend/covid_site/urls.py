@@ -30,8 +30,7 @@ urlpatterns = [
     path('status/', include('status.urls')),
     path('organization/', include('organization.urls')),
     path('announcement/', include('announcement.urls')),
-    path('team/', include('team.urls')),
-    path('blossom/', include('blossom.urls'))
+    path('team/', include('team.urls'))
 ]
 
 

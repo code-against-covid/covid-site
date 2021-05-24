@@ -64,7 +64,6 @@ INSTALLED_APPS = [
     'announcement',
     'organization',
     'team',
-    'blossom',
     'django_otp',
     'django_otp.plugins.otp_totp',
 ]
