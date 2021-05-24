@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import Database from './Pages/database'
 import Team from './Pages/team'
-import Blossom from './Pages/blossom'
 import Donors from './Pages/Donors'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Error from './Pages/error'
@@ -17,9 +16,6 @@ ReactDOM.render(
         </Route>
         <Route path='/help'>
           <Database />
-        </Route>
-        <Route path='/blossom'>
-          <Blossom />
         </Route>
         <Route path='/team'>
           <Team />

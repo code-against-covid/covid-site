@@ -10,7 +10,6 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import StorageIcon from '@material-ui/icons/Storage';
-import FavoriteIcon from '@material-ui/icons/Favorite';
 import EmojiPeopleIcon from '@material-ui/icons/EmojiPeople';
 import HomeIcon from '@material-ui/icons/Home';
 import PeopleIcon from '@material-ui/icons/People';
@@ -50,19 +49,6 @@ const renderIcon = (text) =>
                 <ListItem button >
 
                     <ListItemIcon><StorageIcon color="primary" /></ListItemIcon>
-                    <ListItemText primary={text} />
-
-                </ListItem>
-            </NavLink>
-        );
-    }
-    else if (text === 'Relax')
-    {
-        return (
-            <NavLink exact to="/blossom" key={text} activeStyle={{ color: "blue" }} style={{ textDecoration: "none", color: "black" }} >
-                <ListItem button >
-
-                    <ListItemIcon><FavoriteIcon color="primary" /></ListItemIcon>
                     <ListItemText primary={text} />
 
                 </ListItem>
@@ -125,7 +111,7 @@ export default function TemporaryDrawer()
             onKeyDown={toggleDrawer(anchor, false)}
         >
             <List>
-                {['Home', 'Database', 'Our Team', 'Contributors','Relax'].map((text, index) => (
+                {['Home', 'Database', 'Our Team', 'Contributors'].map((text, index) => (
 
                     renderIcon(text)
 

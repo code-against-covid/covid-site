@@ -4,7 +4,10 @@ export const resources = [
     'Remdesivir',
     'Medicine',
     'ICU Beds',
+    'Oxygen Beds',
+    'Ventilator Beds',
     'Vaccine',
     'Free services',
+    'Ambulance Service',
     'Miscellaneous'
 ]
