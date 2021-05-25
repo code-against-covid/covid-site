@@ -3,7 +3,8 @@ import '../../App.css';
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import styles from './styles/News.module.css';
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion';
+import Button from '@material-ui/core/Button';
 
 const News = () =>
 {
@@ -36,18 +37,18 @@ const News = () =>
   }
     , [loading]) // [] renders only once
 
-    const fadeRight = {
-    hidden: {opacity:0,x:100},
-    visible:{opacity:1,x:0}
+  const fadeRight = {
+    hidden: { opacity: 0, x: 100 },
+    visible: { opacity: 1, x: 0 }
   }
 
   return (
     <motion.div
-     variants={fadeRight}
-    initial = 'hidden'
-    animate = 'visible'
-    transition = {{duration:1}}
-    className={`${ styles.frontpagecont }`}>
+      variants={fadeRight}
+      initial='hidden'
+      animate='visible'
+      transition={{ duration: 1 }}
+      className={`${ styles.frontpagecont }`}>
       <div className={`${ styles.leftbox }`}>
         <div className={`${ styles.heading }`}>
           Other Helpful Initiatives
@@ -67,12 +68,12 @@ const News = () =>
                 </p>
 
                 <div style={{ textAlign: 'center' }}>
-                  <button className={`${ styles.explorebtn }`} onClick={() =>
+                  <Button className={`${ styles.explorebtn }`} variant="contained" color="secondary" size="large" onClick={() =>
                   {
                     window.open(item.link)
                   }}>
                     Explore
-      </button>
+                  </Button>
                 </div>
               </div>
             )

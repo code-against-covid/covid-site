@@ -5,6 +5,19 @@
   background-size: cover;
 }
 
+.emailicondiv{
+  display: flex;
+  width: 90%;
+  justify-content: left;
+  align-items: center;
+  margin-left: 5%;
+  flex-wrap: wrap;
+}
+.emailicondiv p{
+  margin-left: 20px;
+}
+
+
 .dbsearchsec {
   display: flex;
   justify-content: space-around;
@@ -111,5 +124,8 @@ tr:nth-child(even) {
   }
   .tablecontainer {
     width: 87vw;
+  }
+  .emailicondiv p{
+    margin-left: 0px;
   }
 }

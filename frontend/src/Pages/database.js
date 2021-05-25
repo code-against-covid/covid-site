@@ -17,6 +17,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import Typography from '@material-ui/core/Typography';
 import MuiDialogContent from '@material-ui/core/DialogContent';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
+import EmailIcon from '@material-ui/icons/Email';
 
 const DialogContent = withStyles((theme) => ({
     root: {
@@ -121,6 +122,12 @@ const Database = () =>
                         <h3>Warning!</h3>
                         <p>WE ACCEPT NO RESPONSIBILITY OR LIABILITY FOR THE ACCURACY OR THE COMPLETENESS OF THE INFORMATION CONTAINED IN THIS WEBSITE. UNDER NO CIRCUMSTANCES WILL WE BE HELD RESPONSIBLE OR LIABLE IN ANY WAY FOR ANY CLAIMS, DAMAGES, LOSSES, EXPENSES, COSTS OR LIABILITIES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, ANY DIRECT OR INDIRECT DAMAGES FOR LOSS OF PROFITS, BUSINESS INTERRUPTION OR LOSS OF INFORMATION) RESULTING OR ARISING DIRECTLY OR INDIRECTLY FROM YOUR USE OF OR INABILITIY TO USE THIS WEBSITE OR ANY WEBSITES LINKED TO IT, OR FROM YOUR RELIANCE ON THE INFORMATION AND MATERIAL ON THIS WEBSITE, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES IN ADVANCE. WE ARE JUST TRYING TO HELP BY PROVIDING A PLATFORM FOR EVERYONE TO BENEFIT FROM. WHILE WE TRY TO VERIFY THE INFORMATION TO THE BEST OF OUR ABILITIES, WE CANNOT GUARANTEE THAT THERE ARE NO MISTAKES OR ERRORS. SHOULD YOU DECIDE TO ACT UPON ANY OF THE INFORMATION ON THIS WEBSITE, YOU DO SO AT YOUR OWN RISK.</p>
                     </div>
+                </div>
+                <div className={`${ styles.emailicondiv }`}>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=unitedagainstcovid19dbstatus@gmail.com&su=Status of a lead I tried from your database." target="_blank">
+                        <EmailIcon style={{ fontSize: "35px", color: "rgb(133, 0, 0)" }} />
+                    </a>
+                    <p>Help us make the database better by mailing us about the status of the leads you might have tried.</p>
                 </div>
                 {
                     <div className={`${ styles.tablecontainer } tablecontainerscroll`}>
