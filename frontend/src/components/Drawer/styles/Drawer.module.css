@@ -20,14 +20,14 @@
 } */
 
 .menutogglediv {
-  padding: 1% 2%;
+  padding: 1.5% 2%;
   margin-bottom: 70px;
   display: flex;
   flex-wrap: no-wrap;
   align-items: center;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(133, 0, 0, 1);
   color: #f0f0f0;
-  box-shadow: 0 0 3px 3px #000000;
+  box-shadow: 0 0 3px 3px #a8a1a1;
 }
 
 .mainheading {

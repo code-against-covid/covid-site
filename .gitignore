@@ -30,7 +30,7 @@ venv/
 .history
 
 #secrets
-/secrets.json
+/backend/secrets.json
 
 # Ignore socket files
 **/**.sock

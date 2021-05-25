@@ -16,6 +16,7 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import Typography from '@material-ui/core/Typography';
 import MuiDialogContent from '@material-ui/core/DialogContent';
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 
 const DialogContent = withStyles((theme) => ({
     root: {
@@ -71,6 +72,12 @@ const Database = () =>
                 setData(response.data)
     }
 
+    const toTop = () =>
+    {
+        var dbtable = document.querySelector(".tablecontainerscroll");
+        dbtable.scrollTop = 0;
+    }
+
     return (
         <>
             <div className={`${ styles.database }`}>
@@ -116,7 +123,13 @@ const Database = () =>
                     </div>
                 </div>
                 {
-                    <div className={`${ styles.tablecontainer }`}>
+                    <div className={`${ styles.tablecontainer } tablecontainerscroll`}>
+                        <div className={`${ styles.tableuparrow }`}>
+                            <Button color="primary" variant="contained" onClick={toTop}>
+                                <ArrowUpwardIcon color="secondary" style={{ fontSize: "30px" }} />
+                                <p>TOP</p>
+                            </Button>
+                        </div>
                         <table className={`${ styles.dbtable }`}>
                             <thead>
                                 <tr>
@@ -157,7 +170,7 @@ const Database = () =>
                 <DialogContent dividers>
                     <Typography style={{ fontSize: '20px' }} gutterBottom >
                         PLEASE BEWARE OF FRAUDS AND ILLEGAL SELLERS OF THESE RESOURCES. CONFIRM EACH PERSON'S IDENTITY AND MAKE SURE THAT THEIR BUSINESS IS LEGIT. DON'T MAKE ANY PAYMENTS IN ADVANCE BEFORE VERIFYING EVERY POSSIBLE DETAIL ISSUED BY THE SELLER !
-         </Typography>
+                    </Typography>
                 </DialogContent>
                 <DialogActions>
                     <Button autoFocus onClick={() =>
@@ -165,7 +178,7 @@ const Database = () =>
                         setAlert(false)
                     }} color="primary">
                         close
-          </Button>
+                    </Button>
                 </DialogActions>
             </Dialog>
             <Footer />

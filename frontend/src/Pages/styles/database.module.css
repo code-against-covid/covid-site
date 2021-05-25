@@ -50,9 +50,21 @@
 
 .tablecontainer {
   overflow-x: scroll;
-  margin: 0 2% 2% 2%;
-  width: 95vw;
+  margin: 30px auto;
+  width: 92vw;
+  height: 700px;
+  overflow-y: scroll;
   /* min-width: 1000px; */
+}
+.tableuparrow{
+  display: inline-block;
+  position:fixed;
+  z-index: 20;
+  right: 50px;
+  bottom: 30px;
+  /* background-color: rgba(255,255,255,0.7); */
+  text-align: center;
+  font-weight: bold;
 }
 
 .dbtable {
@@ -62,7 +74,7 @@
   background: #fff;
   table-layout: fixed;
   line-height: 20px;
-  min-width: 900px;
+  min-width: 930px;
   width: 100%;
 }
 
@@ -96,5 +108,8 @@ tr:nth-child(even) {
   .resourcerow {
     width: 30%;
     /* width: 500px; */
+  }
+  .tablecontainer {
+    width: 87vw;
   }
 }
