@@ -5,7 +5,7 @@
   background-size: cover;
 }
 
-.emailicondiv{
+.emailicondiv {
   display: flex;
   width: 90%;
   justify-content: left;
@@ -13,10 +13,10 @@
   margin-left: 5%;
   flex-wrap: wrap;
 }
-.emailicondiv p{
+.emailicondiv p {
   margin-left: 20px;
+  font-size: 20px;
 }
-
 
 .dbsearchsec {
   display: flex;
@@ -69,9 +69,9 @@
   overflow-y: scroll;
   /* min-width: 1000px; */
 }
-.tableuparrow{
+.tableuparrow {
   display: inline-block;
-  position:fixed;
+  position: fixed;
   z-index: 20;
   right: 50px;
   bottom: 30px;
@@ -125,7 +125,7 @@ tr:nth-child(even) {
   .tablecontainer {
     width: 87vw;
   }
-  .emailicondiv p{
+  .emailicondiv p {
     margin-left: 0px;
   }
 }
