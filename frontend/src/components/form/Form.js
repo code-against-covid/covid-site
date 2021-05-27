@@ -74,7 +74,6 @@ const Form = () =>
   })();
 
 
-
   const handleSelect1 = (e) =>
   {
     setState(e.target.value)

@@ -30,7 +30,8 @@ urlpatterns = [
     path('status/', include('status.urls')),
     path('organization/', include('organization.urls')),
     path('announcement/', include('announcement.urls')),
-    path('team/', include('team.urls'))
+    path('team/', include('team.urls')),
+    path('suggestion/', include('suggestion.urls'))
 ]
 
 
