@@ -109,8 +109,8 @@ const Form = () =>
       const str2 = states.find((item)=> state.includes(item) )
     axios.post(`${ process.env.REACT_APP_API_URL }/form/`, {
           name: name ? name : 'Anonymous',
-          state : str1,
-          resource: str2,
+          state : str2,
+          resource: str1,
           status: 1,
           ip_address: JSON.stringify(ip),
           additional_info: additional,

@@ -127,7 +127,7 @@ const Database = () =>
                     <a href="https://mail.google.com/mail/?view=cm&fs=1&to=unitedagainstcovid19dbstatus@gmail.com&su=Status of a lead I tried from your database." target="_blank" rel="noreferrer">
                         <EmailIcon style={{ fontSize: "35px", color: "rgb(133, 0, 0)" }} />
                     </a>
-                    <p>Click on the mail icon to provide feedback on the database.This will help us improve the efficiency of it. Thank you. </p>
+                    <p>Click on the mail icon to provide feedback on the database.This will help us improve its efficiency. Thank you. </p>
                 </div>
                 {
                     <div className={`${ styles.tablecontainer } tablecontainerscroll`}>
