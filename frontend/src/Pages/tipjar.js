@@ -103,10 +103,10 @@ const Tipjar = () =>
     <div>
       <Drawer />
       <p className={`${ style.heading } `}>
-       Share Your Stories
+       Tipjar
       </p>
         <p className={`${style.disclaimer}`}>
-          Please consider sharing an advice or a few hacks that you used to get past the 14 days quarantine period.
+          Here you can share fun anecdotes or tips\tricks that helped you through the 14 days quarantine period.
           </p>
       <div className={`${ style.form } `}>
         <div className={`${ style.subform1 } `}>
