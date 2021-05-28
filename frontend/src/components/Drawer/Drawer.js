@@ -56,7 +56,7 @@ const renderIcon = (text) =>
             </NavLink>
         );
     }
-    else if (text === 'Share your tips')
+    else if (text === 'Covid Survivors Experiences/Tips')
     {
         return (
             <NavLink exact to="/tipjar" key={text} activeStyle={{ color: "blue" }} style={{ textDecoration: "none", color: "black" }} >
@@ -125,7 +125,7 @@ export default function TemporaryDrawer()
             onKeyDown={toggleDrawer(anchor, false)}
         >
             <List>
-                {['Home', 'Database', 'Share your tips', 'Our Team', 'Contributors'].map((text, index) => (
+                {['Home', 'Database', 'Covid Survivors Experiences/Tips', 'Our Team', 'Contributors'].map((text, index) => (
 
                     renderIcon(text)
 
