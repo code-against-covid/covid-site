@@ -16,7 +16,7 @@
   background-color: #fff8f8;
   width: 300px;
   padding: 1.8%;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin: 2%;
   border-radius: 4px;
   line-height: 20px;
@@ -44,7 +44,7 @@
   width: 80%;
   margin: 0 auto;
   padding-bottom: 2%;
-  border-bottom: 4px solid rgb(133, 0, 0);;
+  border-bottom: 4px solid rgb(133, 0, 0);
   color: rgb(133, 0, 0);
   /* color: rgb(19, 66, 51); */
 }

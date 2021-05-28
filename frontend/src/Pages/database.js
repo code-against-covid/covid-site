@@ -31,6 +31,7 @@ const Database = () =>
 
     const [data, setData] = useState([])
     const [state, setState] = useState('')
+    const [working, setWorking] = useState('')
     const [resource, setResource] = useState('')
     const [alert, setAlert] = useState(true)
     const [loading, setLoading] = useState(true)
@@ -59,6 +60,10 @@ const Database = () =>
     {
         setState(e.target.value)
     }
+    const handleSelect3 = (e) =>
+    {
+        setWorking(e.target.value)
+    }
 
     const handleSelect2 = (e) =>
     {
@@ -68,9 +73,23 @@ const Database = () =>
     const handleSubmit = async () =>
     {
         const response = await axios.get(`${ process.env.REACT_APP_API_URL }/form/`)
-        resource ? state ? setData(response.data.filter((item) => item.state.toLowerCase() === state.toLowerCase() && item.resource.toLowerCase() === resource.toLowerCase())) : setData(response.data.filter((item) => item.resource.toLowerCase() === resource.toLowerCase()))
-            : state ? setData(response.data.filter((item) => item.state.toLowerCase() === state.toLowerCase())) :
-                setData(response.data)
+
+        
+        resource ? state ? working ? setData(response.data.filter((item) => item.state.toLowerCase() === state.toLowerCase() && item.resource.toLowerCase() === resource.toLowerCase() && status[item.status -1].toLowerCase() === working.toLowerCase()))
+        : 
+        setData(response.data.filter((item) => item.state.toLowerCase() === state.toLowerCase() && item.resource.toLowerCase() === resource.toLowerCase())) 
+        :
+        working ? setData(response.data.filter((item) => status[item.status -1].toLowerCase() === working.toLowerCase() && item.resource.toLowerCase() === resource.toLowerCase())) 
+        : 
+        setData(response.data.filter((item) => item.resource.toLowerCase() === resource.toLowerCase()))
+        : 
+        state ? working ? setData(response.data.filter((item) => status[item.status -1].toLowerCase() === working.toLowerCase() && item.state.toLowerCase() === state.toLowerCase())) 
+        :
+        setData(response.data.filter((item) => item.state.toLowerCase() === state.toLowerCase()))
+        :
+        working ? setData(response.data.filter((item) => status[item.status -1].toLowerCase() === working.toLowerCase()))
+        :
+        setData(response.data)
     }
 
     const toTop = () =>
@@ -110,8 +129,24 @@ const Database = () =>
                             )}
                         />
                     </div>
-                    <div className={`${ styles.searchbtn }`}>
+
+                    <div className={`${ styles.filter }`}>
+
+                        <Autocomplete
+
+                            onSelect={handleSelect3}
+                            options={status.map((option) => option)}
+                            renderInput={(params) => (
+                                <TextField {...params} label="Filter By Status" margin="normal" variant="outlined" />
+                            )}
+                        />
+                    </div>
+                    <div >
                         <Button variant="contained" color="primary" size="large" onClick={handleSubmit}>Search</Button>
+                        <Button variant="contained" color="primary" size="large" style={{marginLeft:'10px'}} onClick={async ()=>{
+                            const response = await axios.get(`${ process.env.REACT_APP_API_URL }/form/`)
+                            setData(response.data)
+                        }}>Reset</Button>
                     </div>
                     <div className={`${ styles.totaldbposts }`}>
                         Total Number of Posts: {data.length}
@@ -124,10 +159,10 @@ const Database = () =>
                     </div>
                 </div>
                 <div className={`${ styles.emailicondiv }`}>
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=unitedagainstcovid19dbstatus@gmail.com&su=Status of a lead I tried from your database." target="_blank">
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=unitedagainstcovid19dbstatus@gmail.com&su=Status of a lead I tried from your database." target="_blank" rel="noreferrer">
                         <EmailIcon style={{ fontSize: "35px", color: "rgb(133, 0, 0)" }} />
                     </a>
-                    <p>Help us make the database better by mailing us about the status of the leads you might have tried.</p>
+                    <p>Click on the mail icon to provide feedback on the database.This will help us improve its efficiency. Thank you. </p>
                 </div>
                 {
                     <div className={`${ styles.tablecontainer } tablecontainerscroll`}>

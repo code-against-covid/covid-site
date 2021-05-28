@@ -6,6 +6,7 @@ import Team from './Pages/team'
 import Donors from './Pages/Donors'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Error from './Pages/error'
+import Tipjar from './Pages/tipjar'
 
 ReactDOM.render(
   <Router>
@@ -13,6 +14,9 @@ ReactDOM.render(
       <Switch>
         <Route exact path='/'>
           <App />
+        </Route>
+        <Route exact path='/tipjar'>
+          <Tipjar/>
         </Route>
         <Route path='/help'>
           <Database />

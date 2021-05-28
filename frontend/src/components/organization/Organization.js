@@ -3,6 +3,7 @@ import '../../App.css';
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import styles from './styles/Organization.module.css';
+import {motion} from 'framer-motion'
 
 const Organization = () =>
 {
@@ -32,8 +33,18 @@ const Organization = () =>
   }
     , [loading]) // [] renders only once
 
+     const fadeLeft = {
+    hidden: {opacity:0,x:-100},
+    visible:{opacity:1,x:0}
+     }
+
   return (
-    <div className={`${ styles.donation }`}>
+    <motion.div
+     variants={fadeLeft}
+    initial = 'hidden'
+    animate = 'visible'
+    transition = {{duration:1}}
+    className={`${ styles.donation }`}>
       <div className={`${ styles.heading }`}>
         Helpful Organizations
           </div>
@@ -62,7 +73,7 @@ const Organization = () =>
           )
         })}
       </div>
-    </div>
+    </motion.div>
   )
 }
 

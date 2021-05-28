@@ -74,7 +74,6 @@ const Form = () =>
   })();
 
 
-
   const handleSelect1 = (e) =>
   {
     setState(e.target.value)
@@ -99,15 +98,18 @@ const Form = () =>
   // {
   //   setAddress(e.target.value)
   // }
-
   // handlesubmit for the submit button in the post and display thank you message.
+
+
   const handleSubmit = () =>
   {
     if(resource && additional && state){
+      const str1 = resources.find((item)=> resource.includes(item) )
+      const str2 = states.find((item)=> state.includes(item) )
     axios.post(`${ process.env.REACT_APP_API_URL }/form/`, {
           name: name ? name : 'Anonymous',
-          state: state,
-          resource: resource,
+          state : str2,
+          resource: str1,
           status: 1,
           ip_address: JSON.stringify(ip),
           additional_info: additional,
@@ -270,7 +272,7 @@ const Form = () =>
           }} aria-labelledby="customized-dialog-title" open={openError}>
            <DialogContent dividers>
              <Typography gutterBottom>
-             Please fill the state, resource and information section before submitting.
+             Please select an option from the state and resource drop down menus and don't forget to fill the information section before submitting. Thank you.
          </Typography>
            </DialogContent>
          </Dialog>
