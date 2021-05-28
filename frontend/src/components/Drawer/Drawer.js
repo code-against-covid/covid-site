@@ -17,7 +17,7 @@ import PeopleIcon from '@material-ui/icons/People';
 import ForumIcon from '@material-ui/icons/Forum';
 import MenuIcon from '@material-ui/icons/Menu';
 import styles from './styles/Drawer.module.css';
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion'
 
 const useStyles = makeStyles({
     list: {
@@ -56,7 +56,7 @@ const renderIcon = (text) =>
             </NavLink>
         );
     }
-    else if (text === 'Covid Survivors Tipjar')
+    else if (text === 'Share your tips')
     {
         return (
             <NavLink exact to="/tipjar" key={text} activeStyle={{ color: "blue" }} style={{ textDecoration: "none", color: "black" }} >
@@ -125,7 +125,7 @@ export default function TemporaryDrawer()
             onKeyDown={toggleDrawer(anchor, false)}
         >
             <List>
-                {['Home', 'Database','Covid Survivors Tipjar', 'Our Team', 'Contributors'].map((text, index) => (
+                {['Home', 'Database', 'Share your tips', 'Our Team', 'Contributors'].map((text, index) => (
 
                     renderIcon(text)
 
@@ -152,11 +152,11 @@ export default function TemporaryDrawer()
                         <div className={`${ styles.menubtn }`}>
                             <Button onClick={toggleDrawer(anchor, true)}><MenuIcon fontSize="large" style={{ color: "white" }} /></Button>
                         </div>
-                        <motion.div 
-                        initial={{opacity:0}}
-                        animate={{opacity:1}}
-                        transition={{duration:1}}
-                        className={`${ styles.mainheading }`}>
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 1 }}
+                            className={`${ styles.mainheading }`}>
                             United Against Covid
                         </motion.div>
                     </div>

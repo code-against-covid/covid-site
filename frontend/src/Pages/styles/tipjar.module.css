@@ -3,14 +3,15 @@
   text-align: center;
   margin-bottom: 2%;
   color: rgba(133, 0, 0, 1);
+  padding: 0 5%;
 }
 
 .form {
-  border: solid #000;
   text-align: center;
   display: flex;
   justify-content: center;
-  padding: 4% 4% 0 4%;
+  padding: 5%;
+  align-items: flex-end;
 }
 
 .subform1 {
@@ -42,9 +43,10 @@
 }
 
 .subform2 {
-  position: relative;
+  /* position: relative;
   right: 3%;
-  top: 80px;
+  top: 80px; */
+  margin-left: 30px;
   height: 40px;
   width: 200px;
 }
@@ -63,15 +65,22 @@
 .data {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
+  margin: 5%;
 }
 
 .description {
-  width: 300px;
+  width: 350px;
   height: 150px;
-  background-color: thistle;
+  background-color: rgb(247, 240, 240);
+  overflow-y: scroll;
+  word-wrap: break-word;
   margin: 2%;
   font-size: 25px;
-  border-radius: 10px;
+  border-radius: 7px;
   padding: 1%;
+}
+
+.authorname {
+  margin-bottom: 10px;
 }
