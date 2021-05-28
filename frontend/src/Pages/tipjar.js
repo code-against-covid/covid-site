@@ -147,7 +147,8 @@ const Tipjar = () => {
     initial = 'hidden'
     animate = 'visible'
     transition = {{duration:1}}
-                      className={`${style.description}`} >
+                      className={`${style.description}`} 
+                      key={item.id}>
                      <p>Tip: {item.description} </p>
                      <p>Author: {item.name}      </p>
                         
