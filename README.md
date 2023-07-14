@@ -1,1 +1,7 @@
 # covid-site
+
+During the COVID-19 outbreak in India, we observed that people were not able to proliferate critical life resources to a bigger audience, despite working day and night. A key reason why that's the case is the restricted networking abilities provided by social media platforms. With this limitation in mind, we created this social media application. 
+
+We provide a platform for three kinds of people. First category encompasses people who aren't covid patients themselves but have gone through a recent trauma, for them, we provide a list of helpful initiatives who are spreading awareness on topics like: sexual assaults, depression etc. and also are extending a helping hand. Next, the people who are not able to find resources like ICU beds, oxygen cylinders etc, we provide access to our rich database, which not only contains information regarding these resources, but also displays the status of that particular information(Status: Working,Unchecked,WhatsApp only, & Not Working). Lastly, people who have information about leads on the resources and want to share it, our website provides a very basic form, and by filling it, one can share any information or lead to the whole country.
+
+The website is sophisticated in a very simple way and achieves its purpose of helping people who are struggling. God forbid, but if Covid third wave does hit India, we need to be well prepared and make sure that the flow of information is properly regulated and well sustained throughout the pandemic. 
