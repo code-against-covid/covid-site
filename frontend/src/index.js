@@ -12,7 +12,7 @@ ReactDOM.render(
   <Router>
     <main className="layout">
       <Switch>
-        <Route exact path='/'>
+        <Route exact path='https://code-against-covid.github.io/covid-site/'>
           <App />
         </Route>
         <Route exact path='/tipjar'>
