@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/http//:dhananjhay.github.io/code-against-covid/covid-site/static/css/main.d10614c6.chunk.css",
+    "main.js": "/http//:dhananjhay.github.io/code-against-covid/covid-site/static/js/main.6fa9c730.chunk.js",
+    "main.js.map": "/http//:dhananjhay.github.io/code-against-covid/covid-site/static/js/main.6fa9c730.chunk.js.map",
+    "runtime-main.js": "/http//:dhananjhay.github.io/code-against-covid/covid-site/static/js/runtime-main.b2db1600.js",
+    "runtime-main.js.map": "/http//:dhananjhay.github.io/code-against-covid/covid-site/static/js/runtime-main.b2db1600.js.map",
+    "static/js/2.69bd310e.chunk.js": "/http//:dhananjhay.github.io/code-against-covid/covid-site/static/js/2.69bd310e.chunk.js",
+    "static/js/2.69bd310e.chunk.js.map": "/http//:dhananjhay.github.io/code-against-covid/covid-site/static/js/2.69bd310e.chunk.js.map",
+    "index.html": "/http//:dhananjhay.github.io/code-against-covid/covid-site/index.html",
+    "static/css/main.d10614c6.chunk.css.map": "/http//:dhananjhay.github.io/code-against-covid/covid-site/static/css/main.d10614c6.chunk.css.map",
+    "static/js/2.69bd310e.chunk.js.LICENSE.txt": "/http//:dhananjhay.github.io/code-against-covid/covid-site/static/js/2.69bd310e.chunk.js.LICENSE.txt",
+    "static/media/Drawer.module.css": "/http//:dhananjhay.github.io/code-against-covid/covid-site/static/media/Oxygen-Bold.8c64e060.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b2db1600.js",
+    "static/js/2.69bd310e.chunk.js",
+    "static/css/main.d10614c6.chunk.css",
+    "static/js/main.6fa9c730.chunk.js"
+  ]
+}
