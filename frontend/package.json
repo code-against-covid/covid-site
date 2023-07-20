@@ -25,7 +25,8 @@
     "start": "react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "build": "rd /s /q build ..\\backend\\build && react-scripts build && xcopy /i build ..\\backend\\build /E /H ",
+    // "build": "rd /s /q build ..\\backend\\build && react-scripts build && xcopy /i build ..\\backend\\build /E /H ",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
