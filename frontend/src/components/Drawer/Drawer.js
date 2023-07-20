@@ -33,7 +33,7 @@ const renderIcon = (text) =>
     if (text === 'Home')
     {
         return (
-            <NavLink exact to="/" key={text} activeStyle={{ color: "blue" }} style={{ textDecoration: "none", color: "black" }} >
+            <NavLink exact to="/covid-site" key={text} activeStyle={{ color: "blue" }} style={{ textDecoration: "none", color: "black" }} >
                 <ListItem button>
 
                     <ListItemIcon><HomeIcon color="primary" /></ListItemIcon>
@@ -46,7 +46,7 @@ const renderIcon = (text) =>
     else if (text === 'Database')
     {
         return (
-            <NavLink exact to="/help" key={text} activeStyle={{ color: "blue" }} style={{ textDecoration: "none", color: "black" }} >
+            <NavLink exact to="/covid-site/help" key={text} activeStyle={{ color: "blue" }} style={{ textDecoration: "none", color: "black" }} >
                 <ListItem button >
 
                     <ListItemIcon><StorageIcon color="primary" /></ListItemIcon>
@@ -59,7 +59,7 @@ const renderIcon = (text) =>
     else if (text === "Tipjar")
     {
         return (
-            <NavLink exact to="/tipjar" key={text} activeStyle={{ color: "blue" }} style={{ textDecoration: "none", color: "black" }} >
+            <NavLink exact to="/covid-site/tipjar" key={text} activeStyle={{ color: "blue" }} style={{ textDecoration: "none", color: "black" }} >
                 <ListItem button >
 
                     <ListItemIcon><LoyaltyIcon color="primary" /></ListItemIcon>
@@ -72,7 +72,7 @@ const renderIcon = (text) =>
     else if (text === 'Our Team')
     {
         return (
-            <NavLink exact to="/team" key={text} activeStyle={{ color: "blue" }} style={{ textDecoration: "none", color: "black" }} >
+            <NavLink exact to="/covid-site/team" key={text} activeStyle={{ color: "blue" }} style={{ textDecoration: "none", color: "black" }} >
                 <ListItem button>
 
                     <ListItemIcon><EmojiPeopleIcon color="primary" /></ListItemIcon>
@@ -85,7 +85,7 @@ const renderIcon = (text) =>
     else if (text === 'Contributors')
     {
         return (
-            <NavLink exact to="/donors" key={text} activeStyle={{ color: "blue" }} style={{ textDecoration: "none", color: "black" }} >
+            <NavLink exact to="/covid-site/donors" key={text} activeStyle={{ color: "blue" }} style={{ textDecoration: "none", color: "black" }} >
                 <ListItem button>
 
                     <ListItemIcon><PeopleIcon color="primary" /></ListItemIcon>

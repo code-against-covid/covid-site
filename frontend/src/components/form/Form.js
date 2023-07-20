@@ -159,7 +159,7 @@ const Form = () =>
 
           {/* // Starting of I need help. */}
           <div className={`${ style.need }`}>
-            <Link to='/help' style={{ textDecoration: 'none' }}>
+            <Link to='/covid-site/help' style={{ textDecoration: 'none' }}>
               <Button className={`${ style.helpbtn }`} variant="contained" color="secondary" size="large" >
                 I Need Help
               </Button>

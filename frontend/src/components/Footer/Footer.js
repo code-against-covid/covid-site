@@ -14,10 +14,10 @@ const Footer = () =>
                 <div className={`${ styles.quicklinks }`}>
                     <div className={`${ styles.quickheading }`}><h3>Quick Links</h3></div>
                     <ul>
-                        <li><Link to="/help">Database</Link></li>
-                        <li><Link to="/forum">Forum</Link></li>
-                        <li><Link to="/team">Our Team</Link></li>
-                        <li><Link to="/donors">Contributors</Link></li>
+                        <li><Link to="/covid-site/help">Database</Link></li>
+                        <li><Link to="/covid-site/forum">Forum</Link></li>
+                        <li><Link to="/covid-site/team">Our Team</Link></li>
+                        <li><Link to="/covid-site/donors">Contributors</Link></li>
                     </ul>
                 </div>
             </div>

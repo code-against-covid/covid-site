@@ -12,19 +12,19 @@ ReactDOM.render(
   <Router>
     <main className="layout">
       <Switch>
-        <Route exact path='/'>
+        <Route exact path='/covid-site'>
           <App />
         </Route>
-        <Route exact path='/tipjar'>
+        <Route exact path='/covid-site/tipjar'>
           <Tipjar/>
         </Route>
-        <Route path='/help'>
+        <Route path='/covid-site/help'>
           <Database />
         </Route>
-        <Route path='/team'>
+        <Route path='/covid-site/team'>
           <Team />
         </Route>
-        <Route path='/donors'>
+        <Route path='/covid-site/donors'>
           <Donors />
         </Route>
         <Route path='*'>
